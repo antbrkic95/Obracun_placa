@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="ID_doprinosIzUkupno" />
           </Key>
-          <Property Name="ID_doprinosIzUkupno" Type="int" Nullable="false" />
+          <Property Name="ID_doprinosIzUkupno" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="varchar" MaxLength="50" />
           <Property Name="koeficijent" Type="int" />
           <Property Name="placa_ID" Type="int" />
@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="ID_doprinosNaUkupno" />
           </Key>
-          <Property Name="ID_doprinosNaUkupno" Type="int" Nullable="false" />
+          <Property Name="ID_doprinosNaUkupno" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="varchar" MaxLength="50" />
           <Property Name="koeficijent" Type="int" />
           <Property Name="placa_ID" Type="int" />
@@ -27,7 +27,7 @@
           <Key>
             <PropertyRef Name="ID_obracun" />
           </Key>
-          <Property Name="ID_obracun" Type="int" Nullable="false" />
+          <Property Name="ID_obracun" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="vrsta_obracuna" Type="varchar" MaxLength="20" />
           <Property Name="godina" Type="int" />
           <Property Name="mjesec" Type="varchar" MaxLength="20" />
@@ -37,7 +37,7 @@
           <Key>
             <PropertyRef Name="ID_odbitak" />
           </Key>
-          <Property Name="ID_odbitak" Type="int" Nullable="false" />
+          <Property Name="ID_odbitak" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="broj_clanova" Type="varchar" MaxLength="50" />
           <Property Name="koeficijent" Type="int" />
         </EntityType>
@@ -45,7 +45,7 @@
           <Key>
             <PropertyRef Name="ID_odbitakZaDjecu" />
           </Key>
-          <Property Name="ID_odbitakZaDjecu" Type="int" Nullable="false" />
+          <Property Name="ID_odbitakZaDjecu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="broj_djece" Type="int" />
           <Property Name="koeficijent" Type="int" />
         </EntityType>
@@ -53,7 +53,7 @@
           <Key>
             <PropertyRef Name="ID_placa" />
           </Key>
-          <Property Name="ID_placa" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID_placa" Type="nchar" MaxLength="10" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="visina_place" Type="nchar" MaxLength="10" />
           <Property Name="vrsta_place" Type="nchar" MaxLength="10" />
         </EntityType>
@@ -61,7 +61,7 @@
           <Key>
             <PropertyRef Name="ID_poslodavac" />
           </Key>
-          <Property Name="ID_poslodavac" Type="int" Nullable="false" />
+          <Property Name="ID_poslodavac" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="varchar" MaxLength="30" />
           <Property Name="adresa" Type="varchar" MaxLength="30" />
           <Property Name="OIB" Type="int" />
@@ -71,7 +71,7 @@
           <Key>
             <PropertyRef Name="ID_prirez" />
           </Key>
-          <Property Name="ID_prirez" Type="int" Nullable="false" />
+          <Property Name="ID_prirez" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="opcina" Type="varchar" MaxLength="50" />
           <Property Name="postotak" Type="int" />
         </EntityType>
@@ -79,7 +79,7 @@
           <Key>
             <PropertyRef Name="ID_radniSati" />
           </Key>
-          <Property Name="ID_radniSati" Type="int" Nullable="false" />
+          <Property Name="ID_radniSati" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="vrsta_rada" Type="varchar" MaxLength="60" />
           <Property Name="broj_sati" Type="int" />
         </EntityType>
@@ -87,7 +87,7 @@
           <Key>
             <PropertyRef Name="ID_radnik" />
           </Key>
-          <Property Name="ID_radnik" Type="int" Nullable="false" />
+          <Property Name="ID_radnik" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="ime" Type="varchar" MaxLength="50" />
           <Property Name="prezime" Type="varchar" MaxLength="50" />
           <Property Name="OIB" Type="int" />
@@ -103,7 +103,7 @@
           <Key>
             <PropertyRef Name="ID_blagdani" />
           </Key>
-          <Property Name="ID_blagdani" Type="int" Nullable="false" />
+          <Property Name="ID_blagdani" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="varchar" MaxLength="50" />
           <Property Name="broj_sati" Type="int" />
           <Property Name="radnik_ID" Type="int" />
@@ -112,7 +112,7 @@
           <Key>
             <PropertyRef Name="ID_bolovanje" />
           </Key>
-          <Property Name="ID_bolovanje" Type="int" Nullable="false" />
+          <Property Name="ID_bolovanje" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="razlog_bolovanja" Type="varchar" MaxLength="70" />
           <Property Name="broj_sati" Type="int" />
           <Property Name="radnik_ID" Type="int" />
@@ -121,7 +121,7 @@
           <Key>
             <PropertyRef Name="ID_godisnji" />
           </Key>
-          <Property Name="ID_godisnji" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID_godisnji" Type="nchar" MaxLength="10" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="pocetak_godisnji" Type="varchar" MaxLength="20" />
           <Property Name="kraj_godisnji" Type="varchar" MaxLength="20" />
           <Property Name="broj_sati" Type="int" />
@@ -131,7 +131,7 @@
           <Key>
             <PropertyRef Name="ID_stanje" />
           </Key>
-          <Property Name="ID_stanje" Type="int" Nullable="false" />
+          <Property Name="ID_stanje" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="ukupno_bruto" Type="int" />
           <Property Name="ukupno_neto" Type="int" />
           <Property Name="ukupan_trosak" Type="int" />
@@ -180,7 +180,7 @@
           <Key>
             <PropertyRef Name="ID_doprinosIzUkupno" />
           </Key>
-          <Property Name="ID_doprinosIzUkupno" Type="Int32" Nullable="false" />
+          <Property Name="ID_doprinosIzUkupno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="koeficijent" Type="Int32" />
           <Property Name="placa_ID" Type="Int32" />
@@ -190,7 +190,7 @@
           <Key>
             <PropertyRef Name="ID_doprinosNaUkupno" />
           </Key>
-          <Property Name="ID_doprinosNaUkupno" Type="Int32" Nullable="false" />
+          <Property Name="ID_doprinosNaUkupno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="koeficijent" Type="Int32" />
           <Property Name="placa_ID" Type="Int32" />
@@ -200,7 +200,7 @@
           <Key>
             <PropertyRef Name="ID_obracun" />
           </Key>
-          <Property Name="ID_obracun" Type="Int32" Nullable="false" />
+          <Property Name="ID_obracun" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="vrsta_obracuna" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="godina" Type="Int32" />
           <Property Name="mjesec" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -211,7 +211,7 @@
           <Key>
             <PropertyRef Name="ID_odbitak" />
           </Key>
-          <Property Name="ID_odbitak" Type="Int32" Nullable="false" />
+          <Property Name="ID_odbitak" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="broj_clanova" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="koeficijent" Type="Int32" />
           <NavigationProperty Name="radnik" Relationship="ProjektModel.radnikodbitak_clanovi" FromRole="odbitak_clanovi" ToRole="radnik" />
@@ -220,7 +220,7 @@
           <Key>
             <PropertyRef Name="ID_odbitakZaDjecu" />
           </Key>
-          <Property Name="ID_odbitakZaDjecu" Type="Int32" Nullable="false" />
+          <Property Name="ID_odbitakZaDjecu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="broj_djece" Type="Int32" />
           <Property Name="koeficijent" Type="Int32" />
           <NavigationProperty Name="radnik" Relationship="ProjektModel.radnikodbitak_za_djecu" FromRole="odbitak_za_djecu" ToRole="radnik" />
@@ -229,7 +229,7 @@
           <Key>
             <PropertyRef Name="ID_placa" />
           </Key>
-          <Property Name="ID_placa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ID_placa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="visina_place" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="vrsta_place" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="radnik" Relationship="ProjektModel.radnikplaca" FromRole="placa" ToRole="radnik" />
@@ -246,7 +246,7 @@
           <Key>
             <PropertyRef Name="ID_poslodavac" />
           </Key>
-          <Property Name="ID_poslodavac" Type="Int32" Nullable="false" />
+          <Property Name="ID_poslodavac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="adresa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="OIB" Type="Int32" />
@@ -257,7 +257,7 @@
           <Key>
             <PropertyRef Name="ID_prirez" />
           </Key>
-          <Property Name="ID_prirez" Type="Int32" Nullable="false" />
+          <Property Name="ID_prirez" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="opcina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="postotak" Type="Int32" />
           <NavigationProperty Name="placa" Relationship="ProjektModel.placaprirez" FromRole="prirez" ToRole="placa" />
@@ -266,7 +266,7 @@
           <Key>
             <PropertyRef Name="ID_radniSati" />
           </Key>
-          <Property Name="ID_radniSati" Type="Int32" Nullable="false" />
+          <Property Name="ID_radniSati" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="vrsta_rada" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="broj_sati" Type="Int32" />
           <NavigationProperty Name="radnik" Relationship="ProjektModel.radnikradni_sati" FromRole="radni_sati" ToRole="radnik" />
@@ -276,7 +276,7 @@
           <Key>
             <PropertyRef Name="ID_radnik" />
           </Key>
-          <Property Name="ID_radnik" Type="Int32" Nullable="false" />
+          <Property Name="ID_radnik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="OIB" Type="Int32" />
@@ -300,7 +300,7 @@
           <Key>
             <PropertyRef Name="ID_blagdani" />
           </Key>
-          <Property Name="ID_blagdani" Type="Int32" Nullable="false" />
+          <Property Name="ID_blagdani" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="broj_sati" Type="Int32" />
           <Property Name="radnik_ID" Type="Int32" />
@@ -310,7 +310,7 @@
           <Key>
             <PropertyRef Name="ID_bolovanje" />
           </Key>
-          <Property Name="ID_bolovanje" Type="Int32" Nullable="false" />
+          <Property Name="ID_bolovanje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="razlog_bolovanja" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
           <Property Name="broj_sati" Type="Int32" />
           <Property Name="radnik_ID" Type="Int32" />
@@ -320,7 +320,7 @@
           <Key>
             <PropertyRef Name="ID_godisnji" />
           </Key>
-          <Property Name="ID_godisnji" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ID_godisnji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="pocetak_godisnji" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="kraj_godisnji" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="broj_sati" Type="Int32" />
@@ -331,7 +331,7 @@
           <Key>
             <PropertyRef Name="ID_stanje" />
           </Key>
-          <Property Name="ID_stanje" Type="Int32" Nullable="false" />
+          <Property Name="ID_stanje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ukupno_bruto" Type="Int32" />
           <Property Name="ukupno_neto" Type="Int32" />
           <Property Name="ukupan_trosak" Type="Int32" />

@@ -21,7 +21,7 @@ namespace Projektni_zadatak
             this.doprinos_iz_ukupno = new HashSet<doprinos_iz_ukupno>();
         }
     
-        public string ID_placa { get; set; }
+        public int ID_placa { get; set; }
         public string visina_place { get; set; }
         public string vrsta_place { get; set; }
         public string prirez_ID { get; set; }

@@ -14,7 +14,7 @@ namespace Projektni_zadatak
     
     public partial class sati_godisnji
     {
-        public string ID_godisnji { get; set; }
+        public int ID_godisnji { get; set; }
         public string pocetak_godisnji { get; set; }
         public string kraj_godisnji { get; set; }
         public Nullable<int> broj_sati { get; set; }
