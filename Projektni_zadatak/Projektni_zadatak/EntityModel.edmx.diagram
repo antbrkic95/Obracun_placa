@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1e2aeaa2453346e1abab7685bb5fdafb" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjektModel.doprinos_iz_ukupno" Width="1.5" PointX="11.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.doprinos_na_ukupno" Width="1.5" PointX="10.125" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.obracun_placa" Width="1.5" PointX="8.375" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.odbitak_clanovi" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.odbitak_za_djecu" Width="1.5" PointX="0.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.placa" Width="1.5" PointX="7" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.poslodavac" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.prirez" Width="1.5" PointX="8.375" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.radni_sati" Width="1.5" PointX="5.125" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.radnik" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.sati_blagdani" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.sati_bolovanja" Width="1.5" PointX="3.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.sati_godisnji" Width="1.5" PointX="5.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjektModel.stanje" Width="1.5" PointX="10.625" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="ProjektModel.FK_radnik_poslodavac" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjektModel.radnikodbitak_za_djecu" />
+        <AssociationConnector Association="ProjektModel.radnikplaca" />
+        <AssociationConnector Association="ProjektModel.radnikodbitak_clanovi" />
+        <AssociationConnector Association="ProjektModel.radniksati_bolovanja" />
+        <AssociationConnector Association="ProjektModel.radniksati_godisnji" />
+        <AssociationConnector Association="ProjektModel.radnikradni_sati" />
+        <AssociationConnector Association="ProjektModel.radniksati_blagdani" />
+        <AssociationConnector Association="ProjektModel.placadoprinos_na_ukupno" />
+        <AssociationConnector Association="ProjektModel.placadoprinos_iz_ukupno" />
+        <AssociationConnector Association="ProjektModel.placaprirez" />
+        <AssociationConnector Association="ProjektModel.placaobracun_placa" />
+        <AssociationConnector Association="ProjektModel.placastanje" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

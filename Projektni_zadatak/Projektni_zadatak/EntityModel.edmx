@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProjektModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="doprinos_iz_ukupno">
+          <Key>
+            <PropertyRef Name="ID_doprinosIzUkupno" />
+          </Key>
+          <Property Name="ID_doprinosIzUkupno" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="koeficijent" Type="int" />
+          <Property Name="placa_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="doprinos_na_ukupno">
+          <Key>
+            <PropertyRef Name="ID_doprinosNaUkupno" />
+          </Key>
+          <Property Name="ID_doprinosNaUkupno" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="koeficijent" Type="int" />
+          <Property Name="placa_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="obracun_placa">
+          <Key>
+            <PropertyRef Name="ID_obracun" />
+          </Key>
+          <Property Name="ID_obracun" Type="int" Nullable="false" />
+          <Property Name="vrsta_obracuna" Type="varchar" MaxLength="20" />
+          <Property Name="godina" Type="int" />
+          <Property Name="mjesec" Type="varchar" MaxLength="20" />
+          <Property Name="dan" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="odbitak_clanovi">
+          <Key>
+            <PropertyRef Name="ID_odbitak" />
+          </Key>
+          <Property Name="ID_odbitak" Type="int" Nullable="false" />
+          <Property Name="broj_clanova" Type="varchar" MaxLength="50" />
+          <Property Name="koeficijent" Type="int" />
+        </EntityType>
+        <EntityType Name="odbitak_za_djecu">
+          <Key>
+            <PropertyRef Name="ID_odbitakZaDjecu" />
+          </Key>
+          <Property Name="ID_odbitakZaDjecu" Type="int" Nullable="false" />
+          <Property Name="broj_djece" Type="int" />
+          <Property Name="koeficijent" Type="int" />
+        </EntityType>
+        <EntityType Name="placa">
+          <Key>
+            <PropertyRef Name="ID_placa" />
+          </Key>
+          <Property Name="ID_placa" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="visina_place" Type="nchar" MaxLength="10" />
+          <Property Name="vrsta_place" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="poslodavac">
+          <Key>
+            <PropertyRef Name="ID_poslodavac" />
+          </Key>
+          <Property Name="ID_poslodavac" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="30" />
+          <Property Name="adresa" Type="varchar" MaxLength="30" />
+          <Property Name="OIB" Type="int" />
+          <Property Name="broj_racuna" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="prirez">
+          <Key>
+            <PropertyRef Name="ID_prirez" />
+          </Key>
+          <Property Name="ID_prirez" Type="int" Nullable="false" />
+          <Property Name="opcina" Type="varchar" MaxLength="50" />
+          <Property Name="postotak" Type="int" />
+        </EntityType>
+        <EntityType Name="radni_sati">
+          <Key>
+            <PropertyRef Name="ID_radniSati" />
+          </Key>
+          <Property Name="ID_radniSati" Type="int" Nullable="false" />
+          <Property Name="vrsta_rada" Type="varchar" MaxLength="60" />
+          <Property Name="broj_sati" Type="int" />
+        </EntityType>
+        <EntityType Name="radnik">
+          <Key>
+            <PropertyRef Name="ID_radnik" />
+          </Key>
+          <Property Name="ID_radnik" Type="int" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" />
+          <Property Name="OIB" Type="int" />
+          <Property Name="adresa" Type="varchar" MaxLength="50" />
+          <Property Name="broj_racuna" Type="varchar" MaxLength="50" />
+          <Property Name="banka" Type="varchar" MaxLength="20" />
+          <Property Name="poslodavac_ID" Type="int" />
+          <Property Name="placa_ID" Type="int" />
+          <Property Name="odbitakZaDjecu_ID" Type="int" />
+          <Property Name="odbitakClanovi_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="sati_blagdani">
+          <Key>
+            <PropertyRef Name="ID_blagdani" />
+          </Key>
+          <Property Name="ID_blagdani" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="broj_sati" Type="int" />
+          <Property Name="radnik_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="sati_bolovanja">
+          <Key>
+            <PropertyRef Name="ID_bolovanje" />
+          </Key>
+          <Property Name="ID_bolovanje" Type="int" Nullable="false" />
+          <Property Name="razlog_bolovanja" Type="varchar" MaxLength="70" />
+          <Property Name="broj_sati" Type="int" />
+          <Property Name="radnik_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="sati_godisnji">
+          <Key>
+            <PropertyRef Name="ID_godisnji" />
+          </Key>
+          <Property Name="ID_godisnji" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="pocetak_godisnji" Type="varchar" MaxLength="20" />
+          <Property Name="kraj_godisnji" Type="varchar" MaxLength="20" />
+          <Property Name="broj_sati" Type="int" />
+          <Property Name="radnik_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="stanje">
+          <Key>
+            <PropertyRef Name="ID_stanje" />
+          </Key>
+          <Property Name="ID_stanje" Type="int" Nullable="false" />
+          <Property Name="ukupno_bruto" Type="int" />
+          <Property Name="ukupno_neto" Type="int" />
+          <Property Name="ukupan_trosak" Type="int" />
+          <Property Name="dohodak" Type="int" />
+          <Property Name="ukupno_doprinosiIZ" Type="int" />
+          <Property Name="ukupno_doprinosiNA" Type="int" />
+        </EntityType>
+        <Association Name="FK_radnik_poslodavac">
+          <End Role="poslodavac" Type="Self.poslodavac" Multiplicity="0..1" />
+          <End Role="radnik" Type="Self.radnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="poslodavac">
+              <PropertyRef Name="ID_poslodavac" />
+            </Principal>
+            <Dependent Role="radnik">
+              <PropertyRef Name="poslodavac_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjektModelStoreContainer">
+          <EntitySet Name="doprinos_iz_ukupno" EntityType="Self.doprinos_iz_ukupno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doprinos_na_ukupno" EntityType="Self.doprinos_na_ukupno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="obracun_placa" EntityType="Self.obracun_placa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="odbitak_clanovi" EntityType="Self.odbitak_clanovi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="odbitak_za_djecu" EntityType="Self.odbitak_za_djecu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="placa" EntityType="Self.placa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="poslodavac" EntityType="Self.poslodavac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="prirez" EntityType="Self.prirez" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="radni_sati" EntityType="Self.radni_sati" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="radnik" EntityType="Self.radnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sati_blagdani" EntityType="Self.sati_blagdani" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sati_bolovanja" EntityType="Self.sati_bolovanja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sati_godisnji" EntityType="Self.sati_godisnji" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stanje" EntityType="Self.stanje" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_radnik_poslodavac" Association="Self.FK_radnik_poslodavac">
+            <End Role="poslodavac" EntitySet="poslodavac" />
+            <End Role="radnik" EntitySet="radnik" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjektModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="doprinos_iz_ukupno">
+          <Key>
+            <PropertyRef Name="ID_doprinosIzUkupno" />
+          </Key>
+          <Property Name="ID_doprinosIzUkupno" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="koeficijent" Type="Int32" />
+          <Property Name="placa_ID" Type="Int32" />
+          <NavigationProperty Name="placa" Relationship="ProjektModel.placadoprinos_iz_ukupno" FromRole="doprinos_iz_ukupno" ToRole="placa" />
+        </EntityType>
+        <EntityType Name="doprinos_na_ukupno">
+          <Key>
+            <PropertyRef Name="ID_doprinosNaUkupno" />
+          </Key>
+          <Property Name="ID_doprinosNaUkupno" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="koeficijent" Type="Int32" />
+          <Property Name="placa_ID" Type="Int32" />
+          <NavigationProperty Name="placa" Relationship="ProjektModel.placadoprinos_na_ukupno" FromRole="doprinos_na_ukupno" ToRole="placa" />
+        </EntityType>
+        <EntityType Name="obracun_placa">
+          <Key>
+            <PropertyRef Name="ID_obracun" />
+          </Key>
+          <Property Name="ID_obracun" Type="Int32" Nullable="false" />
+          <Property Name="vrsta_obracuna" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="godina" Type="Int32" />
+          <Property Name="mjesec" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dan" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="placa" Relationship="ProjektModel.placaobracun_placa" FromRole="obracun_placa" ToRole="placa" />
+        </EntityType>
+        <EntityType Name="odbitak_clanovi">
+          <Key>
+            <PropertyRef Name="ID_odbitak" />
+          </Key>
+          <Property Name="ID_odbitak" Type="Int32" Nullable="false" />
+          <Property Name="broj_clanova" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="koeficijent" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="ProjektModel.radnikodbitak_clanovi" FromRole="odbitak_clanovi" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="odbitak_za_djecu">
+          <Key>
+            <PropertyRef Name="ID_odbitakZaDjecu" />
+          </Key>
+          <Property Name="ID_odbitakZaDjecu" Type="Int32" Nullable="false" />
+          <Property Name="broj_djece" Type="Int32" />
+          <Property Name="koeficijent" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="ProjektModel.radnikodbitak_za_djecu" FromRole="odbitak_za_djecu" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="placa">
+          <Key>
+            <PropertyRef Name="ID_placa" />
+          </Key>
+          <Property Name="ID_placa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="visina_place" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="vrsta_place" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="radnik" Relationship="ProjektModel.radnikplaca" FromRole="placa" ToRole="radnik" />
+          <NavigationProperty Name="doprinos_na_ukupno" Relationship="ProjektModel.placadoprinos_na_ukupno" FromRole="placa" ToRole="doprinos_na_ukupno" />
+          <NavigationProperty Name="doprinos_iz_ukupno" Relationship="ProjektModel.placadoprinos_iz_ukupno" FromRole="placa" ToRole="doprinos_iz_ukupno" />
+          <NavigationProperty Name="prirez" Relationship="ProjektModel.placaprirez" FromRole="placa" ToRole="prirez" />
+          <Property Name="prirez_ID" Type="String" Nullable="false" />
+          <NavigationProperty Name="obracun_placa" Relationship="ProjektModel.placaobracun_placa" FromRole="placa" ToRole="obracun_placa" />
+          <Property Name="obracun_ID" Type="String" Nullable="false" />
+          <NavigationProperty Name="stanje" Relationship="ProjektModel.placastanje" FromRole="placa" ToRole="stanje" />
+          <Property Name="stanje_ID" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="poslodavac">
+          <Key>
+            <PropertyRef Name="ID_poslodavac" />
+          </Key>
+          <Property Name="ID_poslodavac" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="adresa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OIB" Type="Int32" />
+          <Property Name="broj_racuna" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="radnik" Relationship="Self.FK_radnik_poslodavac" FromRole="poslodavac" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="prirez">
+          <Key>
+            <PropertyRef Name="ID_prirez" />
+          </Key>
+          <Property Name="ID_prirez" Type="Int32" Nullable="false" />
+          <Property Name="opcina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="postotak" Type="Int32" />
+          <NavigationProperty Name="placa" Relationship="ProjektModel.placaprirez" FromRole="prirez" ToRole="placa" />
+        </EntityType>
+        <EntityType Name="radni_sati">
+          <Key>
+            <PropertyRef Name="ID_radniSati" />
+          </Key>
+          <Property Name="ID_radniSati" Type="Int32" Nullable="false" />
+          <Property Name="vrsta_rada" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="broj_sati" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="ProjektModel.radnikradni_sati" FromRole="radni_sati" ToRole="radnik" />
+          <Property Name="radnik_ID" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="radnik">
+          <Key>
+            <PropertyRef Name="ID_radnik" />
+          </Key>
+          <Property Name="ID_radnik" Type="Int32" Nullable="false" />
+          <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OIB" Type="Int32" />
+          <Property Name="adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="broj_racuna" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="banka" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="placa_ID" Type="Int32" />
+          <Property Name="odbitakZaDjecu_ID" Type="Int32" />
+          <Property Name="odbitakClanovi_ID" Type="Int32" />
+          <NavigationProperty Name="poslodavac" Relationship="Self.FK_radnik_poslodavac" FromRole="radnik" ToRole="poslodavac" />
+          <NavigationProperty Name="odbitak_za_djecu" Relationship="ProjektModel.radnikodbitak_za_djecu" FromRole="radnik" ToRole="odbitak_za_djecu" />
+          <NavigationProperty Name="placa" Relationship="ProjektModel.radnikplaca" FromRole="radnik" ToRole="placa" />
+          <NavigationProperty Name="odbitak_clanovi" Relationship="ProjektModel.radnikodbitak_clanovi" FromRole="radnik" ToRole="odbitak_clanovi" />
+          <NavigationProperty Name="sati_bolovanja" Relationship="ProjektModel.radniksati_bolovanja" FromRole="radnik" ToRole="sati_bolovanja" />
+          <NavigationProperty Name="sati_godisnji" Relationship="ProjektModel.radniksati_godisnji" FromRole="radnik" ToRole="sati_godisnji" />
+          <Property Name="poslodavac_ID" Type="String" Nullable="false" />
+          <NavigationProperty Name="radni_sati" Relationship="ProjektModel.radnikradni_sati" FromRole="radnik" ToRole="radni_sati" />
+          <NavigationProperty Name="sati_blagdani" Relationship="ProjektModel.radniksati_blagdani" FromRole="radnik" ToRole="sati_blagdani" />
+        </EntityType>
+        <EntityType Name="sati_blagdani">
+          <Key>
+            <PropertyRef Name="ID_blagdani" />
+          </Key>
+          <Property Name="ID_blagdani" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="broj_sati" Type="Int32" />
+          <Property Name="radnik_ID" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="ProjektModel.radniksati_blagdani" FromRole="sati_blagdani" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="sati_bolovanja">
+          <Key>
+            <PropertyRef Name="ID_bolovanje" />
+          </Key>
+          <Property Name="ID_bolovanje" Type="Int32" Nullable="false" />
+          <Property Name="razlog_bolovanja" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="broj_sati" Type="Int32" />
+          <Property Name="radnik_ID" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="ProjektModel.radniksati_bolovanja" FromRole="sati_bolovanja" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="sati_godisnji">
+          <Key>
+            <PropertyRef Name="ID_godisnji" />
+          </Key>
+          <Property Name="ID_godisnji" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="pocetak_godisnji" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="kraj_godisnji" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="broj_sati" Type="Int32" />
+          <Property Name="radnik_ID" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="ProjektModel.radniksati_godisnji" FromRole="sati_godisnji" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="stanje">
+          <Key>
+            <PropertyRef Name="ID_stanje" />
+          </Key>
+          <Property Name="ID_stanje" Type="Int32" Nullable="false" />
+          <Property Name="ukupno_bruto" Type="Int32" />
+          <Property Name="ukupno_neto" Type="Int32" />
+          <Property Name="ukupan_trosak" Type="Int32" />
+          <Property Name="dohodak" Type="Int32" />
+          <Property Name="ukupno_doprinosiIZ" Type="Int32" />
+          <Property Name="ukupno_doprinosiNA" Type="Int32" />
+          <NavigationProperty Name="placa" Relationship="ProjektModel.placastanje" FromRole="stanje" ToRole="placa" />
+        </EntityType>
+        <Association Name="FK_radnik_poslodavac">
+          <End Role="poslodavac" Type="Self.poslodavac" Multiplicity="1" />
+          <End Role="radnik" Type="Self.radnik" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="ProjektEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="doprinos_iz_ukupno" EntityType="Self.doprinos_iz_ukupno" />
+          <EntitySet Name="doprinos_na_ukupno" EntityType="Self.doprinos_na_ukupno" />
+          <EntitySet Name="obracun_placa" EntityType="Self.obracun_placa" />
+          <EntitySet Name="odbitak_clanovi" EntityType="Self.odbitak_clanovi" />
+          <EntitySet Name="odbitak_za_djecu" EntityType="Self.odbitak_za_djecu" />
+          <EntitySet Name="placa" EntityType="Self.placa" />
+          <EntitySet Name="poslodavac" EntityType="Self.poslodavac" />
+          <EntitySet Name="prirez" EntityType="Self.prirez" />
+          <EntitySet Name="radni_sati" EntityType="Self.radni_sati" />
+          <EntitySet Name="radnik" EntityType="Self.radnik" />
+          <EntitySet Name="sati_blagdani" EntityType="Self.sati_blagdani" />
+          <EntitySet Name="sati_bolovanja" EntityType="Self.sati_bolovanja" />
+          <EntitySet Name="sati_godisnji" EntityType="Self.sati_godisnji" />
+          <EntitySet Name="stanje" EntityType="Self.stanje" />
+          <AssociationSet Name="FK_radnik_poslodavac" Association="Self.FK_radnik_poslodavac">
+            <End Role="poslodavac" EntitySet="poslodavac" />
+            <End Role="radnik" EntitySet="radnik" />
+          </AssociationSet>
+          <AssociationSet Name="radnikodbitak_za_djecu" Association="ProjektModel.radnikodbitak_za_djecu">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="odbitak_za_djecu" EntitySet="odbitak_za_djecu" />
+          </AssociationSet>
+          <AssociationSet Name="radnikplaca" Association="ProjektModel.radnikplaca">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="placa" EntitySet="placa" />
+          </AssociationSet>
+          <AssociationSet Name="radnikodbitak_clanovi" Association="ProjektModel.radnikodbitak_clanovi">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="odbitak_clanovi" EntitySet="odbitak_clanovi" />
+          </AssociationSet>
+          <AssociationSet Name="radniksati_bolovanja" Association="ProjektModel.radniksati_bolovanja">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="sati_bolovanja" EntitySet="sati_bolovanja" />
+          </AssociationSet>
+          <AssociationSet Name="radniksati_godisnji" Association="ProjektModel.radniksati_godisnji">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="sati_godisnji" EntitySet="sati_godisnji" />
+          </AssociationSet>
+          <AssociationSet Name="radnikradni_sati" Association="ProjektModel.radnikradni_sati">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="radni_sati" EntitySet="radni_sati" />
+          </AssociationSet>
+          <AssociationSet Name="radniksati_blagdani" Association="ProjektModel.radniksati_blagdani">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="sati_blagdani" EntitySet="sati_blagdani" />
+          </AssociationSet>
+          <AssociationSet Name="placadoprinos_na_ukupno" Association="ProjektModel.placadoprinos_na_ukupno">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="doprinos_na_ukupno" EntitySet="doprinos_na_ukupno" />
+          </AssociationSet>
+          <AssociationSet Name="placadoprinos_iz_ukupno" Association="ProjektModel.placadoprinos_iz_ukupno">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="doprinos_iz_ukupno" EntitySet="doprinos_iz_ukupno" />
+          </AssociationSet>
+          <AssociationSet Name="placaprirez" Association="ProjektModel.placaprirez">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="prirez" EntitySet="prirez" />
+          </AssociationSet>
+          <AssociationSet Name="placaobracun_placa" Association="ProjektModel.placaobracun_placa">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="obracun_placa" EntitySet="obracun_placa" />
+          </AssociationSet>
+          <AssociationSet Name="placastanje" Association="ProjektModel.placastanje">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="stanje" EntitySet="stanje" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="radnikodbitak_za_djecu">
+          <End Type="ProjektModel.radnik" Role="radnik" Multiplicity="*" />
+          <End Type="ProjektModel.odbitak_za_djecu" Role="odbitak_za_djecu" Multiplicity="1" />
+        </Association>
+        <Association Name="radnikplaca">
+          <End Type="ProjektModel.radnik" Role="radnik" Multiplicity="1" />
+          <End Type="ProjektModel.placa" Role="placa" Multiplicity="1" />
+        </Association>
+        <Association Name="radnikodbitak_clanovi">
+          <End Type="ProjektModel.radnik" Role="radnik" Multiplicity="*" />
+          <End Type="ProjektModel.odbitak_clanovi" Role="odbitak_clanovi" Multiplicity="1" />
+        </Association>
+        <Association Name="radniksati_bolovanja">
+          <End Type="ProjektModel.radnik" Role="radnik" Multiplicity="1" />
+          <End Type="ProjektModel.sati_bolovanja" Role="sati_bolovanja" Multiplicity="*" />
+        </Association>
+        <Association Name="radniksati_godisnji">
+          <End Type="ProjektModel.radnik" Role="radnik" Multiplicity="1" />
+          <End Type="ProjektModel.sati_godisnji" Role="sati_godisnji" Multiplicity="*" />
+        </Association>
+        <Association Name="radnikradni_sati">
+          <End Type="ProjektModel.radnik" Role="radnik" Multiplicity="1" />
+          <End Type="ProjektModel.radni_sati" Role="radni_sati" Multiplicity="*" />
+        </Association>
+        <Association Name="radniksati_blagdani">
+          <End Type="ProjektModel.radnik" Role="radnik" Multiplicity="1" />
+          <End Type="ProjektModel.sati_blagdani" Role="sati_blagdani" Multiplicity="*" />
+        </Association>
+        <Association Name="placadoprinos_na_ukupno">
+          <End Type="ProjektModel.placa" Role="placa" Multiplicity="1" />
+          <End Type="ProjektModel.doprinos_na_ukupno" Role="doprinos_na_ukupno" Multiplicity="*" />
+        </Association>
+        <Association Name="placadoprinos_iz_ukupno">
+          <End Type="ProjektModel.placa" Role="placa" Multiplicity="1" />
+          <End Type="ProjektModel.doprinos_iz_ukupno" Role="doprinos_iz_ukupno" Multiplicity="*" />
+        </Association>
+        <Association Name="placaprirez">
+          <End Type="ProjektModel.placa" Role="placa" Multiplicity="*" />
+          <End Type="ProjektModel.prirez" Role="prirez" Multiplicity="1" />
+        </Association>
+        <Association Name="placaobracun_placa">
+          <End Type="ProjektModel.placa" Role="placa" Multiplicity="1" />
+          <End Type="ProjektModel.obracun_placa" Role="obracun_placa" Multiplicity="1" />
+        </Association>
+        <Association Name="placastanje">
+          <End Type="ProjektModel.placa" Role="placa" Multiplicity="1" />
+          <End Type="ProjektModel.stanje" Role="stanje" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjektModelStoreContainer" CdmEntityContainer="ProjektEntities">
+          <EntitySetMapping Name="doprinos_iz_ukupno">
+            <EntityTypeMapping TypeName="ProjektModel.doprinos_iz_ukupno">
+              <MappingFragment StoreEntitySet="doprinos_iz_ukupno">
+                <ScalarProperty Name="ID_doprinosIzUkupno" ColumnName="ID_doprinosIzUkupno" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="koeficijent" ColumnName="koeficijent" />
+                <ScalarProperty Name="placa_ID" ColumnName="placa_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doprinos_na_ukupno">
+            <EntityTypeMapping TypeName="ProjektModel.doprinos_na_ukupno">
+              <MappingFragment StoreEntitySet="doprinos_na_ukupno">
+                <ScalarProperty Name="ID_doprinosNaUkupno" ColumnName="ID_doprinosNaUkupno" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="koeficijent" ColumnName="koeficijent" />
+                <ScalarProperty Name="placa_ID" ColumnName="placa_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="obracun_placa">
+            <EntityTypeMapping TypeName="ProjektModel.obracun_placa">
+              <MappingFragment StoreEntitySet="obracun_placa">
+                <ScalarProperty Name="ID_obracun" ColumnName="ID_obracun" />
+                <ScalarProperty Name="vrsta_obracuna" ColumnName="vrsta_obracuna" />
+                <ScalarProperty Name="godina" ColumnName="godina" />
+                <ScalarProperty Name="mjesec" ColumnName="mjesec" />
+                <ScalarProperty Name="dan" ColumnName="dan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="odbitak_clanovi">
+            <EntityTypeMapping TypeName="ProjektModel.odbitak_clanovi">
+              <MappingFragment StoreEntitySet="odbitak_clanovi">
+                <ScalarProperty Name="ID_odbitak" ColumnName="ID_odbitak" />
+                <ScalarProperty Name="broj_clanova" ColumnName="broj_clanova" />
+                <ScalarProperty Name="koeficijent" ColumnName="koeficijent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="odbitak_za_djecu">
+            <EntityTypeMapping TypeName="ProjektModel.odbitak_za_djecu">
+              <MappingFragment StoreEntitySet="odbitak_za_djecu">
+                <ScalarProperty Name="ID_odbitakZaDjecu" ColumnName="ID_odbitakZaDjecu" />
+                <ScalarProperty Name="broj_djece" ColumnName="broj_djece" />
+                <ScalarProperty Name="koeficijent" ColumnName="koeficijent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="placa">
+            <EntityTypeMapping TypeName="ProjektModel.placa">
+              <MappingFragment StoreEntitySet="placa">
+                <ScalarProperty Name="ID_placa" ColumnName="ID_placa" />
+                <ScalarProperty Name="visina_place" ColumnName="visina_place" />
+                <ScalarProperty Name="vrsta_place" ColumnName="vrsta_place" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="poslodavac">
+            <EntityTypeMapping TypeName="ProjektModel.poslodavac">
+              <MappingFragment StoreEntitySet="poslodavac">
+                <ScalarProperty Name="ID_poslodavac" ColumnName="ID_poslodavac" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="OIB" ColumnName="OIB" />
+                <ScalarProperty Name="broj_racuna" ColumnName="broj_racuna" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prirez">
+            <EntityTypeMapping TypeName="ProjektModel.prirez">
+              <MappingFragment StoreEntitySet="prirez">
+                <ScalarProperty Name="ID_prirez" ColumnName="ID_prirez" />
+                <ScalarProperty Name="opcina" ColumnName="opcina" />
+                <ScalarProperty Name="postotak" ColumnName="postotak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="radni_sati">
+            <EntityTypeMapping TypeName="ProjektModel.radni_sati">
+              <MappingFragment StoreEntitySet="radni_sati">
+                <ScalarProperty Name="ID_radniSati" ColumnName="ID_radniSati" />
+                <ScalarProperty Name="vrsta_rada" ColumnName="vrsta_rada" />
+                <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="radnik">
+            <EntityTypeMapping TypeName="ProjektModel.radnik">
+              <MappingFragment StoreEntitySet="radnik">
+                <ScalarProperty Name="ID_radnik" ColumnName="ID_radnik" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="OIB" ColumnName="OIB" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="broj_racuna" ColumnName="broj_racuna" />
+                <ScalarProperty Name="banka" ColumnName="banka" />
+                <ScalarProperty Name="placa_ID" ColumnName="placa_ID" />
+                <ScalarProperty Name="odbitakZaDjecu_ID" ColumnName="odbitakZaDjecu_ID" />
+                <ScalarProperty Name="odbitakClanovi_ID" ColumnName="odbitakClanovi_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sati_blagdani">
+            <EntityTypeMapping TypeName="ProjektModel.sati_blagdani">
+              <MappingFragment StoreEntitySet="sati_blagdani">
+                <ScalarProperty Name="ID_blagdani" ColumnName="ID_blagdani" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />
+                <ScalarProperty Name="radnik_ID" ColumnName="radnik_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sati_bolovanja">
+            <EntityTypeMapping TypeName="ProjektModel.sati_bolovanja">
+              <MappingFragment StoreEntitySet="sati_bolovanja">
+                <ScalarProperty Name="ID_bolovanje" ColumnName="ID_bolovanje" />
+                <ScalarProperty Name="razlog_bolovanja" ColumnName="razlog_bolovanja" />
+                <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />
+                <ScalarProperty Name="radnik_ID" ColumnName="radnik_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sati_godisnji">
+            <EntityTypeMapping TypeName="ProjektModel.sati_godisnji">
+              <MappingFragment StoreEntitySet="sati_godisnji">
+                <ScalarProperty Name="ID_godisnji" ColumnName="ID_godisnji" />
+                <ScalarProperty Name="pocetak_godisnji" ColumnName="pocetak_godisnji" />
+                <ScalarProperty Name="kraj_godisnji" ColumnName="kraj_godisnji" />
+                <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />
+                <ScalarProperty Name="radnik_ID" ColumnName="radnik_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stanje">
+            <EntityTypeMapping TypeName="ProjektModel.stanje">
+              <MappingFragment StoreEntitySet="stanje">
+                <ScalarProperty Name="ID_stanje" ColumnName="ID_stanje" />
+                <ScalarProperty Name="ukupno_bruto" ColumnName="ukupno_bruto" />
+                <ScalarProperty Name="ukupno_neto" ColumnName="ukupno_neto" />
+                <ScalarProperty Name="ukupan_trosak" ColumnName="ukupan_trosak" />
+                <ScalarProperty Name="dohodak" ColumnName="dohodak" />
+                <ScalarProperty Name="ukupno_doprinosiIZ" ColumnName="ukupno_doprinosiIZ" />
+                <ScalarProperty Name="ukupno_doprinosiNA" ColumnName="ukupno_doprinosiNA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_radnik_poslodavac" TypeName="ProjektModel.FK_radnik_poslodavac" StoreEntitySet="radnik">
+            <EndProperty Name="poslodavac">
+              <ScalarProperty Name="ID_poslodavac" ColumnName="poslodavac_ID" />
+            </EndProperty>
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="ID_radnik" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
