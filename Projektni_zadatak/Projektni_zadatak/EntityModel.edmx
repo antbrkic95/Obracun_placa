@@ -240,7 +240,7 @@
           <NavigationProperty Name="obracun_placa" Relationship="ProjektModel.placaobracun_placa" FromRole="placa" ToRole="obracun_placa" />
           <Property Name="obracun_ID" Type="String" Nullable="false" />
           <NavigationProperty Name="stanje" Relationship="ProjektModel.placastanje" FromRole="placa" ToRole="stanje" />
-          <Property Name="stanje_ID" Type="String" Nullable="false" />
+          <Property Name="stanje_ID" Nullable="false" Type="String" />
         </EntityType>
         <EntityType Name="poslodavac">
           <Key>
