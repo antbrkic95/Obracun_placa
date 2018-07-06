@@ -27,12 +27,14 @@
         <AssociationConnector Association="ProjektModel.radniksati_godisnji" />
         <AssociationConnector Association="ProjektModel.radnikradni_sati" />
         <AssociationConnector Association="ProjektModel.radniksati_blagdani" ManuallyRouted="true" >
-          <ConnectorPoint PointX="3.6100565235955284" PointY="5.6725065104166656" />
-          <ConnectorPoint PointX="3.6100565235955284" PointY="6.307291666666667" />
-          <ConnectorPoint PointX="3.9166666666666665" PointY="6.3072916666666661" />
-          <ConnectorPoint PointX="4.083333333333333" PointY="6.307291666666667" />
-          <ConnectorPoint PointX="5.128594575" PointY="6.307291666666667" />
-          <ConnectorPoint PointX="5.128594575" PointY="6.453125" />
+          <ConnectorPoint PointX="3.3593775" PointY="5.6725065104166656" />
+          <ConnectorPoint PointX="3.3593775" PointY="5.7575158639322908" />
+          <ConnectorPoint PointX="3.9010441666666669" PointY="5.7575158639322908" />
+          <ConnectorPoint PointX="3.9010441666666669" PointY="5.930110611979166" />
+          <ConnectorPoint PointX="3.6822941666666669" PointY="5.930110611979166" />
+          <ConnectorPoint PointX="3.6822941666666669" PointY="6.453125" />
+          <ConnectorPoint PointX="4.034194928464431" PointY="6.4531249999999991" />
+          <ConnectorPoint PointX="4.200861595131097" PointY="6.453125" />
           <ConnectorPoint PointX="6" PointY="6.453125" />
         </AssociationConnector>
         <AssociationConnector Association="ProjektModel.placadoprinos_na_ukupno" />
