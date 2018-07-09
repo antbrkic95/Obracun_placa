@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f90edf2ed2b44a5a97ba7edea932a362" Name="Diagram1">
+        <EntityTypeShape EntityType="PlaceModel.doprinosIZ" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.doprinosNA" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.obracun_placa" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.odbitakClan" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.odbitakZaDjecu" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.placa" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.poslodavac" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.prirez" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.radnik" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.radniSati" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.sati_blagdani" Width="1.5" PointX="5.25" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.sati_bolovanje" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PlaceModel.sati_godisnji" Width="1.5" PointX="5.25" PointY="21.375" IsExpanded="true" />
+        <AssociationConnector Association="PlaceModel.FK_doprinosIZ_placa" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_doprinosNA_placa" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_obracun_placa_placa" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_radnik_odbitakClan" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_radnik_odbitakZaDjecu" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_placa_prirez" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_placa_radnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_radnik_poslodavac" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_radniSati_radnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_sati_blagdani_radnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_sati_bolovanje_radnik" ManuallyRouted="false" />
+        <AssociationConnector Association="PlaceModel.FK_sati_godisnji_radnik" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,869 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PlaceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="doprinosIZ">
+          <Key>
+            <PropertyRef Name="ID_doprinosIZ" />
+          </Key>
+          <Property Name="ID_doprinosIZ" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="koeficijent" Type="float" />
+          <Property Name="placa_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="doprinosNA">
+          <Key>
+            <PropertyRef Name="ID_doprinosNA" />
+          </Key>
+          <Property Name="ID_doprinosNA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="koeficijent" Type="float" />
+          <Property Name="placa_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="obracun_placa">
+          <Key>
+            <PropertyRef Name="ID_obracun" />
+          </Key>
+          <Property Name="ID_obracun" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vrsta_obracuna" Type="nchar" MaxLength="10" />
+          <Property Name="godina" Type="int" />
+          <Property Name="mjesec" Type="varchar" MaxLength="20" />
+          <Property Name="dan" Type="varchar" MaxLength="20" />
+          <Property Name="placa_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="odbitakClan">
+          <Key>
+            <PropertyRef Name="ID_odbitakClan" />
+          </Key>
+          <Property Name="ID_odbitakClan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="broj_clanova" Type="varchar" MaxLength="30" />
+          <Property Name="koeficijent" Type="float" />
+        </EntityType>
+        <EntityType Name="odbitakZaDjecu">
+          <Key>
+            <PropertyRef Name="ID_odbitakDjeca" />
+          </Key>
+          <Property Name="ID_odbitakDjeca" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="broj_djece" Type="varchar" MaxLength="30" />
+          <Property Name="koeficijent" Type="float" />
+        </EntityType>
+        <EntityType Name="placa">
+          <Key>
+            <PropertyRef Name="ID_placa" />
+          </Key>
+          <Property Name="ID_placa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="visina" Type="int" />
+          <Property Name="vrsta" Type="varchar" MaxLength="50" />
+          <Property Name="prirez_ID" Type="int" />
+          <Property Name="radnik_ID" Type="int" />
+          <Property Name="ukupno_bruto" Type="int" />
+          <Property Name="ukupno_neto" Type="int" />
+          <Property Name="ukupno_trosak" Type="int" />
+          <Property Name="dohodak" Type="int" />
+        </EntityType>
+        <EntityType Name="poslodavac">
+          <Key>
+            <PropertyRef Name="ID_poslodavac" />
+          </Key>
+          <Property Name="ID_poslodavac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="adresa" Type="varchar" MaxLength="50" />
+          <Property Name="broj_racuna" Type="varchar" MaxLength="30" />
+          <Property Name="OIB" Type="int" />
+        </EntityType>
+        <EntityType Name="prirez">
+          <Key>
+            <PropertyRef Name="ID_prirez" />
+          </Key>
+          <Property Name="ID_prirez" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="opcina" Type="varchar" MaxLength="50" />
+          <Property Name="postotak" Type="int" />
+        </EntityType>
+        <EntityType Name="radnik">
+          <Key>
+            <PropertyRef Name="ID_radnik" />
+          </Key>
+          <Property Name="ID_radnik" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" />
+          <Property Name="OIB" Type="varchar" MaxLength="50" />
+          <Property Name="broj_telefona" Type="varchar" MaxLength="50" />
+          <Property Name="broj_racuna" Type="varchar" MaxLength="30" />
+          <Property Name="banka" Type="varchar" MaxLength="20" />
+          <Property Name="adresa" Type="varchar" MaxLength="50" />
+          <Property Name="poslodavac_ID" Type="int" />
+          <Property Name="odbitakDjeca_ID" Type="int" />
+          <Property Name="odbitakClan_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="radniSati">
+          <Key>
+            <PropertyRef Name="ID_radniSati" />
+          </Key>
+          <Property Name="ID_radniSati" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vrsta_rada" Type="varchar" MaxLength="50" />
+          <Property Name="broj_sati" Type="int" />
+          <Property Name="radnik_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="sati_blagdani">
+          <Key>
+            <PropertyRef Name="ID_blagdani" />
+          </Key>
+          <Property Name="ID_blagdani" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="30" />
+          <Property Name="broj_sati" Type="int" />
+          <Property Name="radnik_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="sati_bolovanje">
+          <Key>
+            <PropertyRef Name="ID_bolovanje" />
+          </Key>
+          <Property Name="ID_bolovanje" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="razlog_bolovanja" Type="varchar" MaxLength="70" />
+          <Property Name="broj_sati" Type="int" />
+          <Property Name="radnik_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="sati_godisnji">
+          <Key>
+            <PropertyRef Name="ID_godisnji" />
+          </Key>
+          <Property Name="ID_godisnji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pocetak" Type="varchar" MaxLength="30" />
+          <Property Name="kraj" Type="varchar" MaxLength="30" />
+          <Property Name="broj_sati" Type="int" />
+          <Property Name="radnik_ID" Type="int" />
+        </EntityType>
+        <Association Name="FK_doprinosIZ_placa">
+          <End Role="placa" Type="Self.placa" Multiplicity="0..1" />
+          <End Role="doprinosIZ" Type="Self.doprinosIZ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="placa">
+              <PropertyRef Name="ID_placa" />
+            </Principal>
+            <Dependent Role="doprinosIZ">
+              <PropertyRef Name="placa_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_doprinosNA_placa">
+          <End Role="placa" Type="Self.placa" Multiplicity="0..1" />
+          <End Role="doprinosNA" Type="Self.doprinosNA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="placa">
+              <PropertyRef Name="ID_placa" />
+            </Principal>
+            <Dependent Role="doprinosNA">
+              <PropertyRef Name="placa_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_obracun_placa_placa">
+          <End Role="placa" Type="Self.placa" Multiplicity="0..1" />
+          <End Role="obracun_placa" Type="Self.obracun_placa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="placa">
+              <PropertyRef Name="ID_placa" />
+            </Principal>
+            <Dependent Role="obracun_placa">
+              <PropertyRef Name="placa_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_placa_prirez">
+          <End Role="prirez" Type="Self.prirez" Multiplicity="0..1" />
+          <End Role="placa" Type="Self.placa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="prirez">
+              <PropertyRef Name="ID_prirez" />
+            </Principal>
+            <Dependent Role="placa">
+              <PropertyRef Name="prirez_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_placa_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="placa" Type="Self.placa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="radnik">
+              <PropertyRef Name="ID_radnik" />
+            </Principal>
+            <Dependent Role="placa">
+              <PropertyRef Name="radnik_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_radnik_odbitakClan">
+          <End Role="odbitakClan" Type="Self.odbitakClan" Multiplicity="0..1" />
+          <End Role="radnik" Type="Self.radnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="odbitakClan">
+              <PropertyRef Name="ID_odbitakClan" />
+            </Principal>
+            <Dependent Role="radnik">
+              <PropertyRef Name="odbitakClan_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_radnik_odbitakZaDjecu">
+          <End Role="odbitakZaDjecu" Type="Self.odbitakZaDjecu" Multiplicity="0..1" />
+          <End Role="radnik" Type="Self.radnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="odbitakZaDjecu">
+              <PropertyRef Name="ID_odbitakDjeca" />
+            </Principal>
+            <Dependent Role="radnik">
+              <PropertyRef Name="odbitakDjeca_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_radnik_poslodavac">
+          <End Role="poslodavac" Type="Self.poslodavac" Multiplicity="0..1" />
+          <End Role="radnik" Type="Self.radnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="poslodavac">
+              <PropertyRef Name="ID_poslodavac" />
+            </Principal>
+            <Dependent Role="radnik">
+              <PropertyRef Name="poslodavac_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_radniSati_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="radniSati" Type="Self.radniSati" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="radnik">
+              <PropertyRef Name="ID_radnik" />
+            </Principal>
+            <Dependent Role="radniSati">
+              <PropertyRef Name="radnik_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sati_blagdani_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="sati_blagdani" Type="Self.sati_blagdani" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="radnik">
+              <PropertyRef Name="ID_radnik" />
+            </Principal>
+            <Dependent Role="sati_blagdani">
+              <PropertyRef Name="radnik_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sati_bolovanje_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="sati_bolovanje" Type="Self.sati_bolovanje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="radnik">
+              <PropertyRef Name="ID_radnik" />
+            </Principal>
+            <Dependent Role="sati_bolovanje">
+              <PropertyRef Name="radnik_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sati_godisnji_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="sati_godisnji" Type="Self.sati_godisnji" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="radnik">
+              <PropertyRef Name="ID_radnik" />
+            </Principal>
+            <Dependent Role="sati_godisnji">
+              <PropertyRef Name="radnik_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PlaceModelStoreContainer">
+          <EntitySet Name="doprinosIZ" EntityType="Self.doprinosIZ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="doprinosNA" EntityType="Self.doprinosNA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="obracun_placa" EntityType="Self.obracun_placa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="odbitakClan" EntityType="Self.odbitakClan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="odbitakZaDjecu" EntityType="Self.odbitakZaDjecu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="placa" EntityType="Self.placa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="poslodavac" EntityType="Self.poslodavac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="prirez" EntityType="Self.prirez" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="radnik" EntityType="Self.radnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="radniSati" EntityType="Self.radniSati" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sati_blagdani" EntityType="Self.sati_blagdani" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sati_bolovanje" EntityType="Self.sati_bolovanje" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sati_godisnji" EntityType="Self.sati_godisnji" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_doprinosIZ_placa" Association="Self.FK_doprinosIZ_placa">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="doprinosIZ" EntitySet="doprinosIZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doprinosNA_placa" Association="Self.FK_doprinosNA_placa">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="doprinosNA" EntitySet="doprinosNA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_obracun_placa_placa" Association="Self.FK_obracun_placa_placa">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="obracun_placa" EntitySet="obracun_placa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_placa_prirez" Association="Self.FK_placa_prirez">
+            <End Role="prirez" EntitySet="prirez" />
+            <End Role="placa" EntitySet="placa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_placa_radnik" Association="Self.FK_placa_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="placa" EntitySet="placa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_radnik_odbitakClan" Association="Self.FK_radnik_odbitakClan">
+            <End Role="odbitakClan" EntitySet="odbitakClan" />
+            <End Role="radnik" EntitySet="radnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_radnik_odbitakZaDjecu" Association="Self.FK_radnik_odbitakZaDjecu">
+            <End Role="odbitakZaDjecu" EntitySet="odbitakZaDjecu" />
+            <End Role="radnik" EntitySet="radnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_radnik_poslodavac" Association="Self.FK_radnik_poslodavac">
+            <End Role="poslodavac" EntitySet="poslodavac" />
+            <End Role="radnik" EntitySet="radnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_radniSati_radnik" Association="Self.FK_radniSati_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="radniSati" EntitySet="radniSati" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sati_blagdani_radnik" Association="Self.FK_sati_blagdani_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="sati_blagdani" EntitySet="sati_blagdani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sati_bolovanje_radnik" Association="Self.FK_sati_bolovanje_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="sati_bolovanje" EntitySet="sati_bolovanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sati_godisnji_radnik" Association="Self.FK_sati_godisnji_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="sati_godisnji" EntitySet="sati_godisnji" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PlaceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="doprinosIZ">
+          <Key>
+            <PropertyRef Name="ID_doprinosIZ" />
+          </Key>
+          <Property Name="ID_doprinosIZ" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="koeficijent" Type="Double" />
+          <NavigationProperty Name="placa" Relationship="Self.FK_doprinosIZ_placa" FromRole="doprinosIZ" ToRole="placa" />
+        </EntityType>
+        <EntityType Name="doprinosNA">
+          <Key>
+            <PropertyRef Name="ID_doprinosNA" />
+          </Key>
+          <Property Name="ID_doprinosNA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="koeficijent" Type="Double" />
+          <NavigationProperty Name="placa" Relationship="Self.FK_doprinosNA_placa" FromRole="doprinosNA" ToRole="placa" />
+        </EntityType>
+        <EntityType Name="obracun_placa">
+          <Key>
+            <PropertyRef Name="ID_obracun" />
+          </Key>
+          <Property Name="ID_obracun" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vrsta_obracuna" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="godina" Type="Int32" />
+          <Property Name="mjesec" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dan" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="placa" Relationship="Self.FK_obracun_placa_placa" FromRole="obracun_placa" ToRole="placa" />
+        </EntityType>
+        <EntityType Name="odbitakClan">
+          <Key>
+            <PropertyRef Name="ID_odbitakClan" />
+          </Key>
+          <Property Name="ID_odbitakClan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="broj_clanova" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="koeficijent" Type="Double" />
+          <NavigationProperty Name="radnik" Relationship="Self.FK_radnik_odbitakClan" FromRole="odbitakClan" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="odbitakZaDjecu">
+          <Key>
+            <PropertyRef Name="ID_odbitakDjeca" />
+          </Key>
+          <Property Name="ID_odbitakDjeca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="broj_djece" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="koeficijent" Type="Double" />
+          <NavigationProperty Name="radnik" Relationship="Self.FK_radnik_odbitakZaDjecu" FromRole="odbitakZaDjecu" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="placa">
+          <Key>
+            <PropertyRef Name="ID_placa" />
+          </Key>
+          <Property Name="ID_placa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="visina" Type="Int32" />
+          <Property Name="vrsta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ukupno_bruto" Type="Int32" />
+          <Property Name="ukupno_neto" Type="Int32" />
+          <Property Name="ukupno_trosak" Type="Int32" />
+          <Property Name="dohodak" Type="Int32" />
+          <NavigationProperty Name="doprinosIZ" Relationship="Self.FK_doprinosIZ_placa" FromRole="placa" ToRole="doprinosIZ" />
+          <NavigationProperty Name="doprinosNA" Relationship="Self.FK_doprinosNA_placa" FromRole="placa" ToRole="doprinosNA" />
+          <NavigationProperty Name="obracun_placa" Relationship="Self.FK_obracun_placa_placa" FromRole="placa" ToRole="obracun_placa" />
+          <NavigationProperty Name="prirez" Relationship="Self.FK_placa_prirez" FromRole="placa" ToRole="prirez" />
+          <NavigationProperty Name="radnik" Relationship="Self.FK_placa_radnik" FromRole="placa" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="poslodavac">
+          <Key>
+            <PropertyRef Name="ID_poslodavac" />
+          </Key>
+          <Property Name="ID_poslodavac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="oib" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="radnik" Relationship="Self.FK_radnik_poslodavac" FromRole="poslodavac" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="prirez">
+          <Key>
+            <PropertyRef Name="ID_prirez" />
+          </Key>
+          <Property Name="ID_prirez" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="opcina" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="postotak" Type="Int32" />
+          <NavigationProperty Name="placa" Relationship="Self.FK_placa_prirez" FromRole="prirez" ToRole="placa" />
+        </EntityType>
+        <EntityType Name="radnik">
+          <Key>
+            <PropertyRef Name="ID_radnik" />
+          </Key>
+          <Property Name="ID_radnik" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OIB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="broj_telefona" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="broj_racuna" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="banka" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="odbitakClan" Relationship="Self.FK_radnik_odbitakClan" FromRole="radnik" ToRole="odbitakClan" />
+          <NavigationProperty Name="odbitakZaDjecu" Relationship="Self.FK_radnik_odbitakZaDjecu" FromRole="radnik" ToRole="odbitakZaDjecu" />
+          <NavigationProperty Name="placa" Relationship="Self.FK_placa_radnik" FromRole="radnik" ToRole="placa" />
+          <NavigationProperty Name="poslodavac" Relationship="Self.FK_radnik_poslodavac" FromRole="radnik" ToRole="poslodavac" />
+          <NavigationProperty Name="radniSati" Relationship="Self.FK_radniSati_radnik" FromRole="radnik" ToRole="radniSati" />
+          <NavigationProperty Name="sati_blagdani" Relationship="Self.FK_sati_blagdani_radnik" FromRole="radnik" ToRole="sati_blagdani" />
+          <NavigationProperty Name="sati_bolovanje" Relationship="Self.FK_sati_bolovanje_radnik" FromRole="radnik" ToRole="sati_bolovanje" />
+          <NavigationProperty Name="sati_godisnji" Relationship="Self.FK_sati_godisnji_radnik" FromRole="radnik" ToRole="sati_godisnji" />
+        </EntityType>
+        <EntityType Name="radniSati">
+          <Key>
+            <PropertyRef Name="ID_radniSati" />
+          </Key>
+          <Property Name="ID_radniSati" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vrsta_rada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="broj_sati" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="Self.FK_radniSati_radnik" FromRole="radniSati" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="sati_blagdani">
+          <Key>
+            <PropertyRef Name="ID_blagdani" />
+          </Key>
+          <Property Name="ID_blagdani" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="broj_sati" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="Self.FK_sati_blagdani_radnik" FromRole="sati_blagdani" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="sati_bolovanje">
+          <Key>
+            <PropertyRef Name="ID_bolovanje" />
+          </Key>
+          <Property Name="ID_bolovanje" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="razlog_bolovanja" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="broj_sati" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="Self.FK_sati_bolovanje_radnik" FromRole="sati_bolovanje" ToRole="radnik" />
+        </EntityType>
+        <EntityType Name="sati_godisnji">
+          <Key>
+            <PropertyRef Name="ID_godisnji" />
+          </Key>
+          <Property Name="ID_godisnji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pocetak" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="kraj" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="broj_sati" Type="Int32" />
+          <NavigationProperty Name="radnik" Relationship="Self.FK_sati_godisnji_radnik" FromRole="sati_godisnji" ToRole="radnik" />
+        </EntityType>
+        <Association Name="FK_doprinosIZ_placa">
+          <End Role="placa" Type="Self.placa" Multiplicity="0..1" />
+          <End Role="doprinosIZ" Type="Self.doprinosIZ" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_doprinosNA_placa">
+          <End Role="placa" Type="Self.placa" Multiplicity="0..1" />
+          <End Role="doprinosNA" Type="Self.doprinosNA" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_obracun_placa_placa">
+          <End Role="placa" Type="Self.placa" Multiplicity="0..1" />
+          <End Role="obracun_placa" Type="Self.obracun_placa" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_radnik_odbitakClan">
+          <End Role="odbitakClan" Type="Self.odbitakClan" Multiplicity="0..1" />
+          <End Role="radnik" Type="Self.radnik" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_radnik_odbitakZaDjecu">
+          <End Role="odbitakZaDjecu" Type="Self.odbitakZaDjecu" Multiplicity="0..1" />
+          <End Role="radnik" Type="Self.radnik" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_placa_prirez">
+          <End Role="prirez" Type="Self.prirez" Multiplicity="0..1" />
+          <End Role="placa" Type="Self.placa" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_placa_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="placa" Type="Self.placa" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_radnik_poslodavac">
+          <End Role="poslodavac" Type="Self.poslodavac" Multiplicity="0..1" />
+          <End Role="radnik" Type="Self.radnik" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_radniSati_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="radniSati" Type="Self.radniSati" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_sati_blagdani_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="sati_blagdani" Type="Self.sati_blagdani" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_sati_bolovanje_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="sati_bolovanje" Type="Self.sati_bolovanje" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_sati_godisnji_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="sati_godisnji" Type="Self.sati_godisnji" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="PlaceEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="doprinosIZ" EntityType="Self.doprinosIZ" />
+          <EntitySet Name="doprinosNA" EntityType="Self.doprinosNA" />
+          <EntitySet Name="obracun_placa" EntityType="Self.obracun_placa" />
+          <EntitySet Name="odbitakClan" EntityType="Self.odbitakClan" />
+          <EntitySet Name="odbitakZaDjecu" EntityType="Self.odbitakZaDjecu" />
+          <EntitySet Name="placa" EntityType="Self.placa" />
+          <EntitySet Name="poslodavac" EntityType="Self.poslodavac" />
+          <EntitySet Name="prirez" EntityType="Self.prirez" />
+          <EntitySet Name="radnik" EntityType="Self.radnik" />
+          <EntitySet Name="radniSati" EntityType="Self.radniSati" />
+          <EntitySet Name="sati_blagdani" EntityType="Self.sati_blagdani" />
+          <EntitySet Name="sati_bolovanje" EntityType="Self.sati_bolovanje" />
+          <EntitySet Name="sati_godisnji" EntityType="Self.sati_godisnji" />
+          <AssociationSet Name="FK_doprinosIZ_placa" Association="Self.FK_doprinosIZ_placa">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="doprinosIZ" EntitySet="doprinosIZ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_doprinosNA_placa" Association="Self.FK_doprinosNA_placa">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="doprinosNA" EntitySet="doprinosNA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_obracun_placa_placa" Association="Self.FK_obracun_placa_placa">
+            <End Role="placa" EntitySet="placa" />
+            <End Role="obracun_placa" EntitySet="obracun_placa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_radnik_odbitakClan" Association="Self.FK_radnik_odbitakClan">
+            <End Role="odbitakClan" EntitySet="odbitakClan" />
+            <End Role="radnik" EntitySet="radnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_radnik_odbitakZaDjecu" Association="Self.FK_radnik_odbitakZaDjecu">
+            <End Role="odbitakZaDjecu" EntitySet="odbitakZaDjecu" />
+            <End Role="radnik" EntitySet="radnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_placa_prirez" Association="Self.FK_placa_prirez">
+            <End Role="prirez" EntitySet="prirez" />
+            <End Role="placa" EntitySet="placa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_placa_radnik" Association="Self.FK_placa_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="placa" EntitySet="placa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_radnik_poslodavac" Association="Self.FK_radnik_poslodavac">
+            <End Role="poslodavac" EntitySet="poslodavac" />
+            <End Role="radnik" EntitySet="radnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_radniSati_radnik" Association="Self.FK_radniSati_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="radniSati" EntitySet="radniSati" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sati_blagdani_radnik" Association="Self.FK_sati_blagdani_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="sati_blagdani" EntitySet="sati_blagdani" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sati_bolovanje_radnik" Association="Self.FK_sati_bolovanje_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="sati_bolovanje" EntitySet="sati_bolovanje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sati_godisnji_radnik" Association="Self.FK_sati_godisnji_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="sati_godisnji" EntitySet="sati_godisnji" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PlaceModelStoreContainer" CdmEntityContainer="PlaceEntities1">
+          <EntitySetMapping Name="doprinosIZ">
+            <EntityTypeMapping TypeName="PlaceModel.doprinosIZ">
+              <MappingFragment StoreEntitySet="doprinosIZ">
+                <ScalarProperty Name="ID_doprinosIZ" ColumnName="ID_doprinosIZ" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="koeficijent" ColumnName="koeficijent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="doprinosNA">
+            <EntityTypeMapping TypeName="PlaceModel.doprinosNA">
+              <MappingFragment StoreEntitySet="doprinosNA">
+                <ScalarProperty Name="ID_doprinosNA" ColumnName="ID_doprinosNA" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="koeficijent" ColumnName="koeficijent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="obracun_placa">
+            <EntityTypeMapping TypeName="PlaceModel.obracun_placa">
+              <MappingFragment StoreEntitySet="obracun_placa">
+                <ScalarProperty Name="ID_obracun" ColumnName="ID_obracun" />
+                <ScalarProperty Name="vrsta_obracuna" ColumnName="vrsta_obracuna" />
+                <ScalarProperty Name="godina" ColumnName="godina" />
+                <ScalarProperty Name="mjesec" ColumnName="mjesec" />
+                <ScalarProperty Name="dan" ColumnName="dan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="odbitakClan">
+            <EntityTypeMapping TypeName="PlaceModel.odbitakClan">
+              <MappingFragment StoreEntitySet="odbitakClan">
+                <ScalarProperty Name="ID_odbitakClan" ColumnName="ID_odbitakClan" />
+                <ScalarProperty Name="broj_clanova" ColumnName="broj_clanova" />
+                <ScalarProperty Name="koeficijent" ColumnName="koeficijent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="odbitakZaDjecu">
+            <EntityTypeMapping TypeName="PlaceModel.odbitakZaDjecu">
+              <MappingFragment StoreEntitySet="odbitakZaDjecu">
+                <ScalarProperty Name="ID_odbitakDjeca" ColumnName="ID_odbitakDjeca" />
+                <ScalarProperty Name="broj_djece" ColumnName="broj_djece" />
+                <ScalarProperty Name="koeficijent" ColumnName="koeficijent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="placa">
+            <EntityTypeMapping TypeName="PlaceModel.placa">
+              <MappingFragment StoreEntitySet="placa">
+                <ScalarProperty Name="ID_placa" ColumnName="ID_placa" />
+                <ScalarProperty Name="visina" ColumnName="visina" />
+                <ScalarProperty Name="vrsta" ColumnName="vrsta" />
+                <ScalarProperty Name="ukupno_bruto" ColumnName="ukupno_bruto" />
+                <ScalarProperty Name="ukupno_neto" ColumnName="ukupno_neto" />
+                <ScalarProperty Name="ukupno_trosak" ColumnName="ukupno_trosak" />
+                <ScalarProperty Name="dohodak" ColumnName="dohodak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="poslodavac">
+            <EntityTypeMapping TypeName="PlaceModel.poslodavac">
+              <MappingFragment StoreEntitySet="poslodavac">
+                <ScalarProperty Name="ID_poslodavac" ColumnName="ID_poslodavac" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="oib" ColumnName="broj_racuna" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prirez">
+            <EntityTypeMapping TypeName="PlaceModel.prirez">
+              <MappingFragment StoreEntitySet="prirez">
+                <ScalarProperty Name="ID_prirez" ColumnName="ID_prirez" />
+                <ScalarProperty Name="opcina" ColumnName="opcina" />
+                <ScalarProperty Name="postotak" ColumnName="postotak" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="radnik">
+            <EntityTypeMapping TypeName="PlaceModel.radnik">
+              <MappingFragment StoreEntitySet="radnik">
+                <ScalarProperty Name="ID_radnik" ColumnName="ID_radnik" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="OIB" ColumnName="OIB" />
+                <ScalarProperty Name="broj_telefona" ColumnName="broj_telefona" />
+                <ScalarProperty Name="broj_racuna" ColumnName="broj_racuna" />
+                <ScalarProperty Name="banka" ColumnName="banka" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="radniSati">
+            <EntityTypeMapping TypeName="PlaceModel.radniSati">
+              <MappingFragment StoreEntitySet="radniSati">
+                <ScalarProperty Name="ID_radniSati" ColumnName="ID_radniSati" />
+                <ScalarProperty Name="vrsta_rada" ColumnName="vrsta_rada" />
+                <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sati_blagdani">
+            <EntityTypeMapping TypeName="PlaceModel.sati_blagdani">
+              <MappingFragment StoreEntitySet="sati_blagdani">
+                <ScalarProperty Name="ID_blagdani" ColumnName="ID_blagdani" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sati_bolovanje">
+            <EntityTypeMapping TypeName="PlaceModel.sati_bolovanje">
+              <MappingFragment StoreEntitySet="sati_bolovanje">
+                <ScalarProperty Name="ID_bolovanje" ColumnName="ID_bolovanje" />
+                <ScalarProperty Name="razlog_bolovanja" ColumnName="razlog_bolovanja" />
+                <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sati_godisnji">
+            <EntityTypeMapping TypeName="PlaceModel.sati_godisnji">
+              <MappingFragment StoreEntitySet="sati_godisnji">
+                <ScalarProperty Name="ID_godisnji" ColumnName="ID_godisnji" />
+                <ScalarProperty Name="pocetak" ColumnName="pocetak" />
+                <ScalarProperty Name="kraj" ColumnName="kraj" />
+                <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_doprinosIZ_placa" TypeName="PlaceModel.FK_doprinosIZ_placa" StoreEntitySet="doprinosIZ">
+            <EndProperty Name="placa">
+              <ScalarProperty Name="ID_placa" ColumnName="placa_ID" />
+            </EndProperty>
+            <EndProperty Name="doprinosIZ">
+              <ScalarProperty Name="ID_doprinosIZ" ColumnName="ID_doprinosIZ" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="placa_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_doprinosNA_placa" TypeName="PlaceModel.FK_doprinosNA_placa" StoreEntitySet="doprinosNA">
+            <EndProperty Name="placa">
+              <ScalarProperty Name="ID_placa" ColumnName="placa_ID" />
+            </EndProperty>
+            <EndProperty Name="doprinosNA">
+              <ScalarProperty Name="ID_doprinosNA" ColumnName="ID_doprinosNA" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="placa_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_obracun_placa_placa" TypeName="PlaceModel.FK_obracun_placa_placa" StoreEntitySet="obracun_placa">
+            <EndProperty Name="placa">
+              <ScalarProperty Name="ID_placa" ColumnName="placa_ID" />
+            </EndProperty>
+            <EndProperty Name="obracun_placa">
+              <ScalarProperty Name="ID_obracun" ColumnName="ID_obracun" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="placa_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_radnik_odbitakClan" TypeName="PlaceModel.FK_radnik_odbitakClan" StoreEntitySet="radnik">
+            <EndProperty Name="odbitakClan">
+              <ScalarProperty Name="ID_odbitakClan" ColumnName="odbitakClan_ID" />
+            </EndProperty>
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="ID_radnik" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="odbitakClan_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_radnik_odbitakZaDjecu" TypeName="PlaceModel.FK_radnik_odbitakZaDjecu" StoreEntitySet="radnik">
+            <EndProperty Name="odbitakZaDjecu">
+              <ScalarProperty Name="ID_odbitakDjeca" ColumnName="odbitakDjeca_ID" />
+            </EndProperty>
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="ID_radnik" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="odbitakDjeca_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_placa_prirez" TypeName="PlaceModel.FK_placa_prirez" StoreEntitySet="placa">
+            <EndProperty Name="prirez">
+              <ScalarProperty Name="ID_prirez" ColumnName="prirez_ID" />
+            </EndProperty>
+            <EndProperty Name="placa">
+              <ScalarProperty Name="ID_placa" ColumnName="ID_placa" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="prirez_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_placa_radnik" TypeName="PlaceModel.FK_placa_radnik" StoreEntitySet="placa">
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="radnik_ID" />
+            </EndProperty>
+            <EndProperty Name="placa">
+              <ScalarProperty Name="ID_placa" ColumnName="ID_placa" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="radnik_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_radnik_poslodavac" TypeName="PlaceModel.FK_radnik_poslodavac" StoreEntitySet="radnik">
+            <EndProperty Name="poslodavac">
+              <ScalarProperty Name="ID_poslodavac" ColumnName="poslodavac_ID" />
+            </EndProperty>
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="ID_radnik" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="poslodavac_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_radniSati_radnik" TypeName="PlaceModel.FK_radniSati_radnik" StoreEntitySet="radniSati">
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="radnik_ID" />
+            </EndProperty>
+            <EndProperty Name="radniSati">
+              <ScalarProperty Name="ID_radniSati" ColumnName="ID_radniSati" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="radnik_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_sati_blagdani_radnik" TypeName="PlaceModel.FK_sati_blagdani_radnik" StoreEntitySet="sati_blagdani">
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="radnik_ID" />
+            </EndProperty>
+            <EndProperty Name="sati_blagdani">
+              <ScalarProperty Name="ID_blagdani" ColumnName="ID_blagdani" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="radnik_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_sati_bolovanje_radnik" TypeName="PlaceModel.FK_sati_bolovanje_radnik" StoreEntitySet="sati_bolovanje">
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="radnik_ID" />
+            </EndProperty>
+            <EndProperty Name="sati_bolovanje">
+              <ScalarProperty Name="ID_bolovanje" ColumnName="ID_bolovanje" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="radnik_ID" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_sati_godisnji_radnik" TypeName="PlaceModel.FK_sati_godisnji_radnik" StoreEntitySet="sati_godisnji">
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="radnik_ID" />
+            </EndProperty>
+            <EndProperty Name="sati_godisnji">
+              <ScalarProperty Name="ID_godisnji" ColumnName="ID_godisnji" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="radnik_ID" />
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

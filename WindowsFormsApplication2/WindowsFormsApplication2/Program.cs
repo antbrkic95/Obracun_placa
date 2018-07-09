@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace obracun_placa
+namespace WindowsFormsApplication2
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace obracun_placa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGlavna());
+            Application.Run(new Form1());
         }
     }
 }
