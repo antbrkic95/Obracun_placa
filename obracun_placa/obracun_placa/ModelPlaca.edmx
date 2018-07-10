@@ -483,8 +483,8 @@
             <PropertyRef Name="ID_godisnji" />
           </Key>
           <Property Name="ID_godisnji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="pocetak" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="kraj" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="pocetak" Type="String" />
+          <Property Name="kraj" Type="String" />
           <Property Name="broj_sati" Type="Int32" />
           <NavigationProperty Name="radnik" Relationship="Self.FK_sati_godisnji_radnik" FromRole="sati_godisnji" ToRole="radnik" />
         </EntityType>

@@ -23,17 +23,6 @@ namespace obracun_placa
             this.sati_bolovanje = new HashSet<sati_bolovanje>();
             this.sati_godisnji = new HashSet<sati_godisnji>();
         }
-
-        public radnik(string i, string p, string OIB, string rac, string a, string b, string t) {
-
-            ime = i;
-            prezime = p;
-            OIB = OIB;
-            broj_racuna = rac;
-            broj_telefona = t;
-            adresa = a;
-            banka = b;
-        }
     
         public int ID_radnik { get; set; }
         public string ime { get; set; }

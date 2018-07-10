@@ -48,37 +48,52 @@
             this.cmbPoslodavci = new System.Windows.Forms.ComboBox();
             this.poslodavacBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblPoslodavac = new System.Windows.Forms.Label();
-            this.cmbOdabir = new System.Windows.Forms.ComboBox();
             this.poslodavacBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnZavrsi = new System.Windows.Forms.Button();
-            this.btnPrikaziSve = new System.Windows.Forms.Button();
-            this.dgvRadnik = new System.Windows.Forms.DataGridView();
+            this.gbOlaksice = new System.Windows.Forms.GroupBox();
+            this.lblOdbitakClan = new System.Windows.Forms.Label();
+            this.lblOdbitakDjeca = new System.Windows.Forms.Label();
+            this.cmbOdbitakClan = new System.Windows.Forms.ComboBox();
+            this.odbitakClanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbOdbitakDjeca = new System.Windows.Forms.ComboBox();
+            this.odbitakZaDjecuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnIzmijeni = new System.Windows.Forms.Button();
+            this.btnUnosSati = new System.Windows.Forms.Button();
+            this.gpUnosSati = new System.Windows.Forms.GroupBox();
+            this.btnUnosPraznika = new System.Windows.Forms.Button();
+            this.btnUnosGodisnjeg = new System.Windows.Forms.Button();
+            this.btnUnosBolovanja = new System.Windows.Forms.Button();
+            this.dgvRadnici = new System.Windows.Forms.DataGridView();
             this.radnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn393 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn394 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn395 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn396 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn397 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn398 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn399 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn400 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn401 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn402 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn403 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn404 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn405 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn406 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn407 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn408 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn649 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn650 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn651 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn652 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn653 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn654 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn655 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn656 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn657 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn658 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn659 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn660 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn661 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn662 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn663 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn664 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRadnik)).BeginInit();
+            this.gbOlaksice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.odbitakClanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.odbitakZaDjecuBindingSource)).BeginInit();
+            this.gpUnosSati.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRadnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSpremiRadnika
             // 
-            this.btnSpremiRadnika.Location = new System.Drawing.Point(3, 243);
+            this.btnSpremiRadnika.Location = new System.Drawing.Point(12, 386);
             this.btnSpremiRadnika.Name = "btnSpremiRadnika";
             this.btnSpremiRadnika.Size = new System.Drawing.Size(106, 42);
             this.btnSpremiRadnika.TabIndex = 0;
@@ -201,7 +216,7 @@
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(115, 243);
+            this.btnObrisi.Location = new System.Drawing.Point(124, 386);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(92, 42);
             this.btnObrisi.TabIndex = 19;
@@ -228,21 +243,9 @@
             this.lblPoslodavac.TabIndex = 21;
             this.lblPoslodavac.Text = "Poslodavac";
             // 
-            // cmbOdabir
-            // 
-            this.cmbOdabir.DataSource = this.poslodavacBindingSource;
-            this.cmbOdabir.DisplayMember = "naziv";
-            this.cmbOdabir.FormattingEnabled = true;
-            this.cmbOdabir.Location = new System.Drawing.Point(248, 23);
-            this.cmbOdabir.Name = "cmbOdabir";
-            this.cmbOdabir.Size = new System.Drawing.Size(121, 21);
-            this.cmbOdabir.TabIndex = 22;
-            this.cmbOdabir.ValueMember = "ID_poslodavac";
-            this.cmbOdabir.SelectedIndexChanged += new System.EventHandler(this.cmbOdabir_SelectedIndexChanged_1);
-            // 
             // btnZavrsi
             // 
-            this.btnZavrsi.Location = new System.Drawing.Point(213, 243);
+            this.btnZavrsi.Location = new System.Drawing.Point(222, 386);
             this.btnZavrsi.Name = "btnZavrsi";
             this.btnZavrsi.Size = new System.Drawing.Size(82, 42);
             this.btnZavrsi.TabIndex = 23;
@@ -250,152 +253,269 @@
             this.btnZavrsi.UseVisualStyleBackColor = true;
             this.btnZavrsi.Click += new System.EventHandler(this.btnZavrsi_Click);
             // 
-            // btnPrikaziSve
+            // gbOlaksice
             // 
-            this.btnPrikaziSve.Location = new System.Drawing.Point(375, 11);
-            this.btnPrikaziSve.Name = "btnPrikaziSve";
-            this.btnPrikaziSve.Size = new System.Drawing.Size(82, 42);
-            this.btnPrikaziSve.TabIndex = 24;
-            this.btnPrikaziSve.Text = "Prikazi sve";
-            this.btnPrikaziSve.UseVisualStyleBackColor = true;
-            this.btnPrikaziSve.Click += new System.EventHandler(this.btnPrikaziSve_Click);
+            this.gbOlaksice.Controls.Add(this.lblOdbitakClan);
+            this.gbOlaksice.Controls.Add(this.lblOdbitakDjeca);
+            this.gbOlaksice.Controls.Add(this.cmbOdbitakClan);
+            this.gbOlaksice.Controls.Add(this.cmbOdbitakDjeca);
+            this.gbOlaksice.Location = new System.Drawing.Point(12, 262);
+            this.gbOlaksice.Name = "gbOlaksice";
+            this.gbOlaksice.Size = new System.Drawing.Size(326, 107);
+            this.gbOlaksice.TabIndex = 26;
+            this.gbOlaksice.TabStop = false;
+            this.gbOlaksice.Text = "Porezne olaksice";
             // 
-            // dgvRadnik
+            // lblOdbitakClan
             // 
-            this.dgvRadnik.AutoGenerateColumns = false;
-            this.dgvRadnik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRadnik.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn393,
-            this.dataGridViewTextBoxColumn394,
-            this.dataGridViewTextBoxColumn395,
-            this.dataGridViewTextBoxColumn396,
-            this.dataGridViewTextBoxColumn397,
-            this.dataGridViewTextBoxColumn398,
-            this.dataGridViewTextBoxColumn399,
-            this.dataGridViewTextBoxColumn400,
-            this.dataGridViewTextBoxColumn401,
-            this.dataGridViewTextBoxColumn402,
-            this.dataGridViewTextBoxColumn403,
-            this.dataGridViewTextBoxColumn404,
-            this.dataGridViewTextBoxColumn405,
-            this.dataGridViewTextBoxColumn406,
-            this.dataGridViewTextBoxColumn407,
-            this.dataGridViewTextBoxColumn408});
-            this.dgvRadnik.DataSource = this.radnikBindingSource;
-            this.dgvRadnik.Location = new System.Drawing.Point(248, 71);
-            this.dgvRadnik.Name = "dgvRadnik";
-            this.dgvRadnik.Size = new System.Drawing.Size(902, 150);
-            this.dgvRadnik.TabIndex = 25;
+            this.lblOdbitakClan.AutoSize = true;
+            this.lblOdbitakClan.Location = new System.Drawing.Point(0, 78);
+            this.lblOdbitakClan.Name = "lblOdbitakClan";
+            this.lblOdbitakClan.Size = new System.Drawing.Size(131, 13);
+            this.lblOdbitakClan.TabIndex = 3;
+            this.lblOdbitakClan.Text = "Odbitak za clanove obitelji";
+            // 
+            // lblOdbitakDjeca
+            // 
+            this.lblOdbitakDjeca.AutoSize = true;
+            this.lblOdbitakDjeca.Location = new System.Drawing.Point(1, 31);
+            this.lblOdbitakDjeca.Name = "lblOdbitakDjeca";
+            this.lblOdbitakDjeca.Size = new System.Drawing.Size(87, 13);
+            this.lblOdbitakDjeca.TabIndex = 2;
+            this.lblOdbitakDjeca.Text = "Odbitak za djecu";
+            // 
+            // cmbOdbitakClan
+            // 
+            this.cmbOdbitakClan.DataSource = this.odbitakClanBindingSource;
+            this.cmbOdbitakClan.DisplayMember = "broj_clanova";
+            this.cmbOdbitakClan.FormattingEnabled = true;
+            this.cmbOdbitakClan.Location = new System.Drawing.Point(137, 75);
+            this.cmbOdbitakClan.Name = "cmbOdbitakClan";
+            this.cmbOdbitakClan.Size = new System.Drawing.Size(121, 21);
+            this.cmbOdbitakClan.TabIndex = 1;
+            this.cmbOdbitakClan.ValueMember = "ID_odbitakClan";
+            // 
+            // cmbOdbitakDjeca
+            // 
+            this.cmbOdbitakDjeca.DataSource = this.odbitakZaDjecuBindingSource;
+            this.cmbOdbitakDjeca.DisplayMember = "broj_djece";
+            this.cmbOdbitakDjeca.FormattingEnabled = true;
+            this.cmbOdbitakDjeca.Location = new System.Drawing.Point(137, 31);
+            this.cmbOdbitakDjeca.Name = "cmbOdbitakDjeca";
+            this.cmbOdbitakDjeca.Size = new System.Drawing.Size(121, 21);
+            this.cmbOdbitakDjeca.TabIndex = 0;
+            this.cmbOdbitakDjeca.ValueMember = "ID_odbitakDjeca";
+            this.cmbOdbitakDjeca.SelectedIndexChanged += new System.EventHandler(this.cmbOdbitakDjeca_SelectedIndexChanged);
+            // 
+            // btnIzmijeni
+            // 
+            this.btnIzmijeni.Location = new System.Drawing.Point(227, 220);
+            this.btnIzmijeni.Name = "btnIzmijeni";
+            this.btnIzmijeni.Size = new System.Drawing.Size(82, 42);
+            this.btnIzmijeni.TabIndex = 28;
+            this.btnIzmijeni.Text = "Izmijeni radnika";
+            this.btnIzmijeni.UseVisualStyleBackColor = true;
+            this.btnIzmijeni.Click += new System.EventHandler(this.btnIzmijeni_Click);
+            // 
+            // btnUnosSati
+            // 
+            this.btnUnosSati.Location = new System.Drawing.Point(6, 59);
+            this.btnUnosSati.Name = "btnUnosSati";
+            this.btnUnosSati.Size = new System.Drawing.Size(82, 42);
+            this.btnUnosSati.TabIndex = 29;
+            this.btnUnosSati.Text = "Unesi radne sate";
+            this.btnUnosSati.UseVisualStyleBackColor = true;
+            this.btnUnosSati.Click += new System.EventHandler(this.btnUnosSati_Click);
+            // 
+            // gpUnosSati
+            // 
+            this.gpUnosSati.Controls.Add(this.btnUnosPraznika);
+            this.gpUnosSati.Controls.Add(this.btnUnosGodisnjeg);
+            this.gpUnosSati.Controls.Add(this.btnUnosBolovanja);
+            this.gpUnosSati.Controls.Add(this.btnUnosSati);
+            this.gpUnosSati.Location = new System.Drawing.Point(361, 262);
+            this.gpUnosSati.Name = "gpUnosSati";
+            this.gpUnosSati.Size = new System.Drawing.Size(396, 107);
+            this.gpUnosSati.TabIndex = 30;
+            this.gpUnosSati.TabStop = false;
+            this.gpUnosSati.Text = "Sati";
+            // 
+            // btnUnosPraznika
+            // 
+            this.btnUnosPraznika.Location = new System.Drawing.Point(299, 59);
+            this.btnUnosPraznika.Name = "btnUnosPraznika";
+            this.btnUnosPraznika.Size = new System.Drawing.Size(82, 42);
+            this.btnUnosPraznika.TabIndex = 32;
+            this.btnUnosPraznika.Text = "Unesi praznike";
+            this.btnUnosPraznika.UseVisualStyleBackColor = true;
+            this.btnUnosPraznika.Click += new System.EventHandler(this.btnUnosPraznika_Click);
+            // 
+            // btnUnosGodisnjeg
+            // 
+            this.btnUnosGodisnjeg.Location = new System.Drawing.Point(201, 59);
+            this.btnUnosGodisnjeg.Name = "btnUnosGodisnjeg";
+            this.btnUnosGodisnjeg.Size = new System.Drawing.Size(82, 42);
+            this.btnUnosGodisnjeg.TabIndex = 31;
+            this.btnUnosGodisnjeg.Text = "Unesi godisnji odmor";
+            this.btnUnosGodisnjeg.UseVisualStyleBackColor = true;
+            this.btnUnosGodisnjeg.Click += new System.EventHandler(this.btnUnosGodisnjeg_Click);
+            // 
+            // btnUnosBolovanja
+            // 
+            this.btnUnosBolovanja.Location = new System.Drawing.Point(104, 59);
+            this.btnUnosBolovanja.Name = "btnUnosBolovanja";
+            this.btnUnosBolovanja.Size = new System.Drawing.Size(82, 42);
+            this.btnUnosBolovanja.TabIndex = 30;
+            this.btnUnosBolovanja.Text = "Unesi bolovanja";
+            this.btnUnosBolovanja.UseVisualStyleBackColor = true;
+            this.btnUnosBolovanja.Click += new System.EventHandler(this.btnUnosBolovanja_Click);
+            // 
+            // dgvRadnici
+            // 
+            this.dgvRadnici.AutoGenerateColumns = false;
+            this.dgvRadnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRadnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn649,
+            this.dataGridViewTextBoxColumn650,
+            this.dataGridViewTextBoxColumn651,
+            this.dataGridViewTextBoxColumn652,
+            this.dataGridViewTextBoxColumn653,
+            this.dataGridViewTextBoxColumn654,
+            this.dataGridViewTextBoxColumn655,
+            this.dataGridViewTextBoxColumn656,
+            this.dataGridViewTextBoxColumn657,
+            this.dataGridViewTextBoxColumn658,
+            this.dataGridViewTextBoxColumn659,
+            this.dataGridViewTextBoxColumn660,
+            this.dataGridViewTextBoxColumn661,
+            this.dataGridViewTextBoxColumn662,
+            this.dataGridViewTextBoxColumn663,
+            this.dataGridViewTextBoxColumn664});
+            this.dgvRadnici.DataSource = this.radnikBindingSource;
+            this.dgvRadnici.Location = new System.Drawing.Point(263, 34);
+            this.dgvRadnici.Name = "dgvRadnici";
+            this.dgvRadnici.Size = new System.Drawing.Size(593, 180);
+            this.dgvRadnici.TabIndex = 31;
             // 
             // radnikBindingSource
             // 
             //this.radnikBindingSource.DataSource = typeof(obracun_placa.radnik);
             // 
-            // dataGridViewTextBoxColumn393
+            // dataGridViewTextBoxColumn649
             // 
-            this.dataGridViewTextBoxColumn393.DataPropertyName = "ID_radnik";
-            this.dataGridViewTextBoxColumn393.HeaderText = "ID_radnik";
-            this.dataGridViewTextBoxColumn393.Name = "dataGridViewTextBoxColumn393";
+            this.dataGridViewTextBoxColumn649.DataPropertyName = "ID_radnik";
+            this.dataGridViewTextBoxColumn649.HeaderText = "ID_radnik";
+            this.dataGridViewTextBoxColumn649.Name = "dataGridViewTextBoxColumn649";
+            this.dataGridViewTextBoxColumn649.Visible = false;
             // 
-            // dataGridViewTextBoxColumn394
+            // dataGridViewTextBoxColumn650
             // 
-            this.dataGridViewTextBoxColumn394.DataPropertyName = "ime";
-            this.dataGridViewTextBoxColumn394.HeaderText = "ime";
-            this.dataGridViewTextBoxColumn394.Name = "dataGridViewTextBoxColumn394";
+            this.dataGridViewTextBoxColumn650.DataPropertyName = "ime";
+            this.dataGridViewTextBoxColumn650.HeaderText = "ime";
+            this.dataGridViewTextBoxColumn650.Name = "dataGridViewTextBoxColumn650";
             // 
-            // dataGridViewTextBoxColumn395
+            // dataGridViewTextBoxColumn651
             // 
-            this.dataGridViewTextBoxColumn395.DataPropertyName = "prezime";
-            this.dataGridViewTextBoxColumn395.HeaderText = "prezime";
-            this.dataGridViewTextBoxColumn395.Name = "dataGridViewTextBoxColumn395";
+            this.dataGridViewTextBoxColumn651.DataPropertyName = "prezime";
+            this.dataGridViewTextBoxColumn651.HeaderText = "prezime";
+            this.dataGridViewTextBoxColumn651.Name = "dataGridViewTextBoxColumn651";
             // 
-            // dataGridViewTextBoxColumn396
+            // dataGridViewTextBoxColumn652
             // 
-            this.dataGridViewTextBoxColumn396.DataPropertyName = "OIB";
-            this.dataGridViewTextBoxColumn396.HeaderText = "OIB";
-            this.dataGridViewTextBoxColumn396.Name = "dataGridViewTextBoxColumn396";
+            this.dataGridViewTextBoxColumn652.DataPropertyName = "OIB";
+            this.dataGridViewTextBoxColumn652.HeaderText = "OIB";
+            this.dataGridViewTextBoxColumn652.Name = "dataGridViewTextBoxColumn652";
             // 
-            // dataGridViewTextBoxColumn397
+            // dataGridViewTextBoxColumn653
             // 
-            this.dataGridViewTextBoxColumn397.DataPropertyName = "broj_telefona";
-            this.dataGridViewTextBoxColumn397.HeaderText = "broj_telefona";
-            this.dataGridViewTextBoxColumn397.Name = "dataGridViewTextBoxColumn397";
+            this.dataGridViewTextBoxColumn653.DataPropertyName = "broj_telefona";
+            this.dataGridViewTextBoxColumn653.HeaderText = "broj_telefona";
+            this.dataGridViewTextBoxColumn653.Name = "dataGridViewTextBoxColumn653";
             // 
-            // dataGridViewTextBoxColumn398
+            // dataGridViewTextBoxColumn654
             // 
-            this.dataGridViewTextBoxColumn398.DataPropertyName = "broj_racuna";
-            this.dataGridViewTextBoxColumn398.HeaderText = "broj_racuna";
-            this.dataGridViewTextBoxColumn398.Name = "dataGridViewTextBoxColumn398";
+            this.dataGridViewTextBoxColumn654.DataPropertyName = "broj_racuna";
+            this.dataGridViewTextBoxColumn654.HeaderText = "broj_racuna";
+            this.dataGridViewTextBoxColumn654.Name = "dataGridViewTextBoxColumn654";
             // 
-            // dataGridViewTextBoxColumn399
+            // dataGridViewTextBoxColumn655
             // 
-            this.dataGridViewTextBoxColumn399.DataPropertyName = "banka";
-            this.dataGridViewTextBoxColumn399.HeaderText = "banka";
-            this.dataGridViewTextBoxColumn399.Name = "dataGridViewTextBoxColumn399";
+            this.dataGridViewTextBoxColumn655.DataPropertyName = "banka";
+            this.dataGridViewTextBoxColumn655.HeaderText = "banka";
+            this.dataGridViewTextBoxColumn655.Name = "dataGridViewTextBoxColumn655";
             // 
-            // dataGridViewTextBoxColumn400
+            // dataGridViewTextBoxColumn656
             // 
-            this.dataGridViewTextBoxColumn400.DataPropertyName = "adresa";
-            this.dataGridViewTextBoxColumn400.HeaderText = "adresa";
-            this.dataGridViewTextBoxColumn400.Name = "dataGridViewTextBoxColumn400";
+            this.dataGridViewTextBoxColumn656.DataPropertyName = "adresa";
+            this.dataGridViewTextBoxColumn656.HeaderText = "adresa";
+            this.dataGridViewTextBoxColumn656.Name = "dataGridViewTextBoxColumn656";
             // 
-            // dataGridViewTextBoxColumn401
+            // dataGridViewTextBoxColumn657
             // 
-            this.dataGridViewTextBoxColumn401.DataPropertyName = "odbitakClan";
-            this.dataGridViewTextBoxColumn401.HeaderText = "odbitakClan";
-            this.dataGridViewTextBoxColumn401.Name = "dataGridViewTextBoxColumn401";
+            this.dataGridViewTextBoxColumn657.DataPropertyName = "odbitakClan";
+            this.dataGridViewTextBoxColumn657.HeaderText = "odbitakClan";
+            this.dataGridViewTextBoxColumn657.Name = "dataGridViewTextBoxColumn657";
+            this.dataGridViewTextBoxColumn657.Visible = false;
             // 
-            // dataGridViewTextBoxColumn402
+            // dataGridViewTextBoxColumn658
             // 
-            this.dataGridViewTextBoxColumn402.DataPropertyName = "odbitakZaDjecu";
-            this.dataGridViewTextBoxColumn402.HeaderText = "odbitakZaDjecu";
-            this.dataGridViewTextBoxColumn402.Name = "dataGridViewTextBoxColumn402";
+            this.dataGridViewTextBoxColumn658.DataPropertyName = "odbitakZaDjecu";
+            this.dataGridViewTextBoxColumn658.HeaderText = "odbitakZaDjecu";
+            this.dataGridViewTextBoxColumn658.Name = "dataGridViewTextBoxColumn658";
+            this.dataGridViewTextBoxColumn658.Visible = false;
             // 
-            // dataGridViewTextBoxColumn403
+            // dataGridViewTextBoxColumn659
             // 
-            this.dataGridViewTextBoxColumn403.DataPropertyName = "placa";
-            this.dataGridViewTextBoxColumn403.HeaderText = "placa";
-            this.dataGridViewTextBoxColumn403.Name = "dataGridViewTextBoxColumn403";
+            this.dataGridViewTextBoxColumn659.DataPropertyName = "placa";
+            this.dataGridViewTextBoxColumn659.HeaderText = "placa";
+            this.dataGridViewTextBoxColumn659.Name = "dataGridViewTextBoxColumn659";
+            this.dataGridViewTextBoxColumn659.Visible = false;
             // 
-            // dataGridViewTextBoxColumn404
+            // dataGridViewTextBoxColumn660
             // 
-            this.dataGridViewTextBoxColumn404.DataPropertyName = "poslodavac";
-            this.dataGridViewTextBoxColumn404.HeaderText = "poslodavac";
-            this.dataGridViewTextBoxColumn404.Name = "dataGridViewTextBoxColumn404";
+            this.dataGridViewTextBoxColumn660.DataPropertyName = "poslodavac";
+            this.dataGridViewTextBoxColumn660.HeaderText = "poslodavac";
+            this.dataGridViewTextBoxColumn660.Name = "dataGridViewTextBoxColumn660";
+            this.dataGridViewTextBoxColumn660.Visible = false;
             // 
-            // dataGridViewTextBoxColumn405
+            // dataGridViewTextBoxColumn661
             // 
-            this.dataGridViewTextBoxColumn405.DataPropertyName = "radniSati";
-            this.dataGridViewTextBoxColumn405.HeaderText = "radniSati";
-            this.dataGridViewTextBoxColumn405.Name = "dataGridViewTextBoxColumn405";
+            this.dataGridViewTextBoxColumn661.DataPropertyName = "radniSati";
+            this.dataGridViewTextBoxColumn661.HeaderText = "radniSati";
+            this.dataGridViewTextBoxColumn661.Name = "dataGridViewTextBoxColumn661";
+            this.dataGridViewTextBoxColumn661.Visible = false;
             // 
-            // dataGridViewTextBoxColumn406
+            // dataGridViewTextBoxColumn662
             // 
-            this.dataGridViewTextBoxColumn406.DataPropertyName = "sati_blagdani";
-            this.dataGridViewTextBoxColumn406.HeaderText = "sati_blagdani";
-            this.dataGridViewTextBoxColumn406.Name = "dataGridViewTextBoxColumn406";
+            this.dataGridViewTextBoxColumn662.DataPropertyName = "sati_blagdani";
+            this.dataGridViewTextBoxColumn662.HeaderText = "sati_blagdani";
+            this.dataGridViewTextBoxColumn662.Name = "dataGridViewTextBoxColumn662";
+            this.dataGridViewTextBoxColumn662.Visible = false;
             // 
-            // dataGridViewTextBoxColumn407
+            // dataGridViewTextBoxColumn663
             // 
-            this.dataGridViewTextBoxColumn407.DataPropertyName = "sati_bolovanje";
-            this.dataGridViewTextBoxColumn407.HeaderText = "sati_bolovanje";
-            this.dataGridViewTextBoxColumn407.Name = "dataGridViewTextBoxColumn407";
+            this.dataGridViewTextBoxColumn663.DataPropertyName = "sati_bolovanje";
+            this.dataGridViewTextBoxColumn663.HeaderText = "sati_bolovanje";
+            this.dataGridViewTextBoxColumn663.Name = "dataGridViewTextBoxColumn663";
+            this.dataGridViewTextBoxColumn663.Visible = false;
             // 
-            // dataGridViewTextBoxColumn408
+            // dataGridViewTextBoxColumn664
             // 
-            this.dataGridViewTextBoxColumn408.DataPropertyName = "sati_godisnji";
-            this.dataGridViewTextBoxColumn408.HeaderText = "sati_godisnji";
-            this.dataGridViewTextBoxColumn408.Name = "dataGridViewTextBoxColumn408";
+            this.dataGridViewTextBoxColumn664.DataPropertyName = "sati_godisnji";
+            this.dataGridViewTextBoxColumn664.HeaderText = "sati_godisnji";
+            this.dataGridViewTextBoxColumn664.Name = "dataGridViewTextBoxColumn664";
+            this.dataGridViewTextBoxColumn664.Visible = false;
             // 
             // frmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 492);
-            this.Controls.Add(this.dgvRadnik);
-            this.Controls.Add(this.btnPrikaziSve);
+            this.ClientSize = new System.Drawing.Size(997, 496);
+            this.Controls.Add(this.dgvRadnici);
+            this.Controls.Add(this.gpUnosSati);
+            this.Controls.Add(this.btnIzmijeni);
+            this.Controls.Add(this.gbOlaksice);
             this.Controls.Add(this.btnZavrsi);
-            this.Controls.Add(this.cmbOdabir);
             this.Controls.Add(this.lblPoslodavac);
             this.Controls.Add(this.cmbPoslodavci);
             this.Controls.Add(this.btnObrisi);
@@ -419,7 +539,12 @@
             this.Load += new System.EventHandler(this.frmGlavna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRadnik)).EndInit();
+            this.gbOlaksice.ResumeLayout(false);
+            this.gbOlaksice.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.odbitakClanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.odbitakZaDjecuBindingSource)).EndInit();
+            this.gpUnosSati.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRadnici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -682,7 +807,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn214;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn215;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn216;
-        private System.Windows.Forms.ComboBox cmbOdabir;
         private System.Windows.Forms.BindingSource poslodavacBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn217;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn218;
@@ -749,7 +873,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn278;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn279;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn280;
-        private System.Windows.Forms.Button btnPrikaziSve;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn281;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn282;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn283;
@@ -846,7 +969,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn374;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn375;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn376;
-        private System.Windows.Forms.DataGridView dgvRadnik;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn377;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn378;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn379;
@@ -879,6 +1001,276 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn406;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn407;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn408;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn409;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn410;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn411;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn412;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn413;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn414;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn415;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn416;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn417;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn418;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn419;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn420;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn421;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn422;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn423;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn424;
+        private System.Windows.Forms.GroupBox gbOlaksice;
+        private System.Windows.Forms.ComboBox cmbOdbitakClan;
+        private System.Windows.Forms.ComboBox cmbOdbitakDjeca;
+        private System.Windows.Forms.Label lblOdbitakClan;
+        private System.Windows.Forms.Label lblOdbitakDjeca;
+        private System.Windows.Forms.BindingSource odbitakClanBindingSource;
+        private System.Windows.Forms.BindingSource odbitakZaDjecuBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn425;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn426;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn427;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn428;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn429;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn430;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn431;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn432;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn433;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn434;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn435;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn436;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn437;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn438;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn439;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn440;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn441;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn442;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn443;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn444;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn445;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn446;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn447;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn448;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn449;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn450;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn451;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn452;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn453;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn454;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn455;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn456;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn457;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn458;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn459;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn460;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn461;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn462;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn463;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn464;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn465;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn466;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn467;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn468;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn469;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn470;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn471;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn472;
+        private System.Windows.Forms.Button btnIzmijeni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn473;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn474;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn475;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn476;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn477;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn478;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn479;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn480;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn481;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn482;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn483;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn484;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn485;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn486;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn487;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn488;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn489;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn490;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn491;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn492;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn493;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn494;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn495;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn496;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn497;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn498;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn499;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn500;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn501;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn502;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn503;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn504;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn505;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn506;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn507;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn508;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn509;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn510;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn511;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn512;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn513;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn514;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn515;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn516;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn517;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn518;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn519;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn520;
+        private System.Windows.Forms.Button btnUnosSati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn521;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn522;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn523;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn524;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn525;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn526;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn527;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn528;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn529;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn530;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn531;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn532;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn533;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn534;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn535;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn536;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn537;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn538;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn539;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn540;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn541;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn542;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn543;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn544;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn545;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn546;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn547;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn548;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn549;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn550;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn551;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn552;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn553;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn554;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn555;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn556;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn557;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn558;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn559;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn560;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn561;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn562;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn563;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn564;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn565;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn566;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn567;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn568;
+        private System.Windows.Forms.GroupBox gpUnosSati;
+        private System.Windows.Forms.Button btnUnosPraznika;
+        private System.Windows.Forms.Button btnUnosGodisnjeg;
+        private System.Windows.Forms.Button btnUnosBolovanja;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn569;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn570;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn571;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn572;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn573;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn574;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn575;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn576;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn577;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn578;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn579;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn580;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn581;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn582;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn583;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn584;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn585;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn586;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn587;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn588;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn589;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn590;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn591;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn592;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn593;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn594;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn595;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn596;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn597;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn598;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn599;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn600;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn601;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn602;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn603;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn604;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn605;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn606;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn607;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn608;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn609;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn610;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn611;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn612;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn613;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn614;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn615;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn616;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn617;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn618;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn619;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn620;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn621;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn622;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn623;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn624;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn625;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn626;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn627;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn628;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn629;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn630;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn631;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn632;
+        private System.Windows.Forms.DataGridView dgvRadnici;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn633;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn634;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn635;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn636;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn637;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn638;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn639;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn640;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn641;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn642;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn643;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn644;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn645;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn646;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn647;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn648;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn649;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn650;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn651;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn652;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn653;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn654;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn655;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn656;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn657;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn658;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn659;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn660;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn661;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn662;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn663;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn664;
         private System.Windows.Forms.BindingSource radnikBindingSource;
         /* private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

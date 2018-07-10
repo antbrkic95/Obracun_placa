@@ -11,7 +11,9 @@ namespace obracun_placa
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.Linq;
+
     public partial class odbitakClan
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,5 +28,20 @@ namespace obracun_placa
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<radnik> radnik { get; set; }
+
+        public BindingList<odbitakClan> VratiOdbiciClan()
+        {
+
+            BindingList<odbitakClan> odbitakClan = null;
+            using (var db = new PlaceEntities1())
+            {
+
+                odbitakClan = new BindingList<odbitakClan>(db.odbitakClan.ToList());
+
+            }
+            return odbitakClan;
+        }
+
+       
     }
 }

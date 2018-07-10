@@ -69,6 +69,36 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGodisnjiOdmor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGodisnjiOdmor.Designer.cs">
+      <DependentUpon>frmGodisnjiOdmor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIzmijeniRadnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIzmijeniRadnika.Designer.cs">
+      <DependentUpon>frmIzmijeniRadnika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPraznici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPraznici.Designer.cs">
+      <DependentUpon>frmPraznici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUnosBolovanja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnosBolovanja.Designer.cs">
+      <DependentUpon>frmUnosBolovanja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUnosSati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnosSati.Designer.cs">
+      <DependentUpon>frmUnosSati.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModelPlaca.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +153,21 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGodisnjiOdmor.resx">
+      <DependentUpon>frmGodisnjiOdmor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIzmijeniRadnika.resx">
+      <DependentUpon>frmIzmijeniRadnika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPraznici.resx">
+      <DependentUpon>frmPraznici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnosBolovanja.resx">
+      <DependentUpon>frmUnosBolovanja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnosSati.resx">
+      <DependentUpon>frmUnosSati.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,6 +185,8 @@
       <DependentUpon>ModelPlaca.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\odbitakClan.datasource" />
+    <None Include="Properties\DataSources\odbitakZaDjecu.datasource" />
     <None Include="Properties\DataSources\poslodavac.datasource" />
     <None Include="Properties\DataSources\radnik.datasource" />
     <None Include="Properties\Settings.settings">

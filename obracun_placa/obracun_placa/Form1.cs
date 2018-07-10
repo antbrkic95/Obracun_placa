@@ -13,9 +13,12 @@ namespace obracun_placa
     public partial class frmGlavna : Form
     {
         private poslodavac odabrani;
+        odbitakZaDjecu odabraniOdbitakDjeca;
+        odbitakClan odabraniOdbitakČlan;
         public frmGlavna()
         {
             InitializeComponent();
+           // odabraniOdbitakDjeca = new odbitakZaDjecu();
 
         }
 
@@ -26,23 +29,29 @@ namespace obracun_placa
             {
                 odabrani = cmbPoslodavci.SelectedItem as poslodavac;
                 db.poslodavac.Attach(odabrani);
+                odabraniOdbitakDjeca = cmbOdbitakDjeca.SelectedItem as odbitakZaDjecu;
+                db.odbitakZaDjecu.Attach(odabraniOdbitakDjeca);
+                odabraniOdbitakČlan = cmbOdbitakClan.SelectedItem as odbitakClan;
+                db.odbitakClan.Attach(odabraniOdbitakČlan);
                 int oib;
                 int ime;
                 int prez;
                 int brojTelefona;
                 int banka;
+                int adresa;
                 radnik noviRadnik;
-                bool test = int.TryParse(txtOIB.Text, out oib);
+                //bool test = int.TryParse(txtOIB.Text, out oib);
                 bool imetest = int.TryParse(txtIme.Text, out ime);
                 bool prezimeTest = int.TryParse(txtPrezime.Text, out prez);
                 bool telefonTest = int.TryParse(txtBrojTelefona.Text, out brojTelefona);
                 bool bankaTest = int.TryParse(txtBanka.Text, out banka);
+                bool testoib = int.TryParse(txtOIB.Text, out oib);
+                bool testadrese = int.TryParse(txtAdresa.Text, out adresa);
 
-                if (test && imetest == false && prezimeTest == false && telefonTest && bankaTest == false && !string.IsNullOrEmpty(txtAdresa.Text) && (!string.IsNullOrEmpty(txtIme.Text) &&
+                if (testoib && testadrese==false && imetest == false && prezimeTest == false && telefonTest && bankaTest == false && !string.IsNullOrEmpty(txtAdresa.Text) && (!string.IsNullOrEmpty(txtIme.Text) &&
                    !string.IsNullOrEmpty(txtPrezime.Text) && !string.IsNullOrEmpty(txtOIB.Text) && !string.IsNullOrEmpty(txtBrojTelefona.Text) && !string.IsNullOrEmpty(txtBrojRacuna.Text) && !string.IsNullOrEmpty(txtBanka.Text)))
                     
                 {
-
                     noviRadnik = new radnik()
                     {
 
@@ -53,9 +62,11 @@ namespace obracun_placa
                         broj_telefona = txtBrojTelefona.Text,
                         adresa = txtAdresa.Text,
                         banka = txtBanka.Text,
-                        poslodavac = odabrani
+                        poslodavac = odabrani,
+                        odbitakClan = odabraniOdbitakČlan,
+                        odbitakZaDjecu = odabraniOdbitakDjeca
                        
-                        
+                    
                 };
                     db.radnik.Add(noviRadnik);
                     db.SaveChanges();
@@ -68,7 +79,7 @@ namespace obracun_placa
                     txtBanka.Clear();
                 }
                 else
-                    MessageBox.Show("Morate unijeti pravilne podatke-provjerite tipove unesenih podataka i obavezan je unos svih potrebnih podataka !");
+                    MessageBox.Show("Morate unijeti pravilne podatke za radnika-provjerite tipove unesenih podataka i obavezan je unos svih potrebnih podataka !");
                
             }
             //Close();
@@ -91,17 +102,25 @@ namespace obracun_placa
         private void frmGlavna_Load(object sender, EventArgs e)
         {
             DohvatiPoslodavce();
-            DohvatiOdabirPoslodavaca();
-            //OsvjeziRadnike();
-            OsvjeziRadnikePoslodavac(poslodavacBindingSource1.Current as poslodavac);
+            OsvjeziRadnike();
+            OsvjeziOdbitakDjeca();
+            OsvjeziOdbitakClanovi();
         }
 
 
-        /* private void btnObrisi_Click(object sender, EventArgs e)
-          {
-            
+       
+        private void OsvjeziOdbitakDjeca() {
+
+            odbitakZaDjecu novi = new odbitakZaDjecu();
+            odbitakZaDjecuBindingSource.DataSource = novi.VratiOdbiciDjeca();
         }
-    */
+
+        private void OsvjeziOdbitakClanovi() {
+
+            odbitakClan noviOdbitak = new odbitakClan();
+            odbitakClanBindingSource.DataSource = noviOdbitak.VratiOdbiciClan();
+        }
+
         private void DohvatiPoslodavce()
         {
 
@@ -114,7 +133,7 @@ namespace obracun_placa
             poslodavacBindingSource1.DataSource = poslodavci;
         }
 
-        private void DohvatiOdabirPoslodavaca()
+       /* private void DohvatiOdabirPoslodavaca()
         {
             BindingList<poslodavac> poslodavci = null;
             using (var db = new PlaceEntities1())
@@ -124,7 +143,7 @@ namespace obracun_placa
             }
             poslodavacBindingSource.DataSource = poslodavci;
 
-        }
+        }*/
         private void OsvjeziRadnikePoslodavac(poslodavac odabraniPoslodavac)
         {
 
@@ -150,11 +169,7 @@ namespace obracun_placa
 
         }
 
-        /*private void btnObrisi_Click_1(object sender, EventArgs e)
-        {
-
-        }*/
-
+        
         private void btnObrisi_Click_2(object sender, EventArgs e)
         {
             radnik odabrani = radnikBindingSource.Current as radnik;
@@ -180,29 +195,37 @@ namespace obracun_placa
             this.Close();
         }
 
-        /*private void cmbOdabir_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            poslodavac p = poslodavacBindingSource.Current as poslodavac;
-            if (p != null)
-                OsvjeziRadnikePoslodavac(p);
-            
-        }*/
-
-        /*private void cmbOdabir_SelectedValueChanged(object sender, EventArgs e)
-        {
-        
-        }*/
+      
 
         private void btnPrikaziSve_Click(object sender, EventArgs e)
         {
             OsvjeziRadnike();
         }
 
-        private void cmbOdabir_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void cmbOdbitakDjeca_SelectedIndexChanged(object sender, EventArgs e)
         {
-            poslodavac p = poslodavacBindingSource.Current as poslodavac;
-            if (p != null)
-                OsvjeziRadnikePoslodavac(p);
+
+        }
+
+        private void btnIzmijeni_Click(object sender, EventArgs e)
+        {
+            radnik odabraniZaIzmjenu = radnikBindingSource.Current as radnik;
+            if (odabraniZaIzmjenu != null)
+           {
+                frmIzmijeniRadnika novaFormaZaIzmjenu = new frmIzmijeniRadnika(odabraniZaIzmjenu);
+                novaFormaZaIzmjenu.ShowDialog();
+                OsvjeziRadnike();
+            }
+        }
+
+        private void btnUnosSati_Click(object sender, EventArgs e)
+        {
+            radnik odabraniUnosRadnik = radnikBindingSource.Current as radnik;
+            if (odabraniUnosRadnik != null) {
+
+                frmUnosSati formaUnosSati = new frmUnosSati(odabraniUnosRadnik);
+                formaUnosSati.ShowDialog();
+            }
         }
 
         private void dgvRadnik_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -210,7 +233,49 @@ namespace obracun_placa
 
         }
 
-        
+        private void btnUnosBolovanja_Click(object sender, EventArgs e)
+        {
+            radnik odabraniUnosBolovanja = radnikBindingSource.Current as radnik;
+            if (odabraniUnosBolovanja != null) {
+
+                frmUnosBolovanja formaBolovanja = new frmUnosBolovanja(odabraniUnosBolovanja);
+                formaBolovanja.ShowDialog();
+            }
+        }
+
+        private void btnUnosPraznika_Click(object sender, EventArgs e)
+        {
+            radnik odabraniRadnikPraznici = radnikBindingSource.Current as radnik;
+            if (odabraniRadnikPraznici != null) {
+
+                frmPraznici formaPraznici = new frmPraznici(odabraniRadnikPraznici);
+                formaPraznici.ShowDialog();
+            }
+        }
+
+        private void btnUnosGodisnjeg_Click(object sender, EventArgs e)
+        {
+            radnik odabrani = radnikBindingSource.Current as radnik;
+            if (odabrani != null) {
+                frmGodisnjiOdmor formaGodisnji = new frmGodisnjiOdmor(odabrani);
+                formaGodisnji.ShowDialog();
+                }
+            }
+        }
+
+        /*private void cmbOdabir_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            poslodavac p = poslodavacBindingSource.Current as poslodavac;
+            if (p != null)
+                OsvjeziRadnikePoslodavac(p);
+        }*/
+
+        /* private void dgvRadnik_CellContentClick(object sender, DataGridViewCellEventArgs e)
+         {
+
+         }*/
+
+
 
         /*private void dgvRadnik_SelectionChanged(object sender, EventArgs e)
         {
@@ -229,4 +294,4 @@ namespace obracun_placa
             }
         }*/
     }
-}
+
