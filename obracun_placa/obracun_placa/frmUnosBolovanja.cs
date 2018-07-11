@@ -36,7 +36,7 @@ namespace obracun_placa
             int sati;
             bool testSati = int.TryParse(txtBrojSati.Text, out sati);
 
-            using (var db = new PlaceEntities1())
+            using (var db = new PlaceEntities4())
             {
                 if (testBolovanje == false && testSati)
                 {

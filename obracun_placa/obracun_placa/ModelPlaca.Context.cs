@@ -13,10 +13,10 @@ namespace obracun_placa
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PlaceEntities1 : DbContext
+    public partial class PlaceEntities4 : DbContext
     {
-        public PlaceEntities1()
-            : base("name=PlaceEntities1")
+        public PlaceEntities4()
+            : base("name=PlaceEntities4")
         {
         }
     
@@ -25,9 +25,6 @@ namespace obracun_placa
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<doprinosIZ> doprinosIZ { get; set; }
-        public virtual DbSet<doprinosNA> doprinosNA { get; set; }
-        public virtual DbSet<obracun_placa> obracun_placa { get; set; }
         public virtual DbSet<odbitakClan> odbitakClan { get; set; }
         public virtual DbSet<odbitakZaDjecu> odbitakZaDjecu { get; set; }
         public virtual DbSet<placa> placa { get; set; }

@@ -15,8 +15,6 @@ namespace obracun_placa
     public partial class sati_godisnji
     {
         public int ID_godisnji { get; set; }
-        public string pocetak { get; set; }
-        public string kraj { get; set; }
         public Nullable<int> broj_sati { get; set; }
     
         public virtual radnik radnik { get; set; }

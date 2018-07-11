@@ -29,17 +29,15 @@ namespace obracun_placa
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<radnik> radnik { get; set; }
 
-        public BindingList<odbitakZaDjecu> VratiOdbiciDjeca()
-        {
+        public BindingList<odbitakZaDjecu> vratiDjecu() {
 
-            BindingList<odbitakZaDjecu> odbitakDjeca = null;
-            using (var db = new PlaceEntities1())
-            {
+            BindingList<odbitakZaDjecu> lista = null;
+            using (var db = new PlaceEntities4()) {
 
-                odbitakDjeca = new BindingList<odbitakZaDjecu>(db.odbitakZaDjecu.ToList());
-
+                lista = new BindingList<odbitakZaDjecu>(db.odbitakZaDjecu.ToList());
             }
-            return odbitakDjeca;
+            return lista;
+
         }
     }
 }

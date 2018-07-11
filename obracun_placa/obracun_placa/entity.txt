@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +16,7 @@ namespace obracun_placa
         private prirez odabraniPrirez;
         private poslodavac odabrani;
         odbitakZaDjecu odabraniOdbitakDjeca;
-        odbitakClan odabraniOdbitakÄŒlan;
+        odbitakClan odabraniOdbitakÈlan;
         public frmGlavna()
         {
             InitializeComponent();
@@ -27,14 +27,14 @@ namespace obracun_placa
         private void button1_Click(object sender, EventArgs e)
         {
 
-            using (var db = new PlaceEntities4())
+            using (var db = new PlaceEntities1())
             {
                 odabrani = cmbPoslodavci.SelectedItem as poslodavac;
                 db.poslodavac.Attach(odabrani);
                 odabraniOdbitakDjeca = cmbOdbitakDjeca.SelectedItem as odbitakZaDjecu;
                 db.odbitakZaDjecu.Attach(odabraniOdbitakDjeca);
-                odabraniOdbitakÄŒlan = cmbOdbitakClan.SelectedItem as odbitakClan;
-                db.odbitakClan.Attach(odabraniOdbitakÄŒlan);
+                odabraniOdbitakÈlan = cmbOdbitakClan.SelectedItem as odbitakClan;
+                db.odbitakClan.Attach(odabraniOdbitakÈlan);
                 int oib;
                 int ime;
                 int prez;
@@ -65,7 +65,7 @@ namespace obracun_placa
                         adresa = txtAdresa.Text,
                         banka = txtBanka.Text,
                         poslodavac = odabrani,
-                        odbitakClan = odabraniOdbitakÄŒlan,
+                        odbitakClan = odabraniOdbitakÈlan,
                         odbitakZaDjecu = odabraniOdbitakDjeca
 
 
@@ -96,7 +96,7 @@ namespace obracun_placa
 
         private void frmGlavna_Load(object sender, EventArgs e)
         {
-            DohvatiPoslodavce();
+            //DohvatiPoslodavce();
             OsvjeziRadnike();
             OsvjeziOdbitakDjeca();
             OsvjeziOdbitakClanovi();
@@ -113,40 +113,40 @@ namespace obracun_placa
         {
 
             odbitakZaDjecu novi = new odbitakZaDjecu();
-            odbitakZaDjecuBindingSource.DataSource = novi.vratiDjecu();
+           // odbitakZaDjecuBindingSource.DataSource = novi.VratiOdbitakDjeca();
         }
 
         private void OsvjeziOdbitakClanovi()
         {
 
             odbitakClan noviOdbitak = new odbitakClan();
-            odbitakClanBindingSource.DataSource = noviOdbitak.vratiClan();
+           // odbitakClanBindingSource.DataSource = noviOdbitak.VratiClanove();
         }
         private void OsvjeziPrireze()
         {
 
             prirez noviPrirez = new prirez();
-            prirezBindingSource.DataSource = noviPrirez.vratiPrirez();
+            //prirezBindingSource.DataSource = noviPrirez.VratiPrireze();
 
         }
-       private void DohvatiPoslodavce()
+       /*private void DohvatiPoslodavce()
         {
 
             BindingList<poslodavac> poslodavci = null;
-            using (var db = new PlaceEntities4())
+            using (var db = new PlaceEntities1())
             {
 
                 poslodavci = new BindingList<poslodavac>(db.poslodavac.ToList());
             }
             poslodavacBindingSource1.DataSource = poslodavci;
-        }
+        }*/
 
 
         private void OsvjeziRadnikePoslodavac(poslodavac odabraniPoslodavac)
         {
 
             BindingList<radnik> radnici = null;
-            using (var db = new PlaceEntities4())
+            using (var db = new PlaceEntities1())
             {
                 db.poslodavac.Attach(odabraniPoslodavac);
 
@@ -159,7 +159,7 @@ namespace obracun_placa
         {
 
             BindingList<radnik> radnici = null;
-            using (var db = new PlaceEntities4())
+            using (var db = new PlaceEntities1())
             {
                 radnici = new BindingList<radnik>(db.radnik.ToList());
             }
@@ -173,9 +173,9 @@ namespace obracun_placa
             radnik odabrani = radnikBindingSource.Current as radnik;
             if (odabrani != null)
             {
-                if (MessageBox.Show("Jeste li sigurni da Å¾elite obrisati radnika?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("Jeste li sigurni da želite obrisati radnika?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    using (var db = new PlaceEntities4())
+                    using (var db = new PlaceEntities1())
                     {
 
                         db.radnik.Attach(odabrani);
@@ -288,7 +288,7 @@ namespace obracun_placa
                 o.vrsta_obracuna = "Osoba mladja od 30 godina";
                // o.placa = placa;
             }
-            else if(cbMinimalnaPLaÄ‡a.Checked==true){
+            else if(cbMinimalnaPLaæa.Checked==true){
                 o.vrsta_obracuna = "Minimalna placa";
                 //o.placa = placa;
 
@@ -303,7 +303,7 @@ namespace obracun_placa
             radnikPlaca = radnikBindingSource.Current as radnik;
             odabraniPrirez = cmbPrirez.SelectedItem as prirez;
            
-            using (var db = new PlaceEntities4())
+            using (var db = new PlaceEntities1())
             {
                 if (radnikPlaca != null && odabraniPrirez != null && testPlaca)
                 {
@@ -332,11 +332,11 @@ namespace obracun_placa
                         db.SaveChanges();
                     }
                     else
-                        MessageBox.Show("Morate odabrati vrstu plaÄ‡e!");
+                        MessageBox.Show("Morate odabrati vrstu plaæe!");
                     //Close();    
                 }
                 else
-                    MessageBox.Show("Za svakog radnika potrebno je unijeti pripadujuÄ‡u plaÄ‡u te plaÄ‡a mora biti napisana u obliku cjelobrojne vrijednosti!");
+                    MessageBox.Show("Za svakog radnika potrebno je unijeti pripadujuæu plaæu te plaæa mora biti napisana u obliku cjelobrojne vrijednosti!");
             }
            /* using (var db = new PlaceEntities1())
             {

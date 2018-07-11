@@ -23,7 +23,8 @@ namespace obracun_placa
         public int ID_poslodavac { get; set; }
         public string naziv { get; set; }
         public string adresa { get; set; }
-        public string oib { get; set; }
+        public string broj_racuna { get; set; }
+        public string OIB { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<radnik> radnik { get; set; }

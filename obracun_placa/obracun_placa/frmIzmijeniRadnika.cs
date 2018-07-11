@@ -52,7 +52,7 @@ namespace obracun_placa
         }*/
         private void btnSpremiIzmjene_Click(object sender, EventArgs e)
         {
-            using (var db = new PlaceEntities1())
+            using (var db = new PlaceEntities4())
             {
                 int oib;
                 int brojtelefona;

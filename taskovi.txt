@@ -1,0 +1,9 @@
+kreirati unos za plaæa
+kerirati unos za prirez-dohvat iz baze i prikaz u comboboxu
+doprinosi su uneseni u bazu-kod kreiranja obrasca samo povuci iz baze
+napraviti izracune
+------------------------------------------------------ napraviti do 13.7.
+kreirati obrazac
+dizajn popraviti
+prevesti GUI na engleski
+------------------------------------------------------ napraviti do 20.7.

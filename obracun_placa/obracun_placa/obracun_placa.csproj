@@ -57,12 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="doprinosIZ.cs">
-      <DependentUpon>ModelPlaca.tt</DependentUpon>
-    </Compile>
-    <Compile Include="doprinosNA.cs">
-      <DependentUpon>ModelPlaca.tt</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,9 +107,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelPlaca.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="obracun_placa.cs">
-      <DependentUpon>ModelPlaca.tt</DependentUpon>
     </Compile>
     <Compile Include="odbitakClan.cs">
       <DependentUpon>ModelPlaca.tt</DependentUpon>
@@ -188,6 +179,7 @@
     <None Include="Properties\DataSources\odbitakClan.datasource" />
     <None Include="Properties\DataSources\odbitakZaDjecu.datasource" />
     <None Include="Properties\DataSources\poslodavac.datasource" />
+    <None Include="Properties\DataSources\prirez.datasource" />
     <None Include="Properties\DataSources\radnik.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

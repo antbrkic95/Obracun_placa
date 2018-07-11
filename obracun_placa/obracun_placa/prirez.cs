@@ -11,7 +11,9 @@ namespace obracun_placa
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.Linq;
+
     public partial class prirez
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,5 +28,18 @@ namespace obracun_placa
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<placa> placa { get; set; }
+
+        public BindingList<prirez> vratiPrirez()
+        {
+
+            BindingList<prirez> lista = null;
+            using (var db = new PlaceEntities4())
+            {
+
+                lista = new BindingList<prirez>(db.prirez.ToList());
+            }
+            return lista;
+
+        }
     }
 }

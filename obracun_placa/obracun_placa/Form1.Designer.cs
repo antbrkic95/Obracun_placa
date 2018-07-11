@@ -65,22 +65,75 @@
             this.btnUnosBolovanja = new System.Windows.Forms.Button();
             this.dgvRadnici = new System.Windows.Forms.DataGridView();
             this.radnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn649 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn650 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn651 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn652 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn653 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn654 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn655 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn656 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn657 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn658 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn659 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn660 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn661 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn662 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn663 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn664 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblObracun = new System.Windows.Forms.Label();
+            this.lblOdbitak = new System.Windows.Forms.Label();
+            this.lblUkupanOdbitak = new System.Windows.Forms.Label();
+            this.lblPrirez = new System.Windows.Forms.Label();
+            this.cmbPrirez = new System.Windows.Forms.ComboBox();
+            this.prirezBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtPlaca = new System.Windows.Forms.TextBox();
+            this.lblPlaca = new System.Windows.Forms.Label();
+            this.rbBruto = new System.Windows.Forms.RadioButton();
+            this.rbUkupanTrosak = new System.Windows.Forms.RadioButton();
+            this.rbNeto = new System.Windows.Forms.RadioButton();
+            this.lblVrsta = new System.Windows.Forms.Label();
+            this.btnIzracunaj = new System.Windows.Forms.Button();
+            this.btnKraj = new System.Windows.Forms.Button();
+            this.lblUkupanTrosak = new System.Windows.Forms.Label();
+            this.lblDoprinosNa = new System.Windows.Forms.Label();
+            this.lblIznosTroska = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblZastita = new System.Windows.Forms.Label();
+            this.lblZdradstveno = new System.Windows.Forms.Label();
+            this.lblZdradstvenoPostotak = new System.Windows.Forms.Label();
+            this.lblZdradstvenoIznos = new System.Windows.Forms.Label();
+            this.lblIznosZdradstvenoUkupno = new System.Windows.Forms.Label();
+            this.lblTrosakUkupno = new System.Windows.Forms.Label();
+            this.lblZastitaUkupno = new System.Windows.Forms.Label();
+            this.lblZastitaPostotak = new System.Windows.Forms.Label();
+            this.lblZastitaIznos = new System.Windows.Forms.Label();
+            this.lblUkupnoZastita = new System.Windows.Forms.Label();
+            this.lblZaposljavanjePostotak = new System.Windows.Forms.Label();
+            this.lblZaposljavanjeIznos = new System.Windows.Forms.Label();
+            this.lblBruto = new System.Windows.Forms.Label();
+            this.lblBrutoIznos = new System.Windows.Forms.Label();
+            this.lblDoprinosIZ = new System.Windows.Forms.Label();
+            this.lblMirovinsko1 = new System.Windows.Forms.Label();
+            this.lblMirovinsko2 = new System.Windows.Forms.Label();
+            this.lblMirovinsko1Iznos = new System.Windows.Forms.Label();
+            this.lblMirovinsko2Iznos = new System.Windows.Forms.Label();
+            this.lblMirovinsko1Ukupno = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblMirovinsko2Ukupno = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblDohodak = new System.Windows.Forms.Label();
+            this.lblDohodakUkupno = new System.Windows.Forms.Label();
+            this.lblOdbitakIzracun = new System.Windows.Forms.Label();
+            this.lblOdbitakUkupno = new System.Windows.Forms.Label();
+            this.lblPorezPrirez = new System.Windows.Forms.Label();
+            this.lblPorezUkupno = new System.Windows.Forms.Label();
+            this.lblDoprinosIZukupno = new System.Windows.Forms.Label();
+            this.lblPorez1 = new System.Windows.Forms.Label();
+            this.lblPorez1Iznos = new System.Windows.Forms.Label();
+            this.lblPorez1Postotak = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblPorez1Ukupno = new System.Windows.Forms.Label();
+            this.lblPorez2Iznos = new System.Windows.Forms.Label();
+            this.lblPorez2Postotak = new System.Windows.Forms.Label();
+            this.lblPorez2Ukupno = new System.Windows.Forms.Label();
+            this.lblPrirezIzracun = new System.Windows.Forms.Label();
+            this.lblPrirezIznos = new System.Windows.Forms.Label();
+            this.lblPrirezPostotak = new System.Windows.Forms.Label();
+            this.lblPrirezUkupno = new System.Windows.Forms.Label();
+            this.lblNeto = new System.Windows.Forms.Label();
+            this.lblNetoIznos = new System.Windows.Forms.Label();
+            this.lblObavijest = new System.Windows.Forms.Label();
+            this.poslodavacBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblValuta = new System.Windows.Forms.Label();
+            this.rbStandardni = new System.Windows.Forms.RadioButton();
+            this.rbZaposlenje = new System.Windows.Forms.RadioButton();
+            this.rbOsoba = new System.Windows.Forms.RadioButton();
+            this.rbMinimalnaPlaca = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource)).BeginInit();
             this.gbOlaksice.SuspendLayout();
@@ -89,11 +142,13 @@
             this.gpUnosSati.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadnici)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prirezBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSpremiRadnika
             // 
-            this.btnSpremiRadnika.Location = new System.Drawing.Point(12, 386);
+            this.btnSpremiRadnika.Location = new System.Drawing.Point(7, 446);
             this.btnSpremiRadnika.Name = "btnSpremiRadnika";
             this.btnSpremiRadnika.Size = new System.Drawing.Size(106, 42);
             this.btnSpremiRadnika.TabIndex = 0;
@@ -216,7 +271,7 @@
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(124, 386);
+            this.btnObrisi.Location = new System.Drawing.Point(124, 446);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(92, 42);
             this.btnObrisi.TabIndex = 19;
@@ -245,7 +300,7 @@
             // 
             // btnZavrsi
             // 
-            this.btnZavrsi.Location = new System.Drawing.Point(222, 386);
+            this.btnZavrsi.Location = new System.Drawing.Point(227, 446);
             this.btnZavrsi.Name = "btnZavrsi";
             this.btnZavrsi.Size = new System.Drawing.Size(82, 42);
             this.btnZavrsi.TabIndex = 23;
@@ -305,7 +360,6 @@
             this.cmbOdbitakDjeca.Size = new System.Drawing.Size(121, 21);
             this.cmbOdbitakDjeca.TabIndex = 0;
             this.cmbOdbitakDjeca.ValueMember = "ID_odbitakDjeca";
-            this.cmbOdbitakDjeca.SelectedIndexChanged += new System.EventHandler(this.cmbOdbitakDjeca_SelectedIndexChanged);
             // 
             // btnIzmijeni
             // 
@@ -374,143 +428,707 @@
             // 
             this.dgvRadnici.AutoGenerateColumns = false;
             this.dgvRadnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRadnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn649,
-            this.dataGridViewTextBoxColumn650,
-            this.dataGridViewTextBoxColumn651,
-            this.dataGridViewTextBoxColumn652,
-            this.dataGridViewTextBoxColumn653,
-            this.dataGridViewTextBoxColumn654,
-            this.dataGridViewTextBoxColumn655,
-            this.dataGridViewTextBoxColumn656,
-            this.dataGridViewTextBoxColumn657,
-            this.dataGridViewTextBoxColumn658,
-            this.dataGridViewTextBoxColumn659,
-            this.dataGridViewTextBoxColumn660,
-            this.dataGridViewTextBoxColumn661,
-            this.dataGridViewTextBoxColumn662,
-            this.dataGridViewTextBoxColumn663,
-            this.dataGridViewTextBoxColumn664});
             this.dgvRadnici.DataSource = this.radnikBindingSource;
             this.dgvRadnici.Location = new System.Drawing.Point(263, 34);
             this.dgvRadnici.Name = "dgvRadnici";
             this.dgvRadnici.Size = new System.Drawing.Size(593, 180);
             this.dgvRadnici.TabIndex = 31;
             // 
-            // radnikBindingSource
+            // lblObracun
             // 
-            //this.radnikBindingSource.DataSource = typeof(obracun_placa.radnik);
+            this.lblObracun.AutoSize = true;
+            this.lblObracun.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblObracun.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblObracun.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblObracun.ImageKey = "(none)";
+            this.lblObracun.Location = new System.Drawing.Point(16, 512);
+            this.lblObracun.Name = "lblObracun";
+            this.lblObracun.Size = new System.Drawing.Size(82, 13);
+            this.lblObracun.TabIndex = 33;
+            this.lblObracun.Text = "Vrsta obracuna:";
             // 
-            // dataGridViewTextBoxColumn649
+            // lblOdbitak
             // 
-            this.dataGridViewTextBoxColumn649.DataPropertyName = "ID_radnik";
-            this.dataGridViewTextBoxColumn649.HeaderText = "ID_radnik";
-            this.dataGridViewTextBoxColumn649.Name = "dataGridViewTextBoxColumn649";
-            this.dataGridViewTextBoxColumn649.Visible = false;
+            this.lblOdbitak.AutoSize = true;
+            this.lblOdbitak.Location = new System.Drawing.Point(16, 399);
+            this.lblOdbitak.Name = "lblOdbitak";
+            this.lblOdbitak.Size = new System.Drawing.Size(116, 13);
+            this.lblOdbitak.TabIndex = 37;
+            this.lblOdbitak.Text = "Ukupni osobni odbitak:";
             // 
-            // dataGridViewTextBoxColumn650
+            // lblUkupanOdbitak
             // 
-            this.dataGridViewTextBoxColumn650.DataPropertyName = "ime";
-            this.dataGridViewTextBoxColumn650.HeaderText = "ime";
-            this.dataGridViewTextBoxColumn650.Name = "dataGridViewTextBoxColumn650";
+            this.lblUkupanOdbitak.AutoSize = true;
+            this.lblUkupanOdbitak.Location = new System.Drawing.Point(146, 399);
+            this.lblUkupanOdbitak.Name = "lblUkupanOdbitak";
+            this.lblUkupanOdbitak.Size = new System.Drawing.Size(0, 13);
+            this.lblUkupanOdbitak.TabIndex = 38;
             // 
-            // dataGridViewTextBoxColumn651
+            // lblPrirez
             // 
-            this.dataGridViewTextBoxColumn651.DataPropertyName = "prezime";
-            this.dataGridViewTextBoxColumn651.HeaderText = "prezime";
-            this.dataGridViewTextBoxColumn651.Name = "dataGridViewTextBoxColumn651";
+            this.lblPrirez.AutoSize = true;
+            this.lblPrirez.Location = new System.Drawing.Point(12, 677);
+            this.lblPrirez.Name = "lblPrirez";
+            this.lblPrirez.Size = new System.Drawing.Size(207, 13);
+            this.lblPrirez.TabIndex = 39;
+            this.lblPrirez.Text = "Grad/opcina prebivalista (postotak prireza)";
             // 
-            // dataGridViewTextBoxColumn652
+            // cmbPrirez
             // 
-            this.dataGridViewTextBoxColumn652.DataPropertyName = "OIB";
-            this.dataGridViewTextBoxColumn652.HeaderText = "OIB";
-            this.dataGridViewTextBoxColumn652.Name = "dataGridViewTextBoxColumn652";
+            this.cmbPrirez.DataSource = this.prirezBindingSource;
+            this.cmbPrirez.DisplayMember = "opcina";
+            this.cmbPrirez.FormattingEnabled = true;
+            this.cmbPrirez.Location = new System.Drawing.Point(11, 723);
+            this.cmbPrirez.Name = "cmbPrirez";
+            this.cmbPrirez.Size = new System.Drawing.Size(172, 21);
+            this.cmbPrirez.TabIndex = 40;
+            this.cmbPrirez.ValueMember = "ID_prirez";
             // 
-            // dataGridViewTextBoxColumn653
+            // txtPlaca
             // 
-            this.dataGridViewTextBoxColumn653.DataPropertyName = "broj_telefona";
-            this.dataGridViewTextBoxColumn653.HeaderText = "broj_telefona";
-            this.dataGridViewTextBoxColumn653.Name = "dataGridViewTextBoxColumn653";
+            this.txtPlaca.Location = new System.Drawing.Point(83, 782);
+            this.txtPlaca.Name = "txtPlaca";
+            this.txtPlaca.Size = new System.Drawing.Size(100, 20);
+            this.txtPlaca.TabIndex = 41;
             // 
-            // dataGridViewTextBoxColumn654
+            // lblPlaca
             // 
-            this.dataGridViewTextBoxColumn654.DataPropertyName = "broj_racuna";
-            this.dataGridViewTextBoxColumn654.HeaderText = "broj_racuna";
-            this.dataGridViewTextBoxColumn654.Name = "dataGridViewTextBoxColumn654";
+            this.lblPlaca.AutoSize = true;
+            this.lblPlaca.Location = new System.Drawing.Point(10, 782);
+            this.lblPlaca.Name = "lblPlaca";
+            this.lblPlaca.Size = new System.Drawing.Size(64, 13);
+            this.lblPlaca.TabIndex = 42;
+            this.lblPlaca.Text = "Iznos place:";
             // 
-            // dataGridViewTextBoxColumn655
+            // rbBruto
             // 
-            this.dataGridViewTextBoxColumn655.DataPropertyName = "banka";
-            this.dataGridViewTextBoxColumn655.HeaderText = "banka";
-            this.dataGridViewTextBoxColumn655.Name = "dataGridViewTextBoxColumn655";
+            this.rbBruto.AutoSize = true;
+            this.rbBruto.Location = new System.Drawing.Point(62, 866);
+            this.rbBruto.Name = "rbBruto";
+            this.rbBruto.Size = new System.Drawing.Size(79, 17);
+            this.rbBruto.TabIndex = 43;
+            this.rbBruto.TabStop = true;
+            this.rbBruto.Text = "Bruto placa";
+            this.rbBruto.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn656
+            // rbUkupanTrosak
             // 
-            this.dataGridViewTextBoxColumn656.DataPropertyName = "adresa";
-            this.dataGridViewTextBoxColumn656.HeaderText = "adresa";
-            this.dataGridViewTextBoxColumn656.Name = "dataGridViewTextBoxColumn656";
+            this.rbUkupanTrosak.AutoSize = true;
+            this.rbUkupanTrosak.Location = new System.Drawing.Point(62, 935);
+            this.rbUkupanTrosak.Name = "rbUkupanTrosak";
+            this.rbUkupanTrosak.Size = new System.Drawing.Size(95, 17);
+            this.rbUkupanTrosak.TabIndex = 44;
+            this.rbUkupanTrosak.TabStop = true;
+            this.rbUkupanTrosak.Text = "Ukupan trosak";
+            this.rbUkupanTrosak.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn657
+            // rbNeto
             // 
-            this.dataGridViewTextBoxColumn657.DataPropertyName = "odbitakClan";
-            this.dataGridViewTextBoxColumn657.HeaderText = "odbitakClan";
-            this.dataGridViewTextBoxColumn657.Name = "dataGridViewTextBoxColumn657";
-            this.dataGridViewTextBoxColumn657.Visible = false;
+            this.rbNeto.AutoSize = true;
+            this.rbNeto.Location = new System.Drawing.Point(62, 898);
+            this.rbNeto.Name = "rbNeto";
+            this.rbNeto.Size = new System.Drawing.Size(77, 17);
+            this.rbNeto.TabIndex = 45;
+            this.rbNeto.TabStop = true;
+            this.rbNeto.Text = "Neto placa";
+            this.rbNeto.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn658
+            // lblVrsta
             // 
-            this.dataGridViewTextBoxColumn658.DataPropertyName = "odbitakZaDjecu";
-            this.dataGridViewTextBoxColumn658.HeaderText = "odbitakZaDjecu";
-            this.dataGridViewTextBoxColumn658.Name = "dataGridViewTextBoxColumn658";
-            this.dataGridViewTextBoxColumn658.Visible = false;
+            this.lblVrsta.AutoSize = true;
+            this.lblVrsta.Location = new System.Drawing.Point(9, 840);
+            this.lblVrsta.Name = "lblVrsta";
+            this.lblVrsta.Size = new System.Drawing.Size(63, 13);
+            this.lblVrsta.TabIndex = 46;
+            this.lblVrsta.Text = "Vrsta place:";
             // 
-            // dataGridViewTextBoxColumn659
+            // btnIzracunaj
             // 
-            this.dataGridViewTextBoxColumn659.DataPropertyName = "placa";
-            this.dataGridViewTextBoxColumn659.HeaderText = "placa";
-            this.dataGridViewTextBoxColumn659.Name = "dataGridViewTextBoxColumn659";
-            this.dataGridViewTextBoxColumn659.Visible = false;
+            this.btnIzracunaj.Location = new System.Drawing.Point(212, 923);
+            this.btnIzracunaj.Name = "btnIzracunaj";
+            this.btnIzracunaj.Size = new System.Drawing.Size(97, 41);
+            this.btnIzracunaj.TabIndex = 47;
+            this.btnIzracunaj.Text = "Izracunaj";
+            this.btnIzracunaj.UseVisualStyleBackColor = true;
+            this.btnIzracunaj.Click += new System.EventHandler(this.btnIzracunaj_Click);
             // 
-            // dataGridViewTextBoxColumn660
+            // btnKraj
             // 
-            this.dataGridViewTextBoxColumn660.DataPropertyName = "poslodavac";
-            this.dataGridViewTextBoxColumn660.HeaderText = "poslodavac";
-            this.dataGridViewTextBoxColumn660.Name = "dataGridViewTextBoxColumn660";
-            this.dataGridViewTextBoxColumn660.Visible = false;
+            this.btnKraj.Location = new System.Drawing.Point(315, 923);
+            this.btnKraj.Name = "btnKraj";
+            this.btnKraj.Size = new System.Drawing.Size(97, 41);
+            this.btnKraj.TabIndex = 48;
+            this.btnKraj.Text = "Odustani";
+            this.btnKraj.UseVisualStyleBackColor = true;
+            this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click);
             // 
-            // dataGridViewTextBoxColumn661
+            // lblUkupanTrosak
             // 
-            this.dataGridViewTextBoxColumn661.DataPropertyName = "radniSati";
-            this.dataGridViewTextBoxColumn661.HeaderText = "radniSati";
-            this.dataGridViewTextBoxColumn661.Name = "dataGridViewTextBoxColumn661";
-            this.dataGridViewTextBoxColumn661.Visible = false;
+            this.lblUkupanTrosak.AutoSize = true;
+            this.lblUkupanTrosak.Location = new System.Drawing.Point(351, 475);
+            this.lblUkupanTrosak.Name = "lblUkupanTrosak";
+            this.lblUkupanTrosak.Size = new System.Drawing.Size(80, 13);
+            this.lblUkupanTrosak.TabIndex = 49;
+            this.lblUkupanTrosak.Text = "Ukupan trosak:";
             // 
-            // dataGridViewTextBoxColumn662
+            // lblDoprinosNa
             // 
-            this.dataGridViewTextBoxColumn662.DataPropertyName = "sati_blagdani";
-            this.dataGridViewTextBoxColumn662.HeaderText = "sati_blagdani";
-            this.dataGridViewTextBoxColumn662.Name = "dataGridViewTextBoxColumn662";
-            this.dataGridViewTextBoxColumn662.Visible = false;
+            this.lblDoprinosNa.AutoSize = true;
+            this.lblDoprinosNa.Location = new System.Drawing.Point(381, 512);
+            this.lblDoprinosNa.Name = "lblDoprinosNa";
+            this.lblDoprinosNa.Size = new System.Drawing.Size(134, 13);
+            this.lblDoprinosNa.TabIndex = 50;
+            this.lblDoprinosNa.Text = "DOPRINOSI NA UKUPNO";
             // 
-            // dataGridViewTextBoxColumn663
+            // lblIznosTroska
             // 
-            this.dataGridViewTextBoxColumn663.DataPropertyName = "sati_bolovanje";
-            this.dataGridViewTextBoxColumn663.HeaderText = "sati_bolovanje";
-            this.dataGridViewTextBoxColumn663.Name = "dataGridViewTextBoxColumn663";
-            this.dataGridViewTextBoxColumn663.Visible = false;
+            this.lblIznosTroska.AutoSize = true;
+            this.lblIznosTroska.Location = new System.Drawing.Point(689, 512);
+            this.lblIznosTroska.Name = "lblIznosTroska";
+            this.lblIznosTroska.Size = new System.Drawing.Size(0, 13);
+            this.lblIznosTroska.TabIndex = 51;
             // 
-            // dataGridViewTextBoxColumn664
+            // label4
             // 
-            this.dataGridViewTextBoxColumn664.DataPropertyName = "sati_godisnji";
-            this.dataGridViewTextBoxColumn664.HeaderText = "sati_godisnji";
-            this.dataGridViewTextBoxColumn664.Name = "dataGridViewTextBoxColumn664";
-            this.dataGridViewTextBoxColumn664.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(381, 590);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Za zaposljavanje";
+            // 
+            // lblZastita
+            // 
+            this.lblZastita.AutoSize = true;
+            this.lblZastita.Location = new System.Drawing.Point(382, 563);
+            this.lblZastita.Name = "lblZastita";
+            this.lblZastita.Size = new System.Drawing.Size(117, 13);
+            this.lblZastita.TabIndex = 53;
+            this.lblZastita.Text = "Zastita zdravlja na radu";
+            // 
+            // lblZdradstveno
+            // 
+            this.lblZdradstveno.AutoSize = true;
+            this.lblZdradstveno.Location = new System.Drawing.Point(381, 536);
+            this.lblZdradstveno.Name = "lblZdradstveno";
+            this.lblZdradstveno.Size = new System.Drawing.Size(118, 13);
+            this.lblZdradstveno.TabIndex = 54;
+            this.lblZdradstveno.Text = "Zdravstveno osiguranje";
+            // 
+            // lblZdradstvenoPostotak
+            // 
+            this.lblZdradstvenoPostotak.AutoSize = true;
+            this.lblZdradstvenoPostotak.Location = new System.Drawing.Point(617, 536);
+            this.lblZdradstvenoPostotak.Name = "lblZdradstvenoPostotak";
+            this.lblZdradstvenoPostotak.Size = new System.Drawing.Size(27, 13);
+            this.lblZdradstvenoPostotak.TabIndex = 55;
+            this.lblZdradstvenoPostotak.Text = "15%";
+            // 
+            // lblZdradstvenoIznos
+            // 
+            this.lblZdradstvenoIznos.AutoSize = true;
+            this.lblZdradstvenoIznos.Location = new System.Drawing.Point(559, 536);
+            this.lblZdradstvenoIznos.Name = "lblZdradstvenoIznos";
+            this.lblZdradstvenoIznos.Size = new System.Drawing.Size(35, 13);
+            this.lblZdradstvenoIznos.TabIndex = 56;
+            this.lblZdradstvenoIznos.Text = "label2";
+            // 
+            // lblIznosZdradstvenoUkupno
+            // 
+            this.lblIznosZdradstvenoUkupno.AutoSize = true;
+            this.lblIznosZdradstvenoUkupno.Location = new System.Drawing.Point(683, 536);
+            this.lblIznosZdradstvenoUkupno.Name = "lblIznosZdradstvenoUkupno";
+            this.lblIznosZdradstvenoUkupno.Size = new System.Drawing.Size(29, 13);
+            this.lblIznosZdradstvenoUkupno.TabIndex = 57;
+            this.lblIznosZdradstvenoUkupno.Text = "label";
+            // 
+            // lblTrosakUkupno
+            // 
+            this.lblTrosakUkupno.AutoSize = true;
+            this.lblTrosakUkupno.Location = new System.Drawing.Point(683, 512);
+            this.lblTrosakUkupno.Name = "lblTrosakUkupno";
+            this.lblTrosakUkupno.Size = new System.Drawing.Size(35, 13);
+            this.lblTrosakUkupno.TabIndex = 58;
+            this.lblTrosakUkupno.Text = "label6";
+            // 
+            // lblZastitaUkupno
+            // 
+            this.lblZastitaUkupno.AutoSize = true;
+            this.lblZastitaUkupno.Location = new System.Drawing.Point(683, 563);
+            this.lblZastitaUkupno.Name = "lblZastitaUkupno";
+            this.lblZastitaUkupno.Size = new System.Drawing.Size(35, 13);
+            this.lblZastitaUkupno.TabIndex = 59;
+            this.lblZastitaUkupno.Text = "label2";
+            // 
+            // lblZastitaPostotak
+            // 
+            this.lblZastitaPostotak.AutoSize = true;
+            this.lblZastitaPostotak.Location = new System.Drawing.Point(618, 563);
+            this.lblZastitaPostotak.Name = "lblZastitaPostotak";
+            this.lblZastitaPostotak.Size = new System.Drawing.Size(30, 13);
+            this.lblZastitaPostotak.TabIndex = 60;
+            this.lblZastitaPostotak.Text = "0,5%";
+            // 
+            // lblZastitaIznos
+            // 
+            this.lblZastitaIznos.AutoSize = true;
+            this.lblZastitaIznos.Location = new System.Drawing.Point(559, 563);
+            this.lblZastitaIznos.Name = "lblZastitaIznos";
+            this.lblZastitaIznos.Size = new System.Drawing.Size(35, 13);
+            this.lblZastitaIznos.TabIndex = 61;
+            this.lblZastitaIznos.Text = "label2";
+            // 
+            // lblUkupnoZastita
+            // 
+            this.lblUkupnoZastita.AutoSize = true;
+            this.lblUkupnoZastita.Location = new System.Drawing.Point(683, 590);
+            this.lblUkupnoZastita.Name = "lblUkupnoZastita";
+            this.lblUkupnoZastita.Size = new System.Drawing.Size(35, 13);
+            this.lblUkupnoZastita.TabIndex = 62;
+            this.lblUkupnoZastita.Text = "label2";
+            // 
+            // lblZaposljavanjePostotak
+            // 
+            this.lblZaposljavanjePostotak.AutoSize = true;
+            this.lblZaposljavanjePostotak.Location = new System.Drawing.Point(618, 590);
+            this.lblZaposljavanjePostotak.Name = "lblZaposljavanjePostotak";
+            this.lblZaposljavanjePostotak.Size = new System.Drawing.Size(30, 13);
+            this.lblZaposljavanjePostotak.TabIndex = 63;
+            this.lblZaposljavanjePostotak.Text = "1,7%";
+            // 
+            // lblZaposljavanjeIznos
+            // 
+            this.lblZaposljavanjeIznos.AutoSize = true;
+            this.lblZaposljavanjeIznos.Location = new System.Drawing.Point(559, 590);
+            this.lblZaposljavanjeIznos.Name = "lblZaposljavanjeIznos";
+            this.lblZaposljavanjeIznos.Size = new System.Drawing.Size(35, 13);
+            this.lblZaposljavanjeIznos.TabIndex = 64;
+            this.lblZaposljavanjeIznos.Text = "label2";
+            // 
+            // lblBruto
+            // 
+            this.lblBruto.AutoSize = true;
+            this.lblBruto.Location = new System.Drawing.Point(351, 624);
+            this.lblBruto.Name = "lblBruto";
+            this.lblBruto.Size = new System.Drawing.Size(35, 13);
+            this.lblBruto.TabIndex = 65;
+            this.lblBruto.Text = "Bruto:";
+            // 
+            // lblBrutoIznos
+            // 
+            this.lblBrutoIznos.AutoSize = true;
+            this.lblBrutoIznos.Location = new System.Drawing.Point(683, 625);
+            this.lblBrutoIznos.Name = "lblBrutoIznos";
+            this.lblBrutoIznos.Size = new System.Drawing.Size(35, 13);
+            this.lblBrutoIznos.TabIndex = 66;
+            this.lblBrutoIznos.Text = "label6";
+            // 
+            // lblDoprinosIZ
+            // 
+            this.lblDoprinosIZ.AutoSize = true;
+            this.lblDoprinosIZ.Location = new System.Drawing.Point(381, 652);
+            this.lblDoprinosIZ.Name = "lblDoprinosIZ";
+            this.lblDoprinosIZ.Size = new System.Drawing.Size(129, 13);
+            this.lblDoprinosIZ.TabIndex = 67;
+            this.lblDoprinosIZ.Text = "DOPRINOSI IZ UKUPNO";
+            // 
+            // lblMirovinsko1
+            // 
+            this.lblMirovinsko1.AutoSize = true;
+            this.lblMirovinsko1.Location = new System.Drawing.Point(381, 677);
+            this.lblMirovinsko1.Name = "lblMirovinsko1";
+            this.lblMirovinsko1.Size = new System.Drawing.Size(87, 13);
+            this.lblMirovinsko1.TabIndex = 68;
+            this.lblMirovinsko1.Text = "Mirovinsko I.stup";
+            // 
+            // lblMirovinsko2
+            // 
+            this.lblMirovinsko2.AutoSize = true;
+            this.lblMirovinsko2.Location = new System.Drawing.Point(381, 705);
+            this.lblMirovinsko2.Name = "lblMirovinsko2";
+            this.lblMirovinsko2.Size = new System.Drawing.Size(90, 13);
+            this.lblMirovinsko2.TabIndex = 69;
+            this.lblMirovinsko2.Text = "Mirovinsko II.stup";
+            // 
+            // lblMirovinsko1Iznos
+            // 
+            this.lblMirovinsko1Iznos.AutoSize = true;
+            this.lblMirovinsko1Iznos.Location = new System.Drawing.Point(559, 677);
+            this.lblMirovinsko1Iznos.Name = "lblMirovinsko1Iznos";
+            this.lblMirovinsko1Iznos.Size = new System.Drawing.Size(35, 13);
+            this.lblMirovinsko1Iznos.TabIndex = 70;
+            this.lblMirovinsko1Iznos.Text = "label2";
+            // 
+            // lblMirovinsko2Iznos
+            // 
+            this.lblMirovinsko2Iznos.AutoSize = true;
+            this.lblMirovinsko2Iznos.Location = new System.Drawing.Point(618, 677);
+            this.lblMirovinsko2Iznos.Name = "lblMirovinsko2Iznos";
+            this.lblMirovinsko2Iznos.Size = new System.Drawing.Size(27, 13);
+            this.lblMirovinsko2Iznos.TabIndex = 71;
+            this.lblMirovinsko2Iznos.Text = "15%";
+            // 
+            // lblMirovinsko1Ukupno
+            // 
+            this.lblMirovinsko1Ukupno.AutoSize = true;
+            this.lblMirovinsko1Ukupno.Location = new System.Drawing.Point(683, 677);
+            this.lblMirovinsko1Ukupno.Name = "lblMirovinsko1Ukupno";
+            this.lblMirovinsko1Ukupno.Size = new System.Drawing.Size(35, 13);
+            this.lblMirovinsko1Ukupno.TabIndex = 72;
+            this.lblMirovinsko1Ukupno.Text = "label2";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(559, 705);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 73;
+            this.label5.Text = "label2";
+            // 
+            // lblMirovinsko2Ukupno
+            // 
+            this.lblMirovinsko2Ukupno.AutoSize = true;
+            this.lblMirovinsko2Ukupno.Location = new System.Drawing.Point(683, 705);
+            this.lblMirovinsko2Ukupno.Name = "lblMirovinsko2Ukupno";
+            this.lblMirovinsko2Ukupno.Size = new System.Drawing.Size(35, 13);
+            this.lblMirovinsko2Ukupno.TabIndex = 74;
+            this.lblMirovinsko2Ukupno.Text = "label2";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(623, 705);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 13);
+            this.label7.TabIndex = 75;
+            this.label7.Text = "5%";
+            // 
+            // lblDohodak
+            // 
+            this.lblDohodak.AutoSize = true;
+            this.lblDohodak.Location = new System.Drawing.Point(351, 731);
+            this.lblDohodak.Name = "lblDohodak";
+            this.lblDohodak.Size = new System.Drawing.Size(51, 13);
+            this.lblDohodak.TabIndex = 76;
+            this.lblDohodak.Text = "Dohodak";
+            // 
+            // lblDohodakUkupno
+            // 
+            this.lblDohodakUkupno.AutoSize = true;
+            this.lblDohodakUkupno.Location = new System.Drawing.Point(683, 731);
+            this.lblDohodakUkupno.Name = "lblDohodakUkupno";
+            this.lblDohodakUkupno.Size = new System.Drawing.Size(35, 13);
+            this.lblDohodakUkupno.TabIndex = 77;
+            this.lblDohodakUkupno.Text = "label2";
+            // 
+            // lblOdbitakIzracun
+            // 
+            this.lblOdbitakIzracun.AutoSize = true;
+            this.lblOdbitakIzracun.Location = new System.Drawing.Point(351, 751);
+            this.lblOdbitakIzracun.Name = "lblOdbitakIzracun";
+            this.lblOdbitakIzracun.Size = new System.Drawing.Size(78, 13);
+            this.lblOdbitakIzracun.TabIndex = 78;
+            this.lblOdbitakIzracun.Text = "Osobni odbitak";
+            // 
+            // lblOdbitakUkupno
+            // 
+            this.lblOdbitakUkupno.AutoSize = true;
+            this.lblOdbitakUkupno.Location = new System.Drawing.Point(683, 751);
+            this.lblOdbitakUkupno.Name = "lblOdbitakUkupno";
+            this.lblOdbitakUkupno.Size = new System.Drawing.Size(35, 13);
+            this.lblOdbitakUkupno.TabIndex = 79;
+            this.lblOdbitakUkupno.Text = "label2";
+            // 
+            // lblPorezPrirez
+            // 
+            this.lblPorezPrirez.AutoSize = true;
+            this.lblPorezPrirez.Location = new System.Drawing.Point(351, 782);
+            this.lblPorezPrirez.Name = "lblPorezPrirez";
+            this.lblPorezPrirez.Size = new System.Drawing.Size(109, 13);
+            this.lblPorezPrirez.TabIndex = 80;
+            this.lblPorezPrirez.Text = "Porez i prirez ukupno:";
+            // 
+            // lblPorezUkupno
+            // 
+            this.lblPorezUkupno.AutoSize = true;
+            this.lblPorezUkupno.Location = new System.Drawing.Point(683, 782);
+            this.lblPorezUkupno.Name = "lblPorezUkupno";
+            this.lblPorezUkupno.Size = new System.Drawing.Size(35, 13);
+            this.lblPorezUkupno.TabIndex = 81;
+            this.lblPorezUkupno.Text = "label2";
+            // 
+            // lblDoprinosIZukupno
+            // 
+            this.lblDoprinosIZukupno.AutoSize = true;
+            this.lblDoprinosIZukupno.Location = new System.Drawing.Point(683, 652);
+            this.lblDoprinosIZukupno.Name = "lblDoprinosIZukupno";
+            this.lblDoprinosIZukupno.Size = new System.Drawing.Size(35, 13);
+            this.lblDoprinosIZukupno.TabIndex = 82;
+            this.lblDoprinosIZukupno.Text = "label6";
+            // 
+            // lblPorez1
+            // 
+            this.lblPorez1.AutoSize = true;
+            this.lblPorez1.Location = new System.Drawing.Point(405, 800);
+            this.lblPorez1.Name = "lblPorez1";
+            this.lblPorez1.Size = new System.Drawing.Size(37, 13);
+            this.lblPorez1.TabIndex = 83;
+            this.lblPorez1.Text = "Porez ";
+            // 
+            // lblPorez1Iznos
+            // 
+            this.lblPorez1Iznos.AutoSize = true;
+            this.lblPorez1Iznos.Location = new System.Drawing.Point(559, 800);
+            this.lblPorez1Iznos.Name = "lblPorez1Iznos";
+            this.lblPorez1Iznos.Size = new System.Drawing.Size(29, 13);
+            this.lblPorez1Iznos.TabIndex = 84;
+            this.lblPorez1Iznos.Text = "label";
+            // 
+            // lblPorez1Postotak
+            // 
+            this.lblPorez1Postotak.AutoSize = true;
+            this.lblPorez1Postotak.Location = new System.Drawing.Point(617, 800);
+            this.lblPorez1Postotak.Name = "lblPorez1Postotak";
+            this.lblPorez1Postotak.Size = new System.Drawing.Size(27, 13);
+            this.lblPorez1Postotak.TabIndex = 85;
+            this.lblPorez1Postotak.Text = "24%";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(405, 827);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 86;
+            this.label1.Text = "Porez ";
+            // 
+            // lblPorez1Ukupno
+            // 
+            this.lblPorez1Ukupno.AutoSize = true;
+            this.lblPorez1Ukupno.Location = new System.Drawing.Point(683, 800);
+            this.lblPorez1Ukupno.Name = "lblPorez1Ukupno";
+            this.lblPorez1Ukupno.Size = new System.Drawing.Size(29, 13);
+            this.lblPorez1Ukupno.TabIndex = 87;
+            this.lblPorez1Ukupno.Text = "label";
+            // 
+            // lblPorez2Iznos
+            // 
+            this.lblPorez2Iznos.AutoSize = true;
+            this.lblPorez2Iznos.Location = new System.Drawing.Point(559, 827);
+            this.lblPorez2Iznos.Name = "lblPorez2Iznos";
+            this.lblPorez2Iznos.Size = new System.Drawing.Size(29, 13);
+            this.lblPorez2Iznos.TabIndex = 88;
+            this.lblPorez2Iznos.Text = "label";
+            // 
+            // lblPorez2Postotak
+            // 
+            this.lblPorez2Postotak.AutoSize = true;
+            this.lblPorez2Postotak.Location = new System.Drawing.Point(617, 827);
+            this.lblPorez2Postotak.Name = "lblPorez2Postotak";
+            this.lblPorez2Postotak.Size = new System.Drawing.Size(27, 13);
+            this.lblPorez2Postotak.TabIndex = 89;
+            this.lblPorez2Postotak.Text = "36%";
+            // 
+            // lblPorez2Ukupno
+            // 
+            this.lblPorez2Ukupno.AutoSize = true;
+            this.lblPorez2Ukupno.Location = new System.Drawing.Point(683, 827);
+            this.lblPorez2Ukupno.Name = "lblPorez2Ukupno";
+            this.lblPorez2Ukupno.Size = new System.Drawing.Size(29, 13);
+            this.lblPorez2Ukupno.TabIndex = 90;
+            this.lblPorez2Ukupno.Text = "label";
+            // 
+            // lblPrirezIzracun
+            // 
+            this.lblPrirezIzracun.AutoSize = true;
+            this.lblPrirezIzracun.Location = new System.Drawing.Point(405, 852);
+            this.lblPrirezIzracun.Name = "lblPrirezIzracun";
+            this.lblPrirezIzracun.Size = new System.Drawing.Size(33, 13);
+            this.lblPrirezIzracun.TabIndex = 91;
+            this.lblPrirezIzracun.Text = "Prirez";
+            // 
+            // lblPrirezIznos
+            // 
+            this.lblPrirezIznos.AutoSize = true;
+            this.lblPrirezIznos.Location = new System.Drawing.Point(559, 852);
+            this.lblPrirezIznos.Name = "lblPrirezIznos";
+            this.lblPrirezIznos.Size = new System.Drawing.Size(29, 13);
+            this.lblPrirezIznos.TabIndex = 92;
+            this.lblPrirezIznos.Text = "label";
+            // 
+            // lblPrirezPostotak
+            // 
+            this.lblPrirezPostotak.AutoSize = true;
+            this.lblPrirezPostotak.Location = new System.Drawing.Point(618, 852);
+            this.lblPrirezPostotak.Name = "lblPrirezPostotak";
+            this.lblPrirezPostotak.Size = new System.Drawing.Size(36, 13);
+            this.lblPrirezPostotak.TabIndex = 93;
+            this.lblPrirezPostotak.Text = "12/10";
+            // 
+            // lblPrirezUkupno
+            // 
+            this.lblPrirezUkupno.AutoSize = true;
+            this.lblPrirezUkupno.Location = new System.Drawing.Point(683, 852);
+            this.lblPrirezUkupno.Name = "lblPrirezUkupno";
+            this.lblPrirezUkupno.Size = new System.Drawing.Size(29, 13);
+            this.lblPrirezUkupno.TabIndex = 94;
+            this.lblPrirezUkupno.Text = "label";
+            // 
+            // lblNeto
+            // 
+            this.lblNeto.AutoSize = true;
+            this.lblNeto.Location = new System.Drawing.Point(351, 882);
+            this.lblNeto.Name = "lblNeto";
+            this.lblNeto.Size = new System.Drawing.Size(33, 13);
+            this.lblNeto.TabIndex = 95;
+            this.lblNeto.Text = "Neto:";
+            // 
+            // lblNetoIznos
+            // 
+            this.lblNetoIznos.AutoSize = true;
+            this.lblNetoIznos.Location = new System.Drawing.Point(683, 882);
+            this.lblNetoIznos.Name = "lblNetoIznos";
+            this.lblNetoIznos.Size = new System.Drawing.Size(29, 13);
+            this.lblNetoIznos.TabIndex = 96;
+            this.lblNetoIznos.Text = "label";
+            // 
+            // lblObavijest
+            // 
+            this.lblObavijest.AutoSize = true;
+            this.lblObavijest.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblObavijest.Location = new System.Drawing.Point(354, 424);
+            this.lblObavijest.Name = "lblObavijest";
+            this.lblObavijest.Size = new System.Drawing.Size(425, 13);
+            this.lblObavijest.TabIndex = 97;
+            this.lblObavijest.Text = "Izračun je isključivo informativan te se kao takav ne može koristiti ni u jednu d" +
+    "rugu svrhu!";
+            // 
+            // lblValuta
+            // 
+            this.lblValuta.AutoSize = true;
+            this.lblValuta.Location = new System.Drawing.Point(189, 785);
+            this.lblValuta.Name = "lblValuta";
+            this.lblValuta.Size = new System.Drawing.Size(30, 13);
+            this.lblValuta.TabIndex = 98;
+            this.lblValuta.Text = "HRK";
+            // 
+            // rbStandardni
+            // 
+            this.rbStandardni.AutoSize = true;
+            this.rbStandardni.Location = new System.Drawing.Point(53, 536);
+            this.rbStandardni.Name = "rbStandardni";
+            this.rbStandardni.Size = new System.Drawing.Size(118, 17);
+            this.rbStandardni.TabIndex = 99;
+            this.rbStandardni.TabStop = true;
+            this.rbStandardni.Text = "Standardni obracun";
+            this.rbStandardni.UseVisualStyleBackColor = true;
+            // 
+            // rbZaposlenje
+            // 
+            this.rbZaposlenje.AutoSize = true;
+            this.rbZaposlenje.Location = new System.Drawing.Point(53, 563);
+            this.rbZaposlenje.Name = "rbZaposlenje";
+            this.rbZaposlenje.Size = new System.Drawing.Size(100, 17);
+            this.rbZaposlenje.TabIndex = 100;
+            this.rbZaposlenje.TabStop = true;
+            this.rbZaposlenje.Text = "Prvo zaposlenje";
+            this.rbZaposlenje.UseVisualStyleBackColor = true;
+            // 
+            // rbOsoba
+            // 
+            this.rbOsoba.AutoSize = true;
+            this.rbOsoba.Location = new System.Drawing.Point(53, 590);
+            this.rbOsoba.Name = "rbOsoba";
+            this.rbOsoba.Size = new System.Drawing.Size(154, 17);
+            this.rbOsoba.TabIndex = 101;
+            this.rbOsoba.TabStop = true;
+            this.rbOsoba.Text = "Osoba mladja od 30 godina";
+            this.rbOsoba.UseVisualStyleBackColor = true;
+            // 
+            // rbMinimalnaPlaca
+            // 
+            this.rbMinimalnaPlaca.AutoSize = true;
+            this.rbMinimalnaPlaca.Location = new System.Drawing.Point(53, 620);
+            this.rbMinimalnaPlaca.Name = "rbMinimalnaPlaca";
+            this.rbMinimalnaPlaca.Size = new System.Drawing.Size(101, 17);
+            this.rbMinimalnaPlaca.TabIndex = 102;
+            this.rbMinimalnaPlaca.TabStop = true;
+            this.rbMinimalnaPlaca.Text = "Minimalna placa";
+            this.rbMinimalnaPlaca.UseVisualStyleBackColor = true;
             // 
             // frmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 496);
+            this.ClientSize = new System.Drawing.Size(899, 1031);
+            this.Controls.Add(this.rbMinimalnaPlaca);
+            this.Controls.Add(this.rbOsoba);
+            this.Controls.Add(this.rbZaposlenje);
+            this.Controls.Add(this.rbStandardni);
+            this.Controls.Add(this.lblValuta);
+            this.Controls.Add(this.lblObavijest);
+            this.Controls.Add(this.lblNetoIznos);
+            this.Controls.Add(this.lblNeto);
+            this.Controls.Add(this.lblPrirezUkupno);
+            this.Controls.Add(this.lblPrirezPostotak);
+            this.Controls.Add(this.lblPrirezIznos);
+            this.Controls.Add(this.lblPrirezIzracun);
+            this.Controls.Add(this.lblPorez2Ukupno);
+            this.Controls.Add(this.lblPorez2Postotak);
+            this.Controls.Add(this.lblPorez2Iznos);
+            this.Controls.Add(this.lblPorez1Ukupno);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPorez1Postotak);
+            this.Controls.Add(this.lblPorez1Iznos);
+            this.Controls.Add(this.lblPorez1);
+            this.Controls.Add(this.lblDoprinosIZukupno);
+            this.Controls.Add(this.lblPorezUkupno);
+            this.Controls.Add(this.lblPorezPrirez);
+            this.Controls.Add(this.lblOdbitakUkupno);
+            this.Controls.Add(this.lblOdbitakIzracun);
+            this.Controls.Add(this.lblDohodakUkupno);
+            this.Controls.Add(this.lblDohodak);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblMirovinsko2Ukupno);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblMirovinsko1Ukupno);
+            this.Controls.Add(this.lblMirovinsko2Iznos);
+            this.Controls.Add(this.lblMirovinsko1Iznos);
+            this.Controls.Add(this.lblMirovinsko2);
+            this.Controls.Add(this.lblMirovinsko1);
+            this.Controls.Add(this.lblDoprinosIZ);
+            this.Controls.Add(this.lblBrutoIznos);
+            this.Controls.Add(this.lblBruto);
+            this.Controls.Add(this.lblZaposljavanjeIznos);
+            this.Controls.Add(this.lblZaposljavanjePostotak);
+            this.Controls.Add(this.lblUkupnoZastita);
+            this.Controls.Add(this.lblZastitaIznos);
+            this.Controls.Add(this.lblZastitaPostotak);
+            this.Controls.Add(this.lblZastitaUkupno);
+            this.Controls.Add(this.lblTrosakUkupno);
+            this.Controls.Add(this.lblIznosZdradstvenoUkupno);
+            this.Controls.Add(this.lblZdradstvenoIznos);
+            this.Controls.Add(this.lblZdradstvenoPostotak);
+            this.Controls.Add(this.lblZdradstveno);
+            this.Controls.Add(this.lblZastita);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblIznosTroska);
+            this.Controls.Add(this.lblDoprinosNa);
+            this.Controls.Add(this.lblUkupanTrosak);
+            this.Controls.Add(this.btnKraj);
+            this.Controls.Add(this.btnIzracunaj);
+            this.Controls.Add(this.lblVrsta);
+            this.Controls.Add(this.rbNeto);
+            this.Controls.Add(this.rbUkupanTrosak);
+            this.Controls.Add(this.rbBruto);
+            this.Controls.Add(this.lblPlaca);
+            this.Controls.Add(this.txtPlaca);
+            this.Controls.Add(this.cmbPrirez);
+            this.Controls.Add(this.lblPrirez);
+            this.Controls.Add(this.lblUkupanOdbitak);
+            this.Controls.Add(this.lblOdbitak);
+            this.Controls.Add(this.lblObracun);
             this.Controls.Add(this.dgvRadnici);
             this.Controls.Add(this.gpUnosSati);
             this.Controls.Add(this.btnIzmijeni);
@@ -546,6 +1164,8 @@
             this.gpUnosSati.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadnici)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prirezBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1271,7 +1891,140 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn662;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn663;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn664;
+        private System.Windows.Forms.Label lblObracun;
+        private System.Windows.Forms.Label lblOdbitak;
+        private System.Windows.Forms.Label lblUkupanOdbitak;
+        private System.Windows.Forms.Label lblPrirez;
+        private System.Windows.Forms.ComboBox cmbPrirez;
+        private System.Windows.Forms.TextBox txtPlaca;
+        private System.Windows.Forms.Label lblPlaca;
+        private System.Windows.Forms.RadioButton rbBruto;
+        private System.Windows.Forms.RadioButton rbUkupanTrosak;
+        private System.Windows.Forms.RadioButton rbNeto;
+        private System.Windows.Forms.Label lblVrsta;
+        private System.Windows.Forms.Button btnIzracunaj;
+        private System.Windows.Forms.Button btnKraj;
+        private System.Windows.Forms.Label lblUkupanTrosak;
+        private System.Windows.Forms.Label lblDoprinosNa;
+        private System.Windows.Forms.Label lblIznosTroska;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblZastita;
+        private System.Windows.Forms.Label lblZdradstveno;
+        private System.Windows.Forms.Label lblZdradstvenoPostotak;
+        private System.Windows.Forms.Label lblZdradstvenoIznos;
+        private System.Windows.Forms.Label lblIznosZdradstvenoUkupno;
+        private System.Windows.Forms.Label lblTrosakUkupno;
+        private System.Windows.Forms.Label lblZastitaUkupno;
+        private System.Windows.Forms.Label lblZastitaPostotak;
+        private System.Windows.Forms.Label lblZastitaIznos;
+        private System.Windows.Forms.Label lblUkupnoZastita;
+        private System.Windows.Forms.Label lblZaposljavanjePostotak;
+        private System.Windows.Forms.Label lblZaposljavanjeIznos;
+        private System.Windows.Forms.Label lblBruto;
+        private System.Windows.Forms.Label lblBrutoIznos;
+        private System.Windows.Forms.Label lblDoprinosIZ;
+        private System.Windows.Forms.Label lblMirovinsko1;
+        private System.Windows.Forms.Label lblMirovinsko2;
+        private System.Windows.Forms.Label lblMirovinsko1Iznos;
+        private System.Windows.Forms.Label lblMirovinsko2Iznos;
+        private System.Windows.Forms.Label lblMirovinsko1Ukupno;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblMirovinsko2Ukupno;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblDohodak;
+        private System.Windows.Forms.Label lblDohodakUkupno;
+        private System.Windows.Forms.Label lblOdbitakIzracun;
+        private System.Windows.Forms.Label lblOdbitakUkupno;
+        private System.Windows.Forms.Label lblPorezPrirez;
+        private System.Windows.Forms.Label lblPorezUkupno;
+        private System.Windows.Forms.Label lblDoprinosIZukupno;
+        private System.Windows.Forms.Label lblPorez1;
+        private System.Windows.Forms.Label lblPorez1Iznos;
+        private System.Windows.Forms.Label lblPorez1Postotak;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPorez1Ukupno;
+        private System.Windows.Forms.Label lblPorez2Iznos;
+        private System.Windows.Forms.Label lblPorez2Postotak;
+        private System.Windows.Forms.Label lblPorez2Ukupno;
+        private System.Windows.Forms.Label lblPrirezIzracun;
+        private System.Windows.Forms.Label lblPrirezIznos;
+        private System.Windows.Forms.Label lblPrirezPostotak;
+        private System.Windows.Forms.Label lblPrirezUkupno;
+        private System.Windows.Forms.Label lblNeto;
+        private System.Windows.Forms.Label lblNetoIznos;
+        private System.Windows.Forms.Label lblObavijest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn665;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn666;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn667;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn668;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn669;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn670;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn671;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn672;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn673;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn674;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn675;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn676;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn677;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn678;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn679;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn680;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn681;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn682;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn683;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn684;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn685;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn686;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn687;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn688;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn689;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn690;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn691;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn692;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn693;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn694;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn695;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn696;
+        private System.Windows.Forms.BindingSource poslodavacBindingSource2;
+        private System.Windows.Forms.BindingSource prirezBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn697;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn698;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn699;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn700;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn701;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn702;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn703;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn704;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn705;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn706;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn707;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn708;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn709;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn710;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn711;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn712;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn713;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn714;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn715;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn716;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn717;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn718;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn719;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn720;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn721;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn722;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn723;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn724;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn725;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn726;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn727;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn728;
         private System.Windows.Forms.BindingSource radnikBindingSource;
+        private System.Windows.Forms.Label lblValuta;
+        private System.Windows.Forms.RadioButton rbStandardni;
+        private System.Windows.Forms.RadioButton rbZaposlenje;
+        private System.Windows.Forms.RadioButton rbOsoba;
+        private System.Windows.Forms.RadioButton rbMinimalnaPlaca;
         /* private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
