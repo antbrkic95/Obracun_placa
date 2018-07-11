@@ -86,6 +86,7 @@ namespace obracun_placa
             }
             //Close();
             OsvjeziRadnike();
+            
 
         }
 
@@ -100,7 +101,7 @@ namespace obracun_placa
             OsvjeziRadnike();
             OsvjeziOdbitakDjeca();
             OsvjeziOdbitakClanovi();
-            lblUkupanOdbitak.Text = "3.800,00 HRK";
+            lblUkupanOdbitak.Text = "3800,00 ";
             /*cmbPrirez.Items.Add("0%");
             cmbPrirez.Items.Add("Slavonski Brod (12%)");
             cmbPrirez.Items.Add("Sibinj (10%)");*/
@@ -270,31 +271,60 @@ namespace obracun_placa
             this.Close();
         }
 
-       /* private void ProvjeriObracun(obracun_placa o) {
+        /* private void ProvjeriObracun(obracun_placa o) {
 
-            if (cbStandardni.Checked == true)
+             if (cbStandardni.Checked == true)
+             {
+
+                 //o.placa = placa;
+                 o.vrsta_obracuna = "Standardni obracun";
+             }
+             else if (cbPrvoZaposlenje.Checked == true)
+             {
+
+                 o.vrsta_obracuna = "Prvo zaposlenje";
+                // o.placa = placa;
+             }
+             else if (cbOsoba.Checked == true) {
+                 o.vrsta_obracuna = "Osoba mladja od 30 godina";
+                // o.placa = placa;
+             }
+             else if(cbMinimalnaPLaća.Checked==true){
+                 o.vrsta_obracuna = "Minimalna placa";
+                 //o.placa = placa;
+
+             }
+
+         }*/
+
+        private void dodajObracun(placa p) {
+
+            if (cbOsoba.Checked == true || cbMinimalna.Checked == true || cbStandardni.Checked == true || cbZaposlenje.Checked == true)
             {
-
-                //o.placa = placa;
-                o.vrsta_obracuna = "Standardni obracun";
-            }
-            else if (cbPrvoZaposlenje.Checked == true)
-            {
-
-                o.vrsta_obracuna = "Prvo zaposlenje";
-               // o.placa = placa;
-            }
-            else if (cbOsoba.Checked == true) {
-                o.vrsta_obracuna = "Osoba mladja od 30 godina";
-               // o.placa = placa;
-            }
-            else if(cbMinimalnaPLaća.Checked==true){
-                o.vrsta_obracuna = "Minimalna placa";
-                //o.placa = placa;
+                if (cbStandardni.Checked == true)
+                {
+                    p.obracun = "Standardni obracun";
+                }
+                else if (cbZaposlenje.Checked == true)
+                {
+                    p.obracun = "Prvo zaposlenje";
+                }
+                else if (cbOsoba.Checked == true)
+                {
+                    p.obracun = "Osoba mladja od 30 godina";
+                }
+                else if (cbMinimalna.Checked == true) {
+                    p.obracun = "Minimalna placa";
+                }
 
             }
+            else
+                MessageBox.Show("Potrebno je odabrati vrstu obracuna!");
 
-        }*/
+        }
+        
+
+        
         private void btnIzracunaj_Click(object sender, EventArgs e)
         {
             int placa;
@@ -320,13 +350,14 @@ namespace obracun_placa
                          */
                         radnik = radnikPlaca,
                         prirez = odabraniPrirez,
-                        
-                        
+                                            
                     };
-                    
-                   
+                   // DodajObracun(novaPlaca);
+
+
                     if (rbBruto.Checked == true || rbNeto.Checked == true || rbUkupanTrosak.Checked == true)
                     {
+                        dodajObracun(novaPlaca);
                         ProvjeriRadioButtone(novaPlaca);
                         db.placa.Add(novaPlaca);
                         db.SaveChanges();
@@ -338,18 +369,7 @@ namespace obracun_placa
                 else
                     MessageBox.Show("Za svakog radnika potrebno je unijeti pripadujuću plaću te plaća mora biti napisana u obliku cjelobrojne vrijednosti!");
             }
-           /* using (var db = new PlaceEntities1())
-            {
-                obracun_placa obracun = new obracun_placa()
-                {
-                    placa = novaPlaca
-                };
-                ProvjeriObracun(obracun);
-                db.obracun_placa.Add(obracun);
-                db.SaveChanges();
-
-
-            }*/
+           
 
 
         }
@@ -369,6 +389,104 @@ namespace obracun_placa
                 p.vrsta = "Ukupan trosak";
             }
             
+        }
+
+        private void cbStandardni_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbStandardni.Checked == true) {
+                cbOsoba.Checked = false;
+                cbMinimalna.Checked = false;
+                cbZaposlenje.Checked = false;
+            }
+        }
+
+        private void cbZaposlenje_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbZaposlenje.Checked == true) {
+
+                cbOsoba.Checked = false;
+                cbMinimalna.Checked = false;
+                cbStandardni.Checked = false;
+            }
+        }
+
+        private void cbOsoba_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbOsoba.Checked == true)
+            {
+
+                cbZaposlenje.Checked = false;
+                cbMinimalna.Checked = false;
+                cbStandardni.Checked = false;
+            }
+        }
+
+        private void racunajOdbitak(odbitakZaDjecu o)
+        {
+
+            if (o.broj_djece == "Dvoje djece")
+                lblUkupanOdbitak.Text = (5550 +  (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Jedno dijete")
+                lblUkupanOdbitak.Text = (3800+ (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Troje djece")
+                lblUkupanOdbitak.Text = (8050 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Četvero djece")
+                lblUkupanOdbitak.Text = (11550 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Petero djece")
+                lblUkupanOdbitak.Text = (16300 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Šestero djece")
+                lblUkupanOdbitak.Text = (22550 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Sedmero djece")
+                lblUkupanOdbitak.Text = (30550 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Osmero djece")
+                lblUkupanOdbitak.Text = (40550 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Devetero djece")
+                lblUkupanOdbitak.Text = (52800 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Desetero djece")
+                lblUkupanOdbitak.Text = (67550 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_djece == "Nema djece")
+                lblUkupanOdbitak.Text = 3800.ToString() + ",00";
+        }
+        private void racunajOdbitakClan(odbitakClan o) {
+
+            if (o.broj_clanova == "Nema")
+                lblUkupanOdbitak.Text = 3800.ToString() + ",00";
+            else if (o.broj_clanova == "Jedan član")
+                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_clanova == "Dva člana")
+                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_clanova == "Tri člana")
+                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_clanova == "Četiri člana")
+                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+            else if (o.broj_clanova == "Pet članova")
+                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+        }
+        private void cbMinimalna_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbMinimalna.Checked == true)
+
+            {
+
+                cbZaposlenje.Checked = false;
+                cbOsoba.Checked = false;
+                cbStandardni.Checked = false;
+            }
+        }
+
+        private void cmbOdbitakDjeca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cmbOdbitakDjeca_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            racunajOdbitak(cmbOdbitakDjeca.SelectedItem as odbitakZaDjecu);
+
+        }
+
+        private void cmbOdbitakClan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            racunajOdbitakClan(cmbOdbitakClan.SelectedItem as odbitakClan);
         }
     }
 }

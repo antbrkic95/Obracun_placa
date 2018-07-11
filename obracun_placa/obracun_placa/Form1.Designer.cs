@@ -130,10 +130,11 @@
             this.lblObavijest = new System.Windows.Forms.Label();
             this.poslodavacBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.lblValuta = new System.Windows.Forms.Label();
-            this.rbStandardni = new System.Windows.Forms.RadioButton();
-            this.rbZaposlenje = new System.Windows.Forms.RadioButton();
-            this.rbOsoba = new System.Windows.Forms.RadioButton();
-            this.rbMinimalnaPlaca = new System.Windows.Forms.RadioButton();
+            this.cbStandardni = new System.Windows.Forms.CheckBox();
+            this.cbMinimalna = new System.Windows.Forms.CheckBox();
+            this.cbOsoba = new System.Windows.Forms.CheckBox();
+            this.cbZaposlenje = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource)).BeginInit();
             this.gbOlaksice.SuspendLayout();
@@ -349,6 +350,7 @@
             this.cmbOdbitakClan.Size = new System.Drawing.Size(121, 21);
             this.cmbOdbitakClan.TabIndex = 1;
             this.cmbOdbitakClan.ValueMember = "ID_odbitakClan";
+            this.cmbOdbitakClan.SelectedIndexChanged += new System.EventHandler(this.cmbOdbitakClan_SelectedIndexChanged);
             // 
             // cmbOdbitakDjeca
             // 
@@ -360,6 +362,7 @@
             this.cmbOdbitakDjeca.Size = new System.Drawing.Size(121, 21);
             this.cmbOdbitakDjeca.TabIndex = 0;
             this.cmbOdbitakDjeca.ValueMember = "ID_odbitakDjeca";
+            this.cmbOdbitakDjeca.SelectedIndexChanged += new System.EventHandler(this.cmbOdbitakDjeca_SelectedIndexChanged_1);
             // 
             // btnIzmijeni
             // 
@@ -1013,59 +1016,69 @@
             this.lblValuta.TabIndex = 98;
             this.lblValuta.Text = "HRK";
             // 
-            // rbStandardni
+            // cbStandardni
             // 
-            this.rbStandardni.AutoSize = true;
-            this.rbStandardni.Location = new System.Drawing.Point(53, 536);
-            this.rbStandardni.Name = "rbStandardni";
-            this.rbStandardni.Size = new System.Drawing.Size(118, 17);
-            this.rbStandardni.TabIndex = 99;
-            this.rbStandardni.TabStop = true;
-            this.rbStandardni.Text = "Standardni obracun";
-            this.rbStandardni.UseVisualStyleBackColor = true;
+            this.cbStandardni.AutoSize = true;
+            this.cbStandardni.Location = new System.Drawing.Point(52, 535);
+            this.cbStandardni.Name = "cbStandardni";
+            this.cbStandardni.Size = new System.Drawing.Size(119, 17);
+            this.cbStandardni.TabIndex = 99;
+            this.cbStandardni.Text = "Standardni obracun";
+            this.cbStandardni.UseVisualStyleBackColor = true;
+            this.cbStandardni.CheckedChanged += new System.EventHandler(this.cbStandardni_CheckedChanged);
             // 
-            // rbZaposlenje
+            // cbMinimalna
             // 
-            this.rbZaposlenje.AutoSize = true;
-            this.rbZaposlenje.Location = new System.Drawing.Point(53, 563);
-            this.rbZaposlenje.Name = "rbZaposlenje";
-            this.rbZaposlenje.Size = new System.Drawing.Size(100, 17);
-            this.rbZaposlenje.TabIndex = 100;
-            this.rbZaposlenje.TabStop = true;
-            this.rbZaposlenje.Text = "Prvo zaposlenje";
-            this.rbZaposlenje.UseVisualStyleBackColor = true;
+            this.cbMinimalna.AutoSize = true;
+            this.cbMinimalna.Location = new System.Drawing.Point(52, 620);
+            this.cbMinimalna.Name = "cbMinimalna";
+            this.cbMinimalna.Size = new System.Drawing.Size(102, 17);
+            this.cbMinimalna.TabIndex = 100;
+            this.cbMinimalna.Text = "Minimalna placa";
+            this.cbMinimalna.UseVisualStyleBackColor = true;
+            this.cbMinimalna.CheckedChanged += new System.EventHandler(this.cbMinimalna_CheckedChanged);
             // 
-            // rbOsoba
+            // cbOsoba
             // 
-            this.rbOsoba.AutoSize = true;
-            this.rbOsoba.Location = new System.Drawing.Point(53, 590);
-            this.rbOsoba.Name = "rbOsoba";
-            this.rbOsoba.Size = new System.Drawing.Size(154, 17);
-            this.rbOsoba.TabIndex = 101;
-            this.rbOsoba.TabStop = true;
-            this.rbOsoba.Text = "Osoba mladja od 30 godina";
-            this.rbOsoba.UseVisualStyleBackColor = true;
+            this.cbOsoba.AutoSize = true;
+            this.cbOsoba.Location = new System.Drawing.Point(52, 590);
+            this.cbOsoba.Name = "cbOsoba";
+            this.cbOsoba.Size = new System.Drawing.Size(155, 17);
+            this.cbOsoba.TabIndex = 101;
+            this.cbOsoba.Text = "Osoba mladja od 30 godina";
+            this.cbOsoba.UseVisualStyleBackColor = true;
+            this.cbOsoba.CheckedChanged += new System.EventHandler(this.cbOsoba_CheckedChanged);
             // 
-            // rbMinimalnaPlaca
+            // cbZaposlenje
             // 
-            this.rbMinimalnaPlaca.AutoSize = true;
-            this.rbMinimalnaPlaca.Location = new System.Drawing.Point(53, 620);
-            this.rbMinimalnaPlaca.Name = "rbMinimalnaPlaca";
-            this.rbMinimalnaPlaca.Size = new System.Drawing.Size(101, 17);
-            this.rbMinimalnaPlaca.TabIndex = 102;
-            this.rbMinimalnaPlaca.TabStop = true;
-            this.rbMinimalnaPlaca.Text = "Minimalna placa";
-            this.rbMinimalnaPlaca.UseVisualStyleBackColor = true;
+            this.cbZaposlenje.AutoSize = true;
+            this.cbZaposlenje.Location = new System.Drawing.Point(52, 562);
+            this.cbZaposlenje.Name = "cbZaposlenje";
+            this.cbZaposlenje.Size = new System.Drawing.Size(101, 17);
+            this.cbZaposlenje.TabIndex = 102;
+            this.cbZaposlenje.Text = "Prvo zaposlenje";
+            this.cbZaposlenje.UseVisualStyleBackColor = true;
+            this.cbZaposlenje.CheckedChanged += new System.EventHandler(this.cbZaposlenje_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(209, 399);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 103;
+            this.label2.Text = "HRK";
             // 
             // frmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 1031);
-            this.Controls.Add(this.rbMinimalnaPlaca);
-            this.Controls.Add(this.rbOsoba);
-            this.Controls.Add(this.rbZaposlenje);
-            this.Controls.Add(this.rbStandardni);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbZaposlenje);
+            this.Controls.Add(this.cbOsoba);
+            this.Controls.Add(this.cbMinimalna);
+            this.Controls.Add(this.cbStandardni);
             this.Controls.Add(this.lblValuta);
             this.Controls.Add(this.lblObavijest);
             this.Controls.Add(this.lblNetoIznos);
@@ -2021,10 +2034,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn728;
         private System.Windows.Forms.BindingSource radnikBindingSource;
         private System.Windows.Forms.Label lblValuta;
-        private System.Windows.Forms.RadioButton rbStandardni;
-        private System.Windows.Forms.RadioButton rbZaposlenje;
-        private System.Windows.Forms.RadioButton rbOsoba;
-        private System.Windows.Forms.RadioButton rbMinimalnaPlaca;
+        private System.Windows.Forms.CheckBox cbStandardni;
+        private System.Windows.Forms.CheckBox cbMinimalna;
+        private System.Windows.Forms.CheckBox cbOsoba;
+        private System.Windows.Forms.CheckBox cbZaposlenje;
+        private System.Windows.Forms.Label label2;
         /* private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
