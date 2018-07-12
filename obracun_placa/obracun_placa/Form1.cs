@@ -423,44 +423,198 @@ namespace obracun_placa
 
         private void racunajOdbitak(odbitakZaDjecu o)
         {
+            try
+            {
+                if (o.broj_djece == "Dvoje djece")
+                    lblUkupanOdbitak.Text = (5550 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Jedno dijete")
+                    lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Troje djece")
+                    lblUkupanOdbitak.Text = (8050 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Četvero djece")
+                    lblUkupanOdbitak.Text = (11550 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Petero djece")
+                    lblUkupanOdbitak.Text = (16300 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Šestero djece")
+                    lblUkupanOdbitak.Text = (22550 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Sedmero djece")
+                    lblUkupanOdbitak.Text = (30550 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Osmero djece")
+                    lblUkupanOdbitak.Text = (40550 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Devetero djece")
+                    lblUkupanOdbitak.Text = (52800 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Desetero djece")
+                    lblUkupanOdbitak.Text = (67550 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_djece == "Nema djece")
+                    lblUkupanOdbitak.Text = 3800.ToString() + ",00";
+           
+            }
+            catch { }
 
-            if (o.broj_djece == "Dvoje djece")
-                lblUkupanOdbitak.Text = (5550 +  (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Jedno dijete")
-                lblUkupanOdbitak.Text = (3800+ (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Troje djece")
-                lblUkupanOdbitak.Text = (8050 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Četvero djece")
-                lblUkupanOdbitak.Text = (11550 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Petero djece")
-                lblUkupanOdbitak.Text = (16300 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Šestero djece")
-                lblUkupanOdbitak.Text = (22550 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Sedmero djece")
-                lblUkupanOdbitak.Text = (30550 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Osmero djece")
-                lblUkupanOdbitak.Text = (40550 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Devetero djece")
-                lblUkupanOdbitak.Text = (52800 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Desetero djece")
-                lblUkupanOdbitak.Text = (67550 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_djece == "Nema djece")
-                lblUkupanOdbitak.Text = 3800.ToString() + ",00";
+ 
         }
-        private void racunajOdbitakClan(odbitakClan o) {
 
-            if (o.broj_clanova == "Nema")
-                lblUkupanOdbitak.Text = 3800.ToString() + ",00";
-            else if (o.broj_clanova == "Jedan član")
-                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_clanova == "Dva člana")
-                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_clanova == "Tri člana")
-                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_clanova == "Četiri člana")
-                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
-            else if (o.broj_clanova == "Pet članova")
-                lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+        private void racunajOdbitkeZajedno(odbitakZaDjecu o, odbitakClan odbitakClan) {
+            int ukupno = 3800;
+            int ukupno2 = 8050;
+            int ukupno1 = 5550;
+            int ukupno3 = 11550;
+            int ukupno4 = 16300;
+            int ukupno5 = 22500;
+            int ukupno6 = 30550;
+            int ukupno7 = 40550;
+            int ukupno8 = 52800;
+            int ukupno9 = 67550;
+            int ukupno10 = 84800;
+            try
+            {
+                using (var db = new PlaceEntities4()) {
+
+                    for (int i = 0; i < db.odbitakClan.Count(); i++)
+                    {
+                        if (o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 3800.ToString() + ",00";
+                        else if (o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Dva člana" || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Tri člana" || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno.ToString();
+                        }
+                        if (o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 5550.ToString() + ",00";
+                        else if (o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Dva člana" || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Tri člana" || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno1 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno1 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno1.ToString();
+                        }
+                        if (o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 8050.ToString() + ",00";
+                        else if (o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Dva člana" || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Tri člana" || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno2 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno2 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno2.ToString();
+                        }
+                        if (o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 11550.ToString() + ",00";
+                        else if (o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Dva člana" || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Tri člana" 
+                            || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno3 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno3 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno3.ToString();
+                        }
+                        if (o.broj_djece == "Četvero djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 16300.ToString() + ",00";
+                        else if (o.broj_djece == "Četvero djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Četvero djece" && odbitakClan.broj_clanova == "Dva člana" || o.broj_djece == "Četvero djece" && odbitakClan.broj_clanova == "Tri člana"
+                            || o.broj_djece == "Četvero djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Četvero djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno4 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno4 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno4.ToString();
+                        }
+                        if (o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 22500.ToString() + ",00";
+                        else if (o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Dva člana" || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Tri člana"
+                            || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno5 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno4 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno5.ToString();
+                        }
+                        if (o.broj_djece == "Šestero djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 30550.ToString() + ",00";
+                        else if (o.broj_djece == "Šestero djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Šestero djece" && odbitakClan.broj_clanova == "Dva člana" || o.broj_djece == "Šestero djece" && odbitakClan.broj_clanova == "Tri člana"
+                            || o.broj_djece == "Šestero djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Šestero djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno6 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno4 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno6.ToString();
+                        }
+                        if (o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 40550.ToString() + ",00";
+                        else if (o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Dva člana" 
+                            || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Tri člana"
+                            || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno7 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno7 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno7.ToString();
+                        }
+                        if (o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 52800.ToString() + ",00";
+                        else if (o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Dva člana"
+                            || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Tri člana"
+                            || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno8 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno8 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno8.ToString();
+                        }
+                        if (o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 67550.ToString() + ",00";
+                        else if (o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Dva člana"
+                            || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Tri člana"
+                            || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno9 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno9 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno9.ToString();
+                        }
+                        if (o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Nema")
+                            lblUkupanOdbitak.Text = 84800.ToString() + ",00";
+                        else if (o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Jedan član" || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Dva člana"
+                            || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Tri člana"
+                            || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Četiri člana"
+                            || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Pet članova")
+                        {
+                            lblUkupanOdbitak.Text = (ukupno10 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
+                            ukupno10 = int.Parse(lblUkupanOdbitak.Text);
+                            lblUkupanOdbitak.Text = ukupno10.ToString();
+                        }
+
+
+
+
+
+
+                    }
+
+                }
+               
+             
+            }
+            catch { }
+
+        }
+        private void racunajOdbitakClan(odbitakClan o ) { 
+            try
+            {
+                if (o.broj_clanova == "Nema")
+                    lblUkupanOdbitak.Text = 3800.ToString() + ",00";
+                else if (o.broj_clanova == "Jedan član")
+                    lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_clanova == "Dva člana")
+                    lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_clanova == "Tri člana")
+                    lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_clanova == "Četiri člana")
+                    lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+                else if (o.broj_clanova == "Pet članova")
+                    lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
+            }
+            catch { }
         }
         private void cbMinimalna_CheckedChanged(object sender, EventArgs e)
         {
@@ -481,12 +635,15 @@ namespace obracun_placa
         private void cmbOdbitakDjeca_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             racunajOdbitak(cmbOdbitakDjeca.SelectedItem as odbitakZaDjecu);
+            racunajOdbitkeZajedno(cmbOdbitakDjeca.SelectedItem as odbitakZaDjecu,cmbOdbitakClan.SelectedItem as odbitakClan);
 
         }
-
         private void cmbOdbitakClan_SelectedIndexChanged(object sender, EventArgs e)
         {
             racunajOdbitakClan(cmbOdbitakClan.SelectedItem as odbitakClan);
+            racunajOdbitkeZajedno(cmbOdbitakDjeca.SelectedItem as odbitakZaDjecu, cmbOdbitakClan.SelectedItem as odbitakClan);
+
+
         }
     }
 }

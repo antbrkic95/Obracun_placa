@@ -64,7 +64,6 @@
             this.btnUnosGodisnjeg = new System.Windows.Forms.Button();
             this.btnUnosBolovanja = new System.Windows.Forms.Button();
             this.dgvRadnici = new System.Windows.Forms.DataGridView();
-            this.radnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblObracun = new System.Windows.Forms.Label();
             this.lblOdbitak = new System.Windows.Forms.Label();
             this.lblUkupanOdbitak = new System.Windows.Forms.Label();
@@ -135,6 +134,23 @@
             this.cbOsoba = new System.Windows.Forms.CheckBox();
             this.cbZaposlenje = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.radnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn729 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn730 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn731 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn732 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn733 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn734 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn735 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn736 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn737 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn738 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn739 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn740 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn741 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn742 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn743 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn744 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource)).BeginInit();
             this.gbOlaksice.SuspendLayout();
@@ -142,9 +158,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.odbitakZaDjecuBindingSource)).BeginInit();
             this.gpUnosSati.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadnici)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prirezBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSpremiRadnika
@@ -431,6 +447,23 @@
             // 
             this.dgvRadnici.AutoGenerateColumns = false;
             this.dgvRadnici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRadnici.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn729,
+            this.dataGridViewTextBoxColumn730,
+            this.dataGridViewTextBoxColumn731,
+            this.dataGridViewTextBoxColumn732,
+            this.dataGridViewTextBoxColumn733,
+            this.dataGridViewTextBoxColumn734,
+            this.dataGridViewTextBoxColumn735,
+            this.dataGridViewTextBoxColumn736,
+            this.dataGridViewTextBoxColumn737,
+            this.dataGridViewTextBoxColumn738,
+            this.dataGridViewTextBoxColumn739,
+            this.dataGridViewTextBoxColumn740,
+            this.dataGridViewTextBoxColumn741,
+            this.dataGridViewTextBoxColumn742,
+            this.dataGridViewTextBoxColumn743,
+            this.dataGridViewTextBoxColumn744});
             this.dgvRadnici.DataSource = this.radnikBindingSource;
             this.dgvRadnici.Location = new System.Drawing.Point(263, 34);
             this.dgvRadnici.Name = "dgvRadnici";
@@ -1069,6 +1102,115 @@
             this.label2.TabIndex = 103;
             this.label2.Text = "HRK";
             // 
+            // radnikBindingSource
+            // 
+            this.radnikBindingSource.DataSource = typeof(obracun_placa.radnik);
+            // 
+            // dataGridViewTextBoxColumn729
+            // 
+            this.dataGridViewTextBoxColumn729.DataPropertyName = "ID_radnik";
+            this.dataGridViewTextBoxColumn729.HeaderText = "ID_radnik";
+            this.dataGridViewTextBoxColumn729.Name = "dataGridViewTextBoxColumn729";
+            this.dataGridViewTextBoxColumn729.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn730
+            // 
+            this.dataGridViewTextBoxColumn730.DataPropertyName = "ime";
+            this.dataGridViewTextBoxColumn730.HeaderText = "ime";
+            this.dataGridViewTextBoxColumn730.Name = "dataGridViewTextBoxColumn730";
+            // 
+            // dataGridViewTextBoxColumn731
+            // 
+            this.dataGridViewTextBoxColumn731.DataPropertyName = "prezime";
+            this.dataGridViewTextBoxColumn731.HeaderText = "prezime";
+            this.dataGridViewTextBoxColumn731.Name = "dataGridViewTextBoxColumn731";
+            // 
+            // dataGridViewTextBoxColumn732
+            // 
+            this.dataGridViewTextBoxColumn732.DataPropertyName = "OIB";
+            this.dataGridViewTextBoxColumn732.HeaderText = "OIB";
+            this.dataGridViewTextBoxColumn732.Name = "dataGridViewTextBoxColumn732";
+            // 
+            // dataGridViewTextBoxColumn733
+            // 
+            this.dataGridViewTextBoxColumn733.DataPropertyName = "broj_telefona";
+            this.dataGridViewTextBoxColumn733.HeaderText = "broj_telefona";
+            this.dataGridViewTextBoxColumn733.Name = "dataGridViewTextBoxColumn733";
+            // 
+            // dataGridViewTextBoxColumn734
+            // 
+            this.dataGridViewTextBoxColumn734.DataPropertyName = "broj_racuna";
+            this.dataGridViewTextBoxColumn734.HeaderText = "broj_racuna";
+            this.dataGridViewTextBoxColumn734.Name = "dataGridViewTextBoxColumn734";
+            // 
+            // dataGridViewTextBoxColumn735
+            // 
+            this.dataGridViewTextBoxColumn735.DataPropertyName = "banka";
+            this.dataGridViewTextBoxColumn735.HeaderText = "banka";
+            this.dataGridViewTextBoxColumn735.Name = "dataGridViewTextBoxColumn735";
+            // 
+            // dataGridViewTextBoxColumn736
+            // 
+            this.dataGridViewTextBoxColumn736.DataPropertyName = "adresa";
+            this.dataGridViewTextBoxColumn736.HeaderText = "adresa";
+            this.dataGridViewTextBoxColumn736.Name = "dataGridViewTextBoxColumn736";
+            // 
+            // dataGridViewTextBoxColumn737
+            // 
+            this.dataGridViewTextBoxColumn737.DataPropertyName = "odbitakClan";
+            this.dataGridViewTextBoxColumn737.HeaderText = "odbitakClan";
+            this.dataGridViewTextBoxColumn737.Name = "dataGridViewTextBoxColumn737";
+            this.dataGridViewTextBoxColumn737.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn738
+            // 
+            this.dataGridViewTextBoxColumn738.DataPropertyName = "odbitakZaDjecu";
+            this.dataGridViewTextBoxColumn738.HeaderText = "odbitakZaDjecu";
+            this.dataGridViewTextBoxColumn738.Name = "dataGridViewTextBoxColumn738";
+            this.dataGridViewTextBoxColumn738.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn739
+            // 
+            this.dataGridViewTextBoxColumn739.DataPropertyName = "placa";
+            this.dataGridViewTextBoxColumn739.HeaderText = "placa";
+            this.dataGridViewTextBoxColumn739.Name = "dataGridViewTextBoxColumn739";
+            this.dataGridViewTextBoxColumn739.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn740
+            // 
+            this.dataGridViewTextBoxColumn740.DataPropertyName = "poslodavac";
+            this.dataGridViewTextBoxColumn740.HeaderText = "poslodavac";
+            this.dataGridViewTextBoxColumn740.Name = "dataGridViewTextBoxColumn740";
+            this.dataGridViewTextBoxColumn740.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn741
+            // 
+            this.dataGridViewTextBoxColumn741.DataPropertyName = "radniSati";
+            this.dataGridViewTextBoxColumn741.HeaderText = "radniSati";
+            this.dataGridViewTextBoxColumn741.Name = "dataGridViewTextBoxColumn741";
+            this.dataGridViewTextBoxColumn741.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn742
+            // 
+            this.dataGridViewTextBoxColumn742.DataPropertyName = "sati_blagdani";
+            this.dataGridViewTextBoxColumn742.HeaderText = "sati_blagdani";
+            this.dataGridViewTextBoxColumn742.Name = "dataGridViewTextBoxColumn742";
+            this.dataGridViewTextBoxColumn742.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn743
+            // 
+            this.dataGridViewTextBoxColumn743.DataPropertyName = "sati_bolovanje";
+            this.dataGridViewTextBoxColumn743.HeaderText = "sati_bolovanje";
+            this.dataGridViewTextBoxColumn743.Name = "dataGridViewTextBoxColumn743";
+            this.dataGridViewTextBoxColumn743.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn744
+            // 
+            this.dataGridViewTextBoxColumn744.DataPropertyName = "sati_godisnji";
+            this.dataGridViewTextBoxColumn744.HeaderText = "sati_godisnji";
+            this.dataGridViewTextBoxColumn744.Name = "dataGridViewTextBoxColumn744";
+            this.dataGridViewTextBoxColumn744.Visible = false;
+            // 
             // frmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1176,9 +1318,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.odbitakZaDjecuBindingSource)).EndInit();
             this.gpUnosSati.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadnici)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prirezBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2032,13 +2174,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn726;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn727;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn728;
-        private System.Windows.Forms.BindingSource radnikBindingSource;
         private System.Windows.Forms.Label lblValuta;
         private System.Windows.Forms.CheckBox cbStandardni;
         private System.Windows.Forms.CheckBox cbMinimalna;
         private System.Windows.Forms.CheckBox cbOsoba;
         private System.Windows.Forms.CheckBox cbZaposlenje;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn729;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn730;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn731;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn732;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn733;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn734;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn735;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn736;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn737;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn738;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn739;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn740;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn741;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn742;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn743;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn744;
+        private System.Windows.Forms.BindingSource radnikBindingSource;
         /* private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
