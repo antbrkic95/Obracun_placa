@@ -31,7 +31,6 @@ namespace obracun_placa
 
         public BindingList<odbitakClan> vratiClan()
         {
-
             BindingList<odbitakClan> lista = null;
             using (var db = new PlaceEntities4())
             {
@@ -39,7 +38,6 @@ namespace obracun_placa
                 lista = new BindingList<odbitakClan>(db.odbitakClan.ToList());
             }
             return lista;
-
         }
     }
 }

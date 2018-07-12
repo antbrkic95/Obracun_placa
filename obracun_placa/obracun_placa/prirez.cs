@@ -21,17 +21,16 @@ namespace obracun_placa
         {
             this.placa = new HashSet<placa>();
         }
-    
+
         public int ID_prirez { get; set; }
         public string opcina { get; set; }
         public Nullable<int> postotak { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<placa> placa { get; set; }
 
         public BindingList<prirez> vratiPrirez()
         {
-
             BindingList<prirez> lista = null;
             using (var db = new PlaceEntities4())
             {
@@ -39,7 +38,6 @@ namespace obracun_placa
                 lista = new BindingList<prirez>(db.prirez.ToList());
             }
             return lista;
-
         }
     }
 }

@@ -101,10 +101,8 @@ namespace obracun_placa
             OsvjeziRadnike();
             OsvjeziOdbitakDjeca();
             OsvjeziOdbitakClanovi();
-            lblUkupanOdbitak.Text = "3800,00 ";
-            /*cmbPrirez.Items.Add("0%");
-            cmbPrirez.Items.Add("Slavonski Brod (12%)");
-            cmbPrirez.Items.Add("Sibinj (10%)");*/
+            lblUkupanOdbitak.Text = "3800";
+        
             OsvjeziPrireze();
         }
 
@@ -271,31 +269,74 @@ namespace obracun_placa
             this.Close();
         }
 
-        /* private void ProvjeriObracun(obracun_placa o) {
+        //metode za izracun
 
-             if (cbStandardni.Checked == true)
-             {
+        private void racunajStandardni(placa p) {
+            prirez odabrani = cmbPrirez.SelectedItem as prirez;
+            if (cbStandardni.Checked == true && rbBruto.Checked == true) {
+                lblPrirezPostotak.Text = odabrani.postotak.ToString()+"%"; ;
+                lblBrutoIznos.Text = txtPlaca.Text;
+                lblMirovinsko1Iznos.Text = txtPlaca.Text;
+                lblmirovinsko2Iznos.Text = txtPlaca.Text;
+                p.ukupno_bruto = p.visina;
 
-                 //o.placa = placa;
-                 o.vrsta_obracuna = "Standardni obracun";
-             }
-             else if (cbPrvoZaposlenje.Checked == true)
-             {
+                lblMirovinsko1Ukupno.Text = (p.visina * 0.15).ToString();
+                lblMirovinsko2Ukupno.Text = (p.visina * 0.05).ToString();
 
-                 o.vrsta_obracuna = "Prvo zaposlenje";
-                // o.placa = placa;
-             }
-             else if (cbOsoba.Checked == true) {
-                 o.vrsta_obracuna = "Osoba mladja od 30 godina";
-                // o.placa = placa;
-             }
-             else if(cbMinimalnaPLaća.Checked==true){
-                 o.vrsta_obracuna = "Minimalna placa";
-                 //o.placa = placa;
+                lblDoprinosIZukupno.Text = ((p.visina * 0.15) + (p.visina * 0.05)).ToString();
+                p.dohodak =p.visina-(int)((p.visina*0.15)+ (p.visina * 0.05));
+                lblDohodakUkupno.Text= (p.visina - (float)((p.visina * 0.15) + (p.visina * 0.05))).ToString();
 
-             }
+                lblZdradstvenoIznos.Text= txtPlaca.Text; ;
+                lblZastitaIznos.Text= txtPlaca.Text;
+                lblZaposljavanjeIznos.Text = txtPlaca.Text;
 
-         }*/
+                lblIznosZdradstvenoUkupno.Text= (p.visina * 0.15).ToString();
+                lblZastitaUkupno.Text= (p.visina * 0.005).ToString();
+                lblZaposlavanjeUkupno.Text= (p.visina * 0.017).ToString();
+
+                lblTrosakUkupno.Text = ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)).ToString();
+
+                lblUkupanTrosakIznos.Text = (p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017))).ToString();
+                p.ukupno_trosak = (int)(p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)));
+
+                float odbitak = float.Parse(lblUkupanOdbitak.Text);
+                //MessageBox.Show(x);
+
+                float dohodak = (float)(p.dohodak);
+
+                if (dohodak < odbitak)
+                {
+                    p.ukupno_neto = p.dohodak;
+                    lblNetoIznos.Text = lblDohodakUkupno.Text;
+                    lblPorez1Iznos.Text = 0 + ",00";
+                    lblPorez2Iznos.Text = 0 + ",00";
+                    lblPrirezIznos.Text = 0 + ",00";
+                    lblPorez1Ukupno.Text = lblPorez1Iznos.Text;
+                    lblPorez2Ukupno.Text = lblPorez2Iznos.Text;
+                    lblPrirezUkupno.Text = lblPrirezIznos.Text;
+                    lblPorezUkupno.Text = 0 + ",00";
+                }
+                else {
+                    float razlika = dohodak - odbitak;
+                    lblPorez1Iznos.Text = razlika.ToString();
+                    lblPorez1Ukupno.Text = (float.Parse(lblPorez1Iznos.Text) * 0.24).ToString();
+                    lblPrirezIznos.Text = lblPorez1Ukupno.Text;
+                    lblPorez2Iznos.Text= 0 + ",00";
+                    lblPorez2Ukupno.Text= 0 + ",00"; 
+                    if (odabrani.postotak == 12)
+                        lblPrirezUkupno.Text = (double.Parse(lblPrirezIznos.Text) * 0.12).ToString();
+                    else if (odabrani.postotak == 10)
+                        lblPrirezUkupno.Text = (double.Parse(lblPrirezIznos.Text) * 0.1).ToString();
+                    else if (odabrani.postotak == 0)
+                        lblPrirezUkupno.Text = 0 + ",00";
+                    lblPorezUkupno.Text = (double.Parse(lblPorez1Ukupno.Text) + double.Parse(lblPorez2Ukupno.Text) + double.Parse(lblPrirezUkupno.Text)).ToString();
+                    lblNetoIznos.Text = ((p.visina - (float)((p.visina * 0.15) + (p.visina * 0.05)))-float.Parse(lblPorezUkupno.Text)).ToString();
+                    p.ukupno_neto =(int) ((p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05))) - float.Parse(lblPorezUkupno.Text));
+                }
+            }
+
+        }
 
         private void dodajObracun(placa p) {
 
@@ -352,7 +393,8 @@ namespace obracun_placa
                         prirez = odabraniPrirez,
                                             
                     };
-                   // DodajObracun(novaPlaca);
+                    // DodajObracun(novaPlaca);
+                    racunajStandardni(novaPlaca);
 
 
                     if (rbBruto.Checked == true || rbNeto.Checked == true || rbUkupanTrosak.Checked == true)
@@ -361,6 +403,9 @@ namespace obracun_placa
                         ProvjeriRadioButtone(novaPlaca);
                         db.placa.Add(novaPlaca);
                         db.SaveChanges();
+                        lblOdbitakUkupno.Text = lblUkupanOdbitak.Text;
+
+
                     }
                     else
                         MessageBox.Show("Morate odabrati vrstu plaće!");
@@ -369,7 +414,7 @@ namespace obracun_placa
                 else
                     MessageBox.Show("Za svakog radnika potrebno je unijeti pripadujuću plaću te plaća mora biti napisana u obliku cjelobrojne vrijednosti!");
             }
-           
+
 
 
         }
