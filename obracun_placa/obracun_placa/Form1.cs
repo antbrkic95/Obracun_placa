@@ -86,7 +86,7 @@ namespace obracun_placa
             }
             //Close();
             OsvjeziRadnike();
-            
+
 
         }
 
@@ -101,8 +101,10 @@ namespace obracun_placa
             OsvjeziRadnike();
             OsvjeziOdbitakDjeca();
             OsvjeziOdbitakClanovi();
-            lblUkupanOdbitak.Text = "3800";
-        
+            lblUkupanOdbitak.Text = "3800" + ",00";
+
+
+
             OsvjeziPrireze();
         }
 
@@ -128,7 +130,7 @@ namespace obracun_placa
             prirezBindingSource.DataSource = noviPrirez.vratiPrirez();
 
         }
-       private void DohvatiPoslodavce()
+        private void DohvatiPoslodavce()
         {
 
             BindingList<poslodavac> poslodavci = null;
@@ -199,10 +201,10 @@ namespace obracun_placa
             OsvjeziRadnike();
         }
 
-       /* private void cmbOdbitakDjeca_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        /* private void cmbOdbitakDjeca_SelectedIndexChanged(object sender, EventArgs e)
+         {
 
-        }*/
+         }*/
 
         private void btnIzmijeni_Click(object sender, EventArgs e)
         {
@@ -240,7 +242,7 @@ namespace obracun_placa
                 frmUnosBolovanja formaBolovanja = new frmUnosBolovanja(odabraniUnosBolovanja);
                 formaBolovanja.ShowDialog();
             }
-            
+
         }
 
         private void btnUnosPraznika_Click(object sender, EventArgs e)
@@ -271,39 +273,36 @@ namespace obracun_placa
 
         //metode za izracun
 
-        private void racunajStandardni(placa p) {
+        private void racunajMladjiOdBruto(placa p) {
             prirez odabrani = cmbPrirez.SelectedItem as prirez;
-            if (cbStandardni.Checked == true && rbBruto.Checked == true) {
-                lblPrirezPostotak.Text = odabrani.postotak.ToString()+"%"; ;
-                lblBrutoIznos.Text = txtPlaca.Text;
-                lblMirovinsko1Iznos.Text = txtPlaca.Text;
-                lblmirovinsko2Iznos.Text = txtPlaca.Text;
+            if (cbOsoba.Checked == true && rbBruto.Checked == true) {
+                lblObavijestOsoba.Text = "Kod izračuna plaće za osobe mlađe od 30 godina poslodavac je oslobođen plaćanja doprinosa na plaću u roku od pet godina.";
+                lblBrutoIznos.Text = double.Parse(txtPlaca.Text) + ",00".ToString();
+                lblZastitaIznos.Text = lblBrutoIznos.Text;
+                lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
+                lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
+                lblZaposlavanjeUkupno.Text = 0 + ",00";
+                lblZastitaUkupno.Text = 0 + ",00";
+                lblIznosZdradstvenoUkupno.Text = 0 + ",00";
+                lblZaposljavanjePostotak.Text = 0 + ",00 %";
+                lblZdradstvenoPostotak.Text = 0 + ",00 %";
+                lblZastitaPostotak.Text = 0 + ",00 %";
+                lblTrosakUkupno.Text = 0 + ",00";
+                lblPrirezPostotak.Text = odabrani.postotak.ToString() + "%";
                 p.ukupno_bruto = p.visina;
+                p.ukupno_trosak = p.ukupno_bruto;
+                lblUkupanTrosakIznos.Text = lblBrutoIznos.Text;
+
 
                 lblMirovinsko1Ukupno.Text = (p.visina * 0.15).ToString();
                 lblMirovinsko2Ukupno.Text = (p.visina * 0.05).ToString();
-
                 lblDoprinosIZukupno.Text = ((p.visina * 0.15) + (p.visina * 0.05)).ToString();
-                p.dohodak =p.visina-(int)((p.visina*0.15)+ (p.visina * 0.05));
-                lblDohodakUkupno.Text= (p.visina - (float)((p.visina * 0.15) + (p.visina * 0.05))).ToString();
+                p.dohodak = p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05));
+                lblDohodakUkupno.Text = ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05))).ToString();
 
-                lblZdradstvenoIznos.Text= txtPlaca.Text; ;
-                lblZastitaIznos.Text= txtPlaca.Text;
-                lblZaposljavanjeIznos.Text = txtPlaca.Text;
+                double odbitak = double.Parse(lblUkupanOdbitak.Text);
 
-                lblIznosZdradstvenoUkupno.Text= (p.visina * 0.15).ToString();
-                lblZastitaUkupno.Text= (p.visina * 0.005).ToString();
-                lblZaposlavanjeUkupno.Text= (p.visina * 0.017).ToString();
-
-                lblTrosakUkupno.Text = ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)).ToString();
-
-                lblUkupanTrosakIznos.Text = (p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017))).ToString();
-                p.ukupno_trosak = (int)(p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)));
-
-                float odbitak = float.Parse(lblUkupanOdbitak.Text);
-                //MessageBox.Show(x);
-
-                float dohodak = (float)(p.dohodak);
+                double dohodak = ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)));
 
                 if (dohodak < odbitak)
                 {
@@ -317,25 +316,293 @@ namespace obracun_placa
                     lblPrirezUkupno.Text = lblPrirezIznos.Text;
                     lblPorezUkupno.Text = 0 + ",00";
                 }
-                else {
-                    float razlika = dohodak - odbitak;
+                else
+                {
+                    double razlika = dohodak - odbitak;
                     lblPorez1Iznos.Text = razlika.ToString();
-                    lblPorez1Ukupno.Text = (float.Parse(lblPorez1Iznos.Text) * 0.24).ToString();
+                    lblPorez1Ukupno.Text = (double.Parse(lblPorez1Iznos.Text) * 0.24).ToString();
                     lblPrirezIznos.Text = lblPorez1Ukupno.Text;
-                    lblPorez2Iznos.Text= 0 + ",00";
-                    lblPorez2Ukupno.Text= 0 + ",00"; 
-                    if (odabrani.postotak == 12)
+
+                    lblPorez2Iznos.Text = 0 + ",00";
+                    lblPorez2Ukupno.Text = 0 + ",00";
+
+                    lblPrirezUkupno.Text = Math.Round((double.Parse(lblPrirezIznos.Text) * (double)(odabrani.postotak * 0.01)), 2).ToString();
+                    lblPorezUkupno.Text = Math.Round((double.Parse(lblPorez1Ukupno.Text) + double.Parse(lblPorez2Ukupno.Text) + double.Parse(lblPrirezUkupno.Text)), 2).ToString();
+                    lblNetoIznos.Text = ((p.visina - (double)((p.visina * 0.15) + (p.visina * 0.05))) - Math.Round(double.Parse(lblPorezUkupno.Text), 2)).ToString();
+                    p.ukupno_neto = (int)((p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05))) - float.Parse(lblPorezUkupno.Text));
+                }
+
+            }
+
+        }
+
+
+
+        private void racunajStandardniBruto(placa p) {
+            prirez odabrani = cmbPrirez.SelectedItem as prirez;
+            lblObavijestOsoba.Text = "";
+
+            if (cbStandardni.Checked == true && rbBruto.Checked == true) {
+                lblPrirezPostotak.Text = odabrani.postotak.ToString() + "%"; ;
+                lblBrutoIznos.Text = double.Parse(txtPlaca.Text).ToString();
+                lblMirovinsko1Iznos.Text = txtPlaca.Text;
+                lblmirovinsko2Iznos.Text = txtPlaca.Text;
+                p.ukupno_bruto = p.visina;
+
+                lblMirovinsko1Ukupno.Text = (p.visina * 0.15).ToString();
+                lblMirovinsko2Ukupno.Text = (p.visina * 0.05).ToString();
+
+                lblDoprinosIZukupno.Text = ((p.visina * 0.15) + (p.visina * 0.05)).ToString();
+                p.dohodak = p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05));
+                lblDohodakUkupno.Text = ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05))).ToString();
+
+                lblZdradstvenoIznos.Text = txtPlaca.Text; ;
+                lblZastitaIznos.Text = txtPlaca.Text;
+                lblZaposljavanjeIznos.Text = txtPlaca.Text;
+                lblZdradstvenoPostotak.Text = 15 + ",00 %";
+                lblZastitaPostotak.Text = 1.7 + "%";
+                lblZaposljavanjePostotak.Text = 0.5 + "%";
+
+                lblIznosZdradstvenoUkupno.Text = (p.visina * 0.15).ToString();
+                lblZastitaUkupno.Text = (p.visina * 0.005).ToString();
+                lblZaposlavanjeUkupno.Text = (p.visina * 0.017).ToString();
+
+                lblTrosakUkupno.Text = ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)).ToString();
+
+                lblUkupanTrosakIznos.Text = (p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017))).ToString();
+                p.ukupno_trosak = (int)(p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)));
+
+                double odbitak = double.Parse(lblUkupanOdbitak.Text);
+
+                double dohodak = ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)));
+
+                if (dohodak < odbitak)
+                {
+                    p.ukupno_neto = p.dohodak;
+                    lblNetoIznos.Text = lblDohodakUkupno.Text;
+                    lblPorez1Iznos.Text = 0 + ",00";
+                    lblPorez2Iznos.Text = 0 + ",00";
+                    lblPrirezIznos.Text = 0 + ",00";
+                    lblPorez1Ukupno.Text = lblPorez1Iznos.Text;
+                    lblPorez2Ukupno.Text = lblPorez2Iznos.Text;
+                    lblPrirezUkupno.Text = lblPrirezIznos.Text;
+                    lblPorezUkupno.Text = 0 + ",00";
+                
+                }
+                else {
+                    double razlika = dohodak - odbitak;
+                    lblPorez1Iznos.Text = razlika.ToString();
+                    lblPorez1Ukupno.Text = (double.Parse(lblPorez1Iznos.Text) * 0.24).ToString();
+                    lblPrirezIznos.Text = lblPorez1Ukupno.Text;
+
+                    lblPorez2Iznos.Text = 0 + ",00";
+                    lblPorez2Ukupno.Text = 0 + ",00";
+
+                    /*if (odabrani.postotak == 12)
                         lblPrirezUkupno.Text = (double.Parse(lblPrirezIznos.Text) * 0.12).ToString();
                     else if (odabrani.postotak == 10)
                         lblPrirezUkupno.Text = (double.Parse(lblPrirezIznos.Text) * 0.1).ToString();
                     else if (odabrani.postotak == 0)
-                        lblPrirezUkupno.Text = 0 + ",00";
-                    lblPorezUkupno.Text = (double.Parse(lblPorez1Ukupno.Text) + double.Parse(lblPorez2Ukupno.Text) + double.Parse(lblPrirezUkupno.Text)).ToString();
-                    lblNetoIznos.Text = ((p.visina - (float)((p.visina * 0.15) + (p.visina * 0.05)))-float.Parse(lblPorezUkupno.Text)).ToString();
-                    p.ukupno_neto =(int) ((p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05))) - float.Parse(lblPorezUkupno.Text));
+                        lblPrirezUkupno.Text = 0 + ",00";*/
+                    lblPrirezUkupno.Text = Math.Round((double.Parse(lblPrirezIznos.Text) * (double)(odabrani.postotak * 0.01)), 2).ToString();
+                    lblPorezUkupno.Text = Math.Round((double.Parse(lblPorez1Ukupno.Text) + double.Parse(lblPorez2Ukupno.Text) + double.Parse(lblPrirezUkupno.Text)), 2).ToString();
+                    lblNetoIznos.Text = ((p.visina - (double)((p.visina * 0.15) + (p.visina * 0.05))) - Math.Round(double.Parse(lblPorezUkupno.Text), 2)).ToString();
+                    p.ukupno_neto = (int)((p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05))) - float.Parse(lblPorezUkupno.Text));
                 }
             }
 
+        }
+
+        private void racunajMladjiOdNeto(placa p)
+        {
+            double razlika;
+            prirez odabrani = cmbPrirez.SelectedItem as prirez;
+            if (cbOsoba.Checked == true && rbNeto.Checked == true)
+            {
+                lblObavijestOsoba.Text = "Kod izračuna plaće za osobe mlađe od 30 godina poslodavac je oslobođen plaćanja doprinosa na plaću u roku od pet godina.";
+                lblNetoIznos.Text = double.Parse(txtPlaca.Text) + ",00".ToString();
+                lblZastitaIznos.Text = lblBrutoIznos.Text;
+                lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
+                lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
+                lblZaposlavanjeUkupno.Text = 0 + ",00";
+                lblZastitaUkupno.Text = 0 + ",00";
+                lblIznosZdradstvenoUkupno.Text = 0 + ",00";
+                lblZaposljavanjePostotak.Text = 0 + ",00 %";
+                lblZdradstvenoPostotak.Text = 0 + ",00 %";
+                lblZastitaPostotak.Text = 0 + ",00 %";
+                lblTrosakUkupno.Text = 0 + ",00";
+                lblPrirezPostotak.Text = odabrani.postotak.ToString() + "%";
+                p.ukupno_neto = p.visina;
+                double odbitak = double.Parse(lblUkupanOdbitak.Text);
+                double neto = double.Parse(txtPlaca.Text);
+                if (neto <= odbitak)
+                {
+                    p.dohodak = p.ukupno_neto;
+                    lblDohodakUkupno.Text = lblNetoIznos.Text;
+                    lblPorez1Iznos.Text = 0 + ",00";
+                    lblPorez2Iznos.Text = 0 + ",00";
+                    lblPrirezIznos.Text = 0 + ",00";
+                    lblPorez1Ukupno.Text = lblPorez1Iznos.Text;
+                    lblPorez2Ukupno.Text = lblPorez2Iznos.Text;
+                    lblPrirezUkupno.Text = lblPrirezIznos.Text;
+                    lblPorezUkupno.Text = 0 + ",00";
+                    lblBrutoIznos.Text = ((100 * neto) / (100 - 20)).ToString();
+                    p.ukupno_bruto = (int)((100 * neto) / (100 - 20));
+                    p.ukupno_trosak = p.ukupno_bruto;
+                    lblUkupanTrosakIznos.Text = lblBrutoIznos.Text;
+                    lblMirovinsko1Iznos.Text = lblBrutoIznos.Text;
+                    lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
+                    lblMirovinsko1Ukupno.Text = (double.Parse(lblMirovinsko1Iznos.Text) * 0.15).ToString();
+                    lblMirovinsko2Ukupno.Text = (double.Parse(lblmirovinsko2Iznos.Text) * 0.05).ToString();
+                    lblDoprinosIZukupno.Text = ((double.Parse(lblMirovinsko1Iznos.Text) * 0.15) + (double.Parse(lblmirovinsko2Iznos.Text) * 0.05)).ToString();
+                    lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
+                    lblZastitaIznos.Text = lblBrutoIznos.Text;
+                    lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
+
+                }
+                else if (neto > odbitak)
+                {
+
+                    lblBrutoIznos.Text = Math.Round((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak))))), 2).ToString();
+                    p.ukupno_bruto = (int)Math.Round((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak))))), 2);
+                    p.ukupno_trosak = p.ukupno_bruto;
+
+                    lblMirovinsko1Iznos.Text = lblBrutoIznos.Text;
+                    lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
+
+                    lblMirovinsko1Ukupno.Text = Math.Round((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.15), 2).ToString();
+
+                    lblMirovinsko2Ukupno.Text = Math.Round((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.05), 2).ToString();
+                    lblDoprinosIZukupno.Text = Math.Round(((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.15) +
+                        (((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.05)), 2).ToString();
+
+                    lblDohodakUkupno.Text = Math.Round(((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak))))) -
+                        ((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.15) +
+                        (((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.05))), 2).ToString();
+
+                    p.dohodak = (int)Math.Round(((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak))))) -
+                        ((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.15) +
+                        (((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.05))), 2);
+
+                    double dohodak = double.Parse(lblDohodakUkupno.Text);
+                    razlika = dohodak - odbitak;
+
+                    lblPorez1Iznos.Text = razlika.ToString();
+                    lblPorez1Ukupno.Text = Math.Round((double.Parse(lblPorez1Iznos.Text) * 0.24), 2).ToString();
+                    lblPorez2Iznos.Text = 0 + ",00";
+                    lblPorez2Ukupno.Text = 0 + ",00";
+                    lblPrirezIznos.Text = lblPorez1Ukupno.Text;
+                    lblPrirezUkupno.Text = Math.Round((double.Parse(lblPrirezIznos.Text) * (double)(odabrani.postotak * 0.01)), 2).ToString();
+                    lblPorezUkupno.Text = Math.Round((double.Parse(lblPorez1Ukupno.Text) + double.Parse(lblPorez2Ukupno.Text) + double.Parse(lblPrirezUkupno.Text)), 2).ToString();
+
+                    lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
+                    lblZastitaIznos.Text = lblBrutoIznos.Text;
+                    lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
+                    lblUkupanTrosakIznos.Text = lblBrutoIznos.Text;
+
+
+                }
+
+            }
+        }
+
+        private void racunajStandardniNeto(placa p)
+        {
+            double razlika;
+            lblObavijestOsoba.Text = "";
+            prirez odabrani = cmbPrirez.SelectedItem as prirez;
+            if (cbStandardni.Checked == true && rbNeto.Checked == true)
+            {
+
+                lblNetoIznos.Text = double.Parse(txtPlaca.Text).ToString() + ",00";
+                p.ukupno_neto = p.visina;
+                lblPrirezPostotak.Text = odabrani.postotak.ToString() + "%";
+                double odbitak = double.Parse(lblUkupanOdbitak.Text);
+                double neto = double.Parse(txtPlaca.Text);
+                if (neto <= odbitak)
+                {
+                    p.dohodak = p.ukupno_neto;
+                    lblDohodakUkupno.Text = lblNetoIznos.Text;
+                    lblPorez1Iznos.Text = 0 + ",00";
+                    lblPorez2Iznos.Text = 0 + ",00";
+                    lblPrirezIznos.Text = 0 + ",00";
+                    lblPorez1Ukupno.Text = lblPorez1Iznos.Text;
+                    lblPorez2Ukupno.Text = lblPorez2Iznos.Text;
+                    lblPrirezUkupno.Text = lblPrirezIznos.Text;
+                    lblPorezUkupno.Text = 0 + ",00";
+                    lblBrutoIznos.Text = ((100 * neto) / (100 - 20)).ToString();
+                    p.ukupno_bruto = (int)((100 * neto) / (100 - 20));
+                    lblMirovinsko1Iznos.Text = lblBrutoIznos.Text;
+                    lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
+                    lblMirovinsko1Ukupno.Text = (double.Parse(lblMirovinsko1Iznos.Text) * 0.15).ToString();
+                    lblMirovinsko2Ukupno.Text = (double.Parse(lblmirovinsko2Iznos.Text) * 0.05).ToString();
+                    lblDoprinosIZukupno.Text = ((double.Parse(lblMirovinsko1Iznos.Text) * 0.15) + (double.Parse(lblmirovinsko2Iznos.Text) * 0.05)).ToString();
+                    lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
+                    lblZastitaIznos.Text = lblBrutoIznos.Text;
+                    lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
+                    lblZdradstvenoPostotak.Text = 15 + ",00 %";
+                    lblZastitaPostotak.Text = 1.7 +  "%";
+                    lblZaposljavanjePostotak.Text = 0.5 + "%";
+                    lblIznosZdradstvenoUkupno.Text = (double.Parse(lblZdradstvenoIznos.Text) * 0.15).ToString();
+                    lblZaposlavanjeUkupno.Text = (double.Parse(lblZaposljavanjeIznos.Text) * 0.017).ToString();
+                    lblZastitaUkupno.Text = (double.Parse(lblZastitaIznos.Text) * 0.005).ToString();
+
+                    lblTrosakUkupno.Text = ((double.Parse(lblZdradstvenoIznos.Text) * 0.15) + (double.Parse(lblZaposljavanjeIznos.Text) * 0.017) + (double.Parse(lblZastitaIznos.Text) * 0.005)).ToString();
+
+                    lblUkupanTrosakIznos.Text = ((double.Parse(lblTrosakUkupno.Text)) + (double.Parse(lblBrutoIznos.Text))).ToString();
+                    p.ukupno_trosak = (int)((double.Parse(lblTrosakUkupno.Text)) + (double.Parse(lblBrutoIznos.Text)));
+                }
+                else if (neto > odbitak)
+                {
+                    
+                    lblBrutoIznos.Text = Math.Round((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak))))), 2).ToString();
+                    p.ukupno_bruto = (int)Math.Round((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak))))), 2);
+
+                    lblMirovinsko1Iznos.Text = lblBrutoIznos.Text;
+                    lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
+
+                    lblMirovinsko1Ukupno.Text = Math.Round((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.15), 2).ToString();
+
+                    lblMirovinsko2Ukupno.Text = Math.Round((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.05), 2).ToString();
+                    lblDoprinosIZukupno.Text = Math.Round(((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.15) +
+                        (((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.05)), 2).ToString();
+
+                    lblDohodakUkupno.Text = Math.Round(((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak))))) -
+                        ((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.15) +
+                        (((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.05))),2).ToString();
+
+                    p.dohodak = (int)Math.Round(((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak))))) -
+                        ((((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.15) +
+                        (((neto - odbitak * (0.24 + 0.0024 * (double)(odabrani.postotak))) / ((double)(0.608 - 0.00192 * (double)(odabrani.postotak)))) * 0.05))), 2);
+
+                    double dohodak = double.Parse(lblDohodakUkupno.Text);
+                    razlika = dohodak - odbitak;
+
+                    lblPorez1Iznos.Text = razlika.ToString();
+
+                    lblPorez1Ukupno.Text= Math.Round((double.Parse(lblPorez1Iznos.Text) * 0.24),2).ToString();
+                    lblPorez2Iznos.Text = 0 + ",00";
+                    lblPorez2Ukupno.Text = 0 + ",00";
+                    lblPrirezIznos.Text = lblPorez1Ukupno.Text;
+                    lblPrirezUkupno.Text =Math.Round( (double.Parse(lblPrirezIznos.Text) * (double)(odabrani.postotak * 0.01)),2).ToString();
+                    lblPorezUkupno.Text = Math.Round((double.Parse(lblPorez1Ukupno.Text) + double.Parse(lblPorez2Ukupno.Text) + double.Parse(lblPrirezUkupno.Text)),2).ToString();
+
+                    lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
+                    lblZastitaIznos.Text= lblBrutoIznos.Text; 
+                    lblZdradstvenoIznos.Text= lblBrutoIznos.Text;
+
+                    lblZaposlavanjeUkupno.Text = Math.Round((double.Parse(lblBrutoIznos.Text) * 0.017),2).ToString();
+                    lblZastitaUkupno.Text=Math.Round( (double.Parse(lblBrutoIznos.Text) * 0.005),2).ToString();
+                    lblIznosZdradstvenoUkupno.Text= Math.Round((double.Parse(lblBrutoIznos.Text) * 0.15),2).ToString();
+
+                    lblTrosakUkupno.Text = Math.Round(((double.Parse(lblBrutoIznos.Text) * 0.017) + (double.Parse(lblBrutoIznos.Text) * 0.005) + (double.Parse(lblBrutoIznos.Text) * 0.15)), 2).ToString();
+
+                    lblUkupanTrosakIznos.Text = Math.Round((double.Parse(lblBrutoIznos.Text) + double.Parse(lblTrosakUkupno.Text)), 2).ToString();
+                    p.ukupno_trosak = (int)(double.Parse(lblBrutoIznos.Text) + double.Parse(lblTrosakUkupno.Text));
+
+                }
+
+            }
         }
 
         private void dodajObracun(placa p) {
@@ -394,10 +661,13 @@ namespace obracun_placa
                                             
                     };
                     // DodajObracun(novaPlaca);
-                    racunajStandardni(novaPlaca);
+                    racunajStandardniBruto(novaPlaca);
+                    racunajStandardniNeto(novaPlaca);
+                    racunajMladjiOdBruto(novaPlaca);
+                    racunajMladjiOdNeto(novaPlaca);
 
 
-                    if (rbBruto.Checked == true || rbNeto.Checked == true || rbUkupanTrosak.Checked == true)
+                    if (rbBruto.Checked == true || rbNeto.Checked == true )
                     {
                         dodajObracun(novaPlaca);
                         ProvjeriRadioButtone(novaPlaca);
@@ -429,10 +699,7 @@ namespace obracun_placa
             {
                 p.vrsta = "Neto";
             }
-            else if (rbUkupanTrosak.Checked == true)
-            {
-                p.vrsta = "Ukupan trosak";
-            }
+            
             
         }
 
@@ -688,6 +955,11 @@ namespace obracun_placa
             racunajOdbitakClan(cmbOdbitakClan.SelectedItem as odbitakClan);
             racunajOdbitkeZajedno(cmbOdbitakDjeca.SelectedItem as odbitakZaDjecu, cmbOdbitakClan.SelectedItem as odbitakClan);
 
+
+        }
+
+        private void gbOlaksice_Enter(object sender, EventArgs e)
+        {
 
         }
     }

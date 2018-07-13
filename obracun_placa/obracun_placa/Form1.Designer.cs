@@ -90,7 +90,6 @@
             this.txtPlaca = new System.Windows.Forms.TextBox();
             this.lblPlaca = new System.Windows.Forms.Label();
             this.rbBruto = new System.Windows.Forms.RadioButton();
-            this.rbUkupanTrosak = new System.Windows.Forms.RadioButton();
             this.rbNeto = new System.Windows.Forms.RadioButton();
             this.lblVrsta = new System.Windows.Forms.Label();
             this.btnIzracunaj = new System.Windows.Forms.Button();
@@ -152,6 +151,7 @@
             this.cbZaposlenje = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUkupanTrosakIznos = new System.Windows.Forms.Label();
+            this.lblObavijestOsoba = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource)).BeginInit();
             this.gbOlaksice.SuspendLayout();
@@ -338,6 +338,7 @@
             this.gbOlaksice.TabIndex = 26;
             this.gbOlaksice.TabStop = false;
             this.gbOlaksice.Text = "Porezne olaksice";
+            this.gbOlaksice.Enter += new System.EventHandler(this.gbOlaksice_Enter);
             // 
             // lblOdbitakClan
             // 
@@ -657,17 +658,6 @@
             this.rbBruto.Text = "Bruto placa";
             this.rbBruto.UseVisualStyleBackColor = true;
             // 
-            // rbUkupanTrosak
-            // 
-            this.rbUkupanTrosak.AutoSize = true;
-            this.rbUkupanTrosak.Location = new System.Drawing.Point(62, 935);
-            this.rbUkupanTrosak.Name = "rbUkupanTrosak";
-            this.rbUkupanTrosak.Size = new System.Drawing.Size(95, 17);
-            this.rbUkupanTrosak.TabIndex = 44;
-            this.rbUkupanTrosak.TabStop = true;
-            this.rbUkupanTrosak.Text = "Ukupan trosak";
-            this.rbUkupanTrosak.UseVisualStyleBackColor = true;
-            // 
             // rbNeto
             // 
             this.rbNeto.AutoSize = true;
@@ -766,9 +756,8 @@
             this.lblZdradstvenoPostotak.AutoSize = true;
             this.lblZdradstvenoPostotak.Location = new System.Drawing.Point(617, 536);
             this.lblZdradstvenoPostotak.Name = "lblZdradstvenoPostotak";
-            this.lblZdradstvenoPostotak.Size = new System.Drawing.Size(27, 13);
+            this.lblZdradstvenoPostotak.Size = new System.Drawing.Size(0, 13);
             this.lblZdradstvenoPostotak.TabIndex = 55;
-            this.lblZdradstvenoPostotak.Text = "15%";
             // 
             // lblZdradstvenoIznos
             // 
@@ -811,9 +800,8 @@
             this.lblZastitaPostotak.AutoSize = true;
             this.lblZastitaPostotak.Location = new System.Drawing.Point(618, 563);
             this.lblZastitaPostotak.Name = "lblZastitaPostotak";
-            this.lblZastitaPostotak.Size = new System.Drawing.Size(30, 13);
+            this.lblZastitaPostotak.Size = new System.Drawing.Size(0, 13);
             this.lblZastitaPostotak.TabIndex = 60;
-            this.lblZastitaPostotak.Text = "0,5%";
             // 
             // lblZastitaIznos
             // 
@@ -838,9 +826,8 @@
             this.lblZaposljavanjePostotak.AutoSize = true;
             this.lblZaposljavanjePostotak.Location = new System.Drawing.Point(618, 590);
             this.lblZaposljavanjePostotak.Name = "lblZaposljavanjePostotak";
-            this.lblZaposljavanjePostotak.Size = new System.Drawing.Size(30, 13);
+            this.lblZaposljavanjePostotak.Size = new System.Drawing.Size(0, 13);
             this.lblZaposljavanjePostotak.TabIndex = 63;
-            this.lblZaposljavanjePostotak.Text = "1,7%";
             // 
             // lblZaposljavanjeIznos
             // 
@@ -854,7 +841,7 @@
             // lblBruto
             // 
             this.lblBruto.AutoSize = true;
-            this.lblBruto.Location = new System.Drawing.Point(351, 624);
+            this.lblBruto.Location = new System.Drawing.Point(351, 645);
             this.lblBruto.Name = "lblBruto";
             this.lblBruto.Size = new System.Drawing.Size(35, 13);
             this.lblBruto.TabIndex = 65;
@@ -863,7 +850,7 @@
             // lblBrutoIznos
             // 
             this.lblBrutoIznos.AutoSize = true;
-            this.lblBrutoIznos.Location = new System.Drawing.Point(683, 625);
+            this.lblBrutoIznos.Location = new System.Drawing.Point(683, 645);
             this.lblBrutoIznos.Name = "lblBrutoIznos";
             this.lblBrutoIznos.Size = new System.Drawing.Size(35, 13);
             this.lblBrutoIznos.TabIndex = 66;
@@ -872,7 +859,7 @@
             // lblDoprinosIZ
             // 
             this.lblDoprinosIZ.AutoSize = true;
-            this.lblDoprinosIZ.Location = new System.Drawing.Point(381, 652);
+            this.lblDoprinosIZ.Location = new System.Drawing.Point(381, 677);
             this.lblDoprinosIZ.Name = "lblDoprinosIZ";
             this.lblDoprinosIZ.Size = new System.Drawing.Size(129, 13);
             this.lblDoprinosIZ.TabIndex = 67;
@@ -881,7 +868,7 @@
             // lblMirovinsko1
             // 
             this.lblMirovinsko1.AutoSize = true;
-            this.lblMirovinsko1.Location = new System.Drawing.Point(381, 677);
+            this.lblMirovinsko1.Location = new System.Drawing.Point(378, 700);
             this.lblMirovinsko1.Name = "lblMirovinsko1";
             this.lblMirovinsko1.Size = new System.Drawing.Size(87, 13);
             this.lblMirovinsko1.TabIndex = 68;
@@ -890,7 +877,7 @@
             // lblMirovinsko2
             // 
             this.lblMirovinsko2.AutoSize = true;
-            this.lblMirovinsko2.Location = new System.Drawing.Point(381, 705);
+            this.lblMirovinsko2.Location = new System.Drawing.Point(378, 723);
             this.lblMirovinsko2.Name = "lblMirovinsko2";
             this.lblMirovinsko2.Size = new System.Drawing.Size(90, 13);
             this.lblMirovinsko2.TabIndex = 69;
@@ -899,7 +886,7 @@
             // lblMirovinsko1Iznos
             // 
             this.lblMirovinsko1Iznos.AutoSize = true;
-            this.lblMirovinsko1Iznos.Location = new System.Drawing.Point(559, 677);
+            this.lblMirovinsko1Iznos.Location = new System.Drawing.Point(559, 700);
             this.lblMirovinsko1Iznos.Name = "lblMirovinsko1Iznos";
             this.lblMirovinsko1Iznos.Size = new System.Drawing.Size(35, 13);
             this.lblMirovinsko1Iznos.TabIndex = 70;
@@ -908,7 +895,7 @@
             // lblMirovinsko1Postotak
             // 
             this.lblMirovinsko1Postotak.AutoSize = true;
-            this.lblMirovinsko1Postotak.Location = new System.Drawing.Point(618, 677);
+            this.lblMirovinsko1Postotak.Location = new System.Drawing.Point(621, 700);
             this.lblMirovinsko1Postotak.Name = "lblMirovinsko1Postotak";
             this.lblMirovinsko1Postotak.Size = new System.Drawing.Size(27, 13);
             this.lblMirovinsko1Postotak.TabIndex = 71;
@@ -917,7 +904,7 @@
             // lblMirovinsko1Ukupno
             // 
             this.lblMirovinsko1Ukupno.AutoSize = true;
-            this.lblMirovinsko1Ukupno.Location = new System.Drawing.Point(683, 677);
+            this.lblMirovinsko1Ukupno.Location = new System.Drawing.Point(683, 700);
             this.lblMirovinsko1Ukupno.Name = "lblMirovinsko1Ukupno";
             this.lblMirovinsko1Ukupno.Size = new System.Drawing.Size(35, 13);
             this.lblMirovinsko1Ukupno.TabIndex = 72;
@@ -926,7 +913,7 @@
             // lblmirovinsko2Iznos
             // 
             this.lblmirovinsko2Iznos.AutoSize = true;
-            this.lblmirovinsko2Iznos.Location = new System.Drawing.Point(559, 705);
+            this.lblmirovinsko2Iznos.Location = new System.Drawing.Point(559, 726);
             this.lblmirovinsko2Iznos.Name = "lblmirovinsko2Iznos";
             this.lblmirovinsko2Iznos.Size = new System.Drawing.Size(35, 13);
             this.lblmirovinsko2Iznos.TabIndex = 73;
@@ -935,7 +922,7 @@
             // lblMirovinsko2Ukupno
             // 
             this.lblMirovinsko2Ukupno.AutoSize = true;
-            this.lblMirovinsko2Ukupno.Location = new System.Drawing.Point(683, 705);
+            this.lblMirovinsko2Ukupno.Location = new System.Drawing.Point(683, 723);
             this.lblMirovinsko2Ukupno.Name = "lblMirovinsko2Ukupno";
             this.lblMirovinsko2Ukupno.Size = new System.Drawing.Size(35, 13);
             this.lblMirovinsko2Ukupno.TabIndex = 74;
@@ -944,7 +931,7 @@
             // lblMirovinsko2postotak
             // 
             this.lblMirovinsko2postotak.AutoSize = true;
-            this.lblMirovinsko2postotak.Location = new System.Drawing.Point(623, 705);
+            this.lblMirovinsko2postotak.Location = new System.Drawing.Point(623, 726);
             this.lblMirovinsko2postotak.Name = "lblMirovinsko2postotak";
             this.lblMirovinsko2postotak.Size = new System.Drawing.Size(21, 13);
             this.lblMirovinsko2postotak.TabIndex = 75;
@@ -953,7 +940,7 @@
             // lblDohodak
             // 
             this.lblDohodak.AutoSize = true;
-            this.lblDohodak.Location = new System.Drawing.Point(351, 731);
+            this.lblDohodak.Location = new System.Drawing.Point(351, 741);
             this.lblDohodak.Name = "lblDohodak";
             this.lblDohodak.Size = new System.Drawing.Size(51, 13);
             this.lblDohodak.TabIndex = 76;
@@ -962,7 +949,7 @@
             // lblDohodakUkupno
             // 
             this.lblDohodakUkupno.AutoSize = true;
-            this.lblDohodakUkupno.Location = new System.Drawing.Point(683, 731);
+            this.lblDohodakUkupno.Location = new System.Drawing.Point(683, 741);
             this.lblDohodakUkupno.Name = "lblDohodakUkupno";
             this.lblDohodakUkupno.Size = new System.Drawing.Size(35, 13);
             this.lblDohodakUkupno.TabIndex = 77;
@@ -971,7 +958,7 @@
             // lblOdbitakIzracun
             // 
             this.lblOdbitakIzracun.AutoSize = true;
-            this.lblOdbitakIzracun.Location = new System.Drawing.Point(351, 751);
+            this.lblOdbitakIzracun.Location = new System.Drawing.Point(351, 763);
             this.lblOdbitakIzracun.Name = "lblOdbitakIzracun";
             this.lblOdbitakIzracun.Size = new System.Drawing.Size(78, 13);
             this.lblOdbitakIzracun.TabIndex = 78;
@@ -980,7 +967,7 @@
             // lblOdbitakUkupno
             // 
             this.lblOdbitakUkupno.AutoSize = true;
-            this.lblOdbitakUkupno.Location = new System.Drawing.Point(683, 751);
+            this.lblOdbitakUkupno.Location = new System.Drawing.Point(683, 763);
             this.lblOdbitakUkupno.Name = "lblOdbitakUkupno";
             this.lblOdbitakUkupno.Size = new System.Drawing.Size(35, 13);
             this.lblOdbitakUkupno.TabIndex = 79;
@@ -989,7 +976,7 @@
             // lblPorezPrirez
             // 
             this.lblPorezPrirez.AutoSize = true;
-            this.lblPorezPrirez.Location = new System.Drawing.Point(351, 782);
+            this.lblPorezPrirez.Location = new System.Drawing.Point(351, 789);
             this.lblPorezPrirez.Name = "lblPorezPrirez";
             this.lblPorezPrirez.Size = new System.Drawing.Size(109, 13);
             this.lblPorezPrirez.TabIndex = 80;
@@ -998,7 +985,7 @@
             // lblPorezUkupno
             // 
             this.lblPorezUkupno.AutoSize = true;
-            this.lblPorezUkupno.Location = new System.Drawing.Point(683, 782);
+            this.lblPorezUkupno.Location = new System.Drawing.Point(683, 789);
             this.lblPorezUkupno.Name = "lblPorezUkupno";
             this.lblPorezUkupno.Size = new System.Drawing.Size(35, 13);
             this.lblPorezUkupno.TabIndex = 81;
@@ -1007,7 +994,7 @@
             // lblDoprinosIZukupno
             // 
             this.lblDoprinosIZukupno.AutoSize = true;
-            this.lblDoprinosIZukupno.Location = new System.Drawing.Point(683, 652);
+            this.lblDoprinosIZukupno.Location = new System.Drawing.Point(683, 677);
             this.lblDoprinosIZukupno.Name = "lblDoprinosIZukupno";
             this.lblDoprinosIZukupno.Size = new System.Drawing.Size(35, 13);
             this.lblDoprinosIZukupno.TabIndex = 82;
@@ -1016,7 +1003,7 @@
             // lblPorez1
             // 
             this.lblPorez1.AutoSize = true;
-            this.lblPorez1.Location = new System.Drawing.Point(405, 800);
+            this.lblPorez1.Location = new System.Drawing.Point(405, 815);
             this.lblPorez1.Name = "lblPorez1";
             this.lblPorez1.Size = new System.Drawing.Size(37, 13);
             this.lblPorez1.TabIndex = 83;
@@ -1025,7 +1012,7 @@
             // lblPorez1Iznos
             // 
             this.lblPorez1Iznos.AutoSize = true;
-            this.lblPorez1Iznos.Location = new System.Drawing.Point(559, 800);
+            this.lblPorez1Iznos.Location = new System.Drawing.Point(559, 815);
             this.lblPorez1Iznos.Name = "lblPorez1Iznos";
             this.lblPorez1Iznos.Size = new System.Drawing.Size(29, 13);
             this.lblPorez1Iznos.TabIndex = 84;
@@ -1034,7 +1021,7 @@
             // lblPorez1Postotak
             // 
             this.lblPorez1Postotak.AutoSize = true;
-            this.lblPorez1Postotak.Location = new System.Drawing.Point(617, 800);
+            this.lblPorez1Postotak.Location = new System.Drawing.Point(618, 815);
             this.lblPorez1Postotak.Name = "lblPorez1Postotak";
             this.lblPorez1Postotak.Size = new System.Drawing.Size(27, 13);
             this.lblPorez1Postotak.TabIndex = 85;
@@ -1043,7 +1030,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(405, 827);
+            this.label1.Location = new System.Drawing.Point(405, 840);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 86;
@@ -1052,7 +1039,7 @@
             // lblPorez1Ukupno
             // 
             this.lblPorez1Ukupno.AutoSize = true;
-            this.lblPorez1Ukupno.Location = new System.Drawing.Point(683, 800);
+            this.lblPorez1Ukupno.Location = new System.Drawing.Point(683, 815);
             this.lblPorez1Ukupno.Name = "lblPorez1Ukupno";
             this.lblPorez1Ukupno.Size = new System.Drawing.Size(29, 13);
             this.lblPorez1Ukupno.TabIndex = 87;
@@ -1061,7 +1048,7 @@
             // lblPorez2Iznos
             // 
             this.lblPorez2Iznos.AutoSize = true;
-            this.lblPorez2Iznos.Location = new System.Drawing.Point(559, 827);
+            this.lblPorez2Iznos.Location = new System.Drawing.Point(559, 840);
             this.lblPorez2Iznos.Name = "lblPorez2Iznos";
             this.lblPorez2Iznos.Size = new System.Drawing.Size(29, 13);
             this.lblPorez2Iznos.TabIndex = 88;
@@ -1070,7 +1057,7 @@
             // lblPorez2Postotak
             // 
             this.lblPorez2Postotak.AutoSize = true;
-            this.lblPorez2Postotak.Location = new System.Drawing.Point(617, 827);
+            this.lblPorez2Postotak.Location = new System.Drawing.Point(617, 840);
             this.lblPorez2Postotak.Name = "lblPorez2Postotak";
             this.lblPorez2Postotak.Size = new System.Drawing.Size(27, 13);
             this.lblPorez2Postotak.TabIndex = 89;
@@ -1079,7 +1066,7 @@
             // lblPorez2Ukupno
             // 
             this.lblPorez2Ukupno.AutoSize = true;
-            this.lblPorez2Ukupno.Location = new System.Drawing.Point(683, 827);
+            this.lblPorez2Ukupno.Location = new System.Drawing.Point(683, 840);
             this.lblPorez2Ukupno.Name = "lblPorez2Ukupno";
             this.lblPorez2Ukupno.Size = new System.Drawing.Size(29, 13);
             this.lblPorez2Ukupno.TabIndex = 90;
@@ -1088,7 +1075,7 @@
             // lblPrirezIzracun
             // 
             this.lblPrirezIzracun.AutoSize = true;
-            this.lblPrirezIzracun.Location = new System.Drawing.Point(405, 852);
+            this.lblPrirezIzracun.Location = new System.Drawing.Point(405, 870);
             this.lblPrirezIzracun.Name = "lblPrirezIzracun";
             this.lblPrirezIzracun.Size = new System.Drawing.Size(33, 13);
             this.lblPrirezIzracun.TabIndex = 91;
@@ -1097,7 +1084,7 @@
             // lblPrirezIznos
             // 
             this.lblPrirezIznos.AutoSize = true;
-            this.lblPrirezIznos.Location = new System.Drawing.Point(559, 852);
+            this.lblPrirezIznos.Location = new System.Drawing.Point(559, 870);
             this.lblPrirezIznos.Name = "lblPrirezIznos";
             this.lblPrirezIznos.Size = new System.Drawing.Size(29, 13);
             this.lblPrirezIznos.TabIndex = 92;
@@ -1106,7 +1093,7 @@
             // lblPrirezPostotak
             // 
             this.lblPrirezPostotak.AutoSize = true;
-            this.lblPrirezPostotak.Location = new System.Drawing.Point(618, 852);
+            this.lblPrirezPostotak.Location = new System.Drawing.Point(617, 870);
             this.lblPrirezPostotak.Name = "lblPrirezPostotak";
             this.lblPrirezPostotak.Size = new System.Drawing.Size(0, 13);
             this.lblPrirezPostotak.TabIndex = 93;
@@ -1114,7 +1101,7 @@
             // lblPrirezUkupno
             // 
             this.lblPrirezUkupno.AutoSize = true;
-            this.lblPrirezUkupno.Location = new System.Drawing.Point(683, 852);
+            this.lblPrirezUkupno.Location = new System.Drawing.Point(683, 870);
             this.lblPrirezUkupno.Name = "lblPrirezUkupno";
             this.lblPrirezUkupno.Size = new System.Drawing.Size(29, 13);
             this.lblPrirezUkupno.TabIndex = 94;
@@ -1123,7 +1110,7 @@
             // lblNeto
             // 
             this.lblNeto.AutoSize = true;
-            this.lblNeto.Location = new System.Drawing.Point(351, 882);
+            this.lblNeto.Location = new System.Drawing.Point(351, 898);
             this.lblNeto.Name = "lblNeto";
             this.lblNeto.Size = new System.Drawing.Size(33, 13);
             this.lblNeto.TabIndex = 95;
@@ -1132,7 +1119,7 @@
             // lblNetoIznos
             // 
             this.lblNetoIznos.AutoSize = true;
-            this.lblNetoIznos.Location = new System.Drawing.Point(683, 882);
+            this.lblNetoIznos.Location = new System.Drawing.Point(683, 898);
             this.lblNetoIznos.Name = "lblNetoIznos";
             this.lblNetoIznos.Size = new System.Drawing.Size(29, 13);
             this.lblNetoIznos.TabIndex = 96;
@@ -1142,7 +1129,7 @@
             // 
             this.lblObavijest.AutoSize = true;
             this.lblObavijest.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblObavijest.Location = new System.Drawing.Point(354, 424);
+            this.lblObavijest.Location = new System.Drawing.Point(382, 388);
             this.lblObavijest.Name = "lblObavijest";
             this.lblObavijest.Size = new System.Drawing.Size(425, 13);
             this.lblObavijest.TabIndex = 97;
@@ -1220,11 +1207,22 @@
             this.lblUkupanTrosakIznos.TabIndex = 104;
             this.lblUkupanTrosakIznos.Text = "label6";
             // 
+            // lblObavijestOsoba
+            // 
+            this.lblObavijestOsoba.AutoSize = true;
+            this.lblObavijestOsoba.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lblObavijestOsoba.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblObavijestOsoba.Location = new System.Drawing.Point(349, 620);
+            this.lblObavijestOsoba.Name = "lblObavijestOsoba";
+            this.lblObavijestOsoba.Size = new System.Drawing.Size(0, 13);
+            this.lblObavijestOsoba.TabIndex = 105;
+            // 
             // frmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 1031);
+            this.Controls.Add(this.lblObavijestOsoba);
             this.Controls.Add(this.lblUkupanTrosakIznos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbZaposlenje);
@@ -1285,7 +1283,6 @@
             this.Controls.Add(this.btnIzracunaj);
             this.Controls.Add(this.lblVrsta);
             this.Controls.Add(this.rbNeto);
-            this.Controls.Add(this.rbUkupanTrosak);
             this.Controls.Add(this.rbBruto);
             this.Controls.Add(this.lblPlaca);
             this.Controls.Add(this.txtPlaca);
@@ -2064,7 +2061,6 @@
         private System.Windows.Forms.TextBox txtPlaca;
         private System.Windows.Forms.Label lblPlaca;
         private System.Windows.Forms.RadioButton rbBruto;
-        private System.Windows.Forms.RadioButton rbUkupanTrosak;
         private System.Windows.Forms.RadioButton rbNeto;
         private System.Windows.Forms.Label lblVrsta;
         private System.Windows.Forms.Button btnIzracunaj;
@@ -2208,6 +2204,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn744;
         private System.Windows.Forms.BindingSource radnikBindingSource;
         private System.Windows.Forms.Label lblUkupanTrosakIznos;
+        private System.Windows.Forms.Label lblObavijestOsoba;
         /* private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
