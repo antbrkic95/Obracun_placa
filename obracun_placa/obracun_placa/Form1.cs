@@ -344,9 +344,9 @@ namespace obracun_placa
 
             if (cbStandardni.Checked == true && rbBruto.Checked == true) {
                 lblPrirezPostotak.Text = odabrani.postotak.ToString() + "%"; ;
-                lblBrutoIznos.Text = double.Parse(txtPlaca.Text).ToString();
-                lblMirovinsko1Iznos.Text = txtPlaca.Text;
-                lblmirovinsko2Iznos.Text = txtPlaca.Text;
+                lblBrutoIznos.Text = double.Parse(txtPlaca.Text) + ",00".ToString();
+                lblMirovinsko1Iznos.Text = lblBrutoIznos.Text;
+                lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
                 p.ukupno_bruto = p.visina;
 
                 lblMirovinsko1Ukupno.Text = (p.visina * 0.15).ToString();
@@ -356,9 +356,9 @@ namespace obracun_placa
                 p.dohodak = p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05));
                 lblDohodakUkupno.Text = ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05))).ToString();
 
-                lblZdradstvenoIznos.Text = txtPlaca.Text; ;
-                lblZastitaIznos.Text = txtPlaca.Text;
-                lblZaposljavanjeIznos.Text = txtPlaca.Text;
+                lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
+                lblZastitaIznos.Text = lblBrutoIznos.Text;
+                lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
                 lblZdradstvenoPostotak.Text = 15 + ",00 %";
                 lblZastitaPostotak.Text = 1.7 + "%";
                 lblZaposljavanjePostotak.Text = 0.5 + "%";

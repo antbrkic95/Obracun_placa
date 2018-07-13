@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGlavna));
             this.btnSpremiRadnika = new System.Windows.Forms.Button();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.txtBrojTelefona = new System.Windows.Forms.TextBox();
@@ -152,6 +153,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblUkupanTrosakIznos = new System.Windows.Forms.Label();
             this.lblObavijestOsoba = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource)).BeginInit();
             this.gbOlaksice.SuspendLayout();
@@ -162,16 +164,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prirezBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSpremiRadnika
             // 
-            this.btnSpremiRadnika.Location = new System.Drawing.Point(7, 446);
+            this.btnSpremiRadnika.BackColor = System.Drawing.Color.SeaShell;
+            this.btnSpremiRadnika.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSpremiRadnika.Location = new System.Drawing.Point(9, 245);
             this.btnSpremiRadnika.Name = "btnSpremiRadnika";
             this.btnSpremiRadnika.Size = new System.Drawing.Size(106, 42);
             this.btnSpremiRadnika.TabIndex = 0;
             this.btnSpremiRadnika.Text = "Spremi";
-            this.btnSpremiRadnika.UseVisualStyleBackColor = true;
+            this.btnSpremiRadnika.UseVisualStyleBackColor = false;
             this.btnSpremiRadnika.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtIme
@@ -289,11 +294,13 @@
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(124, 446);
+            this.btnObrisi.BackColor = System.Drawing.Color.SeaShell;
+            this.btnObrisi.Location = new System.Drawing.Point(121, 245);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(92, 42);
             this.btnObrisi.TabIndex = 19;
             this.btnObrisi.Text = "Obrisi";
+            this.btnObrisi.UseVisualStyleBackColor = false;
             this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click_2);
             // 
             // cmbPoslodavci
@@ -318,12 +325,13 @@
             // 
             // btnZavrsi
             // 
-            this.btnZavrsi.Location = new System.Drawing.Point(227, 446);
+            this.btnZavrsi.BackColor = System.Drawing.Color.SeaShell;
+            this.btnZavrsi.Location = new System.Drawing.Point(307, 245);
             this.btnZavrsi.Name = "btnZavrsi";
             this.btnZavrsi.Size = new System.Drawing.Size(82, 42);
             this.btnZavrsi.TabIndex = 23;
             this.btnZavrsi.Text = "Odustani";
-            this.btnZavrsi.UseVisualStyleBackColor = true;
+            this.btnZavrsi.UseVisualStyleBackColor = false;
             this.btnZavrsi.Click += new System.EventHandler(this.btnZavrsi_Click);
             // 
             // gbOlaksice
@@ -332,7 +340,7 @@
             this.gbOlaksice.Controls.Add(this.lblOdbitakDjeca);
             this.gbOlaksice.Controls.Add(this.cmbOdbitakClan);
             this.gbOlaksice.Controls.Add(this.cmbOdbitakDjeca);
-            this.gbOlaksice.Location = new System.Drawing.Point(12, 262);
+            this.gbOlaksice.Location = new System.Drawing.Point(9, 293);
             this.gbOlaksice.Name = "gbOlaksice";
             this.gbOlaksice.Size = new System.Drawing.Size(326, 107);
             this.gbOlaksice.TabIndex = 26;
@@ -384,22 +392,24 @@
             // 
             // btnIzmijeni
             // 
-            this.btnIzmijeni.Location = new System.Drawing.Point(227, 220);
+            this.btnIzmijeni.BackColor = System.Drawing.Color.AliceBlue;
+            this.btnIzmijeni.Location = new System.Drawing.Point(219, 245);
             this.btnIzmijeni.Name = "btnIzmijeni";
             this.btnIzmijeni.Size = new System.Drawing.Size(82, 42);
             this.btnIzmijeni.TabIndex = 28;
             this.btnIzmijeni.Text = "Izmijeni radnika";
-            this.btnIzmijeni.UseVisualStyleBackColor = true;
+            this.btnIzmijeni.UseVisualStyleBackColor = false;
             this.btnIzmijeni.Click += new System.EventHandler(this.btnIzmijeni_Click);
             // 
             // btnUnosSati
             // 
+            this.btnUnosSati.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnUnosSati.Location = new System.Drawing.Point(6, 59);
             this.btnUnosSati.Name = "btnUnosSati";
             this.btnUnosSati.Size = new System.Drawing.Size(82, 42);
             this.btnUnosSati.TabIndex = 29;
             this.btnUnosSati.Text = "Unesi radne sate";
-            this.btnUnosSati.UseVisualStyleBackColor = true;
+            this.btnUnosSati.UseVisualStyleBackColor = false;
             this.btnUnosSati.Click += new System.EventHandler(this.btnUnosSati_Click);
             // 
             // gpUnosSati
@@ -408,7 +418,7 @@
             this.gpUnosSati.Controls.Add(this.btnUnosGodisnjeg);
             this.gpUnosSati.Controls.Add(this.btnUnosBolovanja);
             this.gpUnosSati.Controls.Add(this.btnUnosSati);
-            this.gpUnosSati.Location = new System.Drawing.Point(361, 262);
+            this.gpUnosSati.Location = new System.Drawing.Point(417, 293);
             this.gpUnosSati.Name = "gpUnosSati";
             this.gpUnosSati.Size = new System.Drawing.Size(396, 107);
             this.gpUnosSati.TabIndex = 30;
@@ -417,32 +427,35 @@
             // 
             // btnUnosPraznika
             // 
+            this.btnUnosPraznika.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnUnosPraznika.Location = new System.Drawing.Point(299, 59);
             this.btnUnosPraznika.Name = "btnUnosPraznika";
             this.btnUnosPraznika.Size = new System.Drawing.Size(82, 42);
             this.btnUnosPraznika.TabIndex = 32;
             this.btnUnosPraznika.Text = "Unesi praznike";
-            this.btnUnosPraznika.UseVisualStyleBackColor = true;
+            this.btnUnosPraznika.UseVisualStyleBackColor = false;
             this.btnUnosPraznika.Click += new System.EventHandler(this.btnUnosPraznika_Click);
             // 
             // btnUnosGodisnjeg
             // 
+            this.btnUnosGodisnjeg.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnUnosGodisnjeg.Location = new System.Drawing.Point(201, 59);
             this.btnUnosGodisnjeg.Name = "btnUnosGodisnjeg";
             this.btnUnosGodisnjeg.Size = new System.Drawing.Size(82, 42);
             this.btnUnosGodisnjeg.TabIndex = 31;
             this.btnUnosGodisnjeg.Text = "Unesi godisnji odmor";
-            this.btnUnosGodisnjeg.UseVisualStyleBackColor = true;
+            this.btnUnosGodisnjeg.UseVisualStyleBackColor = false;
             this.btnUnosGodisnjeg.Click += new System.EventHandler(this.btnUnosGodisnjeg_Click);
             // 
             // btnUnosBolovanja
             // 
+            this.btnUnosBolovanja.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnUnosBolovanja.Location = new System.Drawing.Point(104, 59);
             this.btnUnosBolovanja.Name = "btnUnosBolovanja";
             this.btnUnosBolovanja.Size = new System.Drawing.Size(82, 42);
             this.btnUnosBolovanja.TabIndex = 30;
             this.btnUnosBolovanja.Text = "Unesi bolovanja";
-            this.btnUnosBolovanja.UseVisualStyleBackColor = true;
+            this.btnUnosBolovanja.UseVisualStyleBackColor = false;
             this.btnUnosBolovanja.Click += new System.EventHandler(this.btnUnosBolovanja_Click);
             // 
             // dgvRadnici
@@ -584,29 +597,31 @@
             // lblObracun
             // 
             this.lblObracun.AutoSize = true;
-            this.lblObracun.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblObracun.BackColor = System.Drawing.Color.LightSteelBlue;
             this.lblObracun.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblObracun.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObracun.ForeColor = System.Drawing.SystemColors.InfoText;
             this.lblObracun.ImageKey = "(none)";
-            this.lblObracun.Location = new System.Drawing.Point(16, 512);
+            this.lblObracun.Location = new System.Drawing.Point(12, 500);
             this.lblObracun.Name = "lblObracun";
-            this.lblObracun.Size = new System.Drawing.Size(82, 13);
+            this.lblObracun.Size = new System.Drawing.Size(107, 15);
             this.lblObracun.TabIndex = 33;
             this.lblObracun.Text = "Vrsta obracuna:";
             // 
             // lblOdbitak
             // 
             this.lblOdbitak.AutoSize = true;
-            this.lblOdbitak.Location = new System.Drawing.Point(16, 399);
+            this.lblOdbitak.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOdbitak.Location = new System.Drawing.Point(9, 447);
             this.lblOdbitak.Name = "lblOdbitak";
-            this.lblOdbitak.Size = new System.Drawing.Size(116, 13);
+            this.lblOdbitak.Size = new System.Drawing.Size(138, 14);
             this.lblOdbitak.TabIndex = 37;
             this.lblOdbitak.Text = "Ukupni osobni odbitak:";
             // 
             // lblUkupanOdbitak
             // 
             this.lblUkupanOdbitak.AutoSize = true;
-            this.lblUkupanOdbitak.Location = new System.Drawing.Point(146, 399);
+            this.lblUkupanOdbitak.Location = new System.Drawing.Point(154, 447);
             this.lblUkupanOdbitak.Name = "lblUkupanOdbitak";
             this.lblUkupanOdbitak.Size = new System.Drawing.Size(0, 13);
             this.lblUkupanOdbitak.TabIndex = 38;
@@ -614,18 +629,19 @@
             // lblPrirez
             // 
             this.lblPrirez.AutoSize = true;
+            this.lblPrirez.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPrirez.Location = new System.Drawing.Point(12, 677);
             this.lblPrirez.Name = "lblPrirez";
-            this.lblPrirez.Size = new System.Drawing.Size(207, 13);
+            this.lblPrirez.Size = new System.Drawing.Size(254, 13);
             this.lblPrirez.TabIndex = 39;
-            this.lblPrirez.Text = "Grad/opcina prebivalista (postotak prireza)";
+            this.lblPrirez.Text = "Grad/opcina prebivalista (postotak prireza):";
             // 
             // cmbPrirez
             // 
             this.cmbPrirez.DataSource = this.prirezBindingSource;
             this.cmbPrirez.DisplayMember = "opcina";
             this.cmbPrirez.FormattingEnabled = true;
-            this.cmbPrirez.Location = new System.Drawing.Point(11, 723);
+            this.cmbPrirez.Location = new System.Drawing.Point(11, 713);
             this.cmbPrirez.Name = "cmbPrirez";
             this.cmbPrirez.Size = new System.Drawing.Size(172, 21);
             this.cmbPrirez.TabIndex = 40;
@@ -633,7 +649,7 @@
             // 
             // txtPlaca
             // 
-            this.txtPlaca.Location = new System.Drawing.Point(83, 782);
+            this.txtPlaca.Location = new System.Drawing.Point(92, 779);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(100, 20);
             this.txtPlaca.TabIndex = 41;
@@ -641,9 +657,10 @@
             // lblPlaca
             // 
             this.lblPlaca.AutoSize = true;
+            this.lblPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblPlaca.Location = new System.Drawing.Point(10, 782);
             this.lblPlaca.Name = "lblPlaca";
-            this.lblPlaca.Size = new System.Drawing.Size(64, 13);
+            this.lblPlaca.Size = new System.Drawing.Size(76, 13);
             this.lblPlaca.TabIndex = 42;
             this.lblPlaca.Text = "Iznos place:";
             // 
@@ -672,47 +689,54 @@
             // lblVrsta
             // 
             this.lblVrsta.AutoSize = true;
+            this.lblVrsta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblVrsta.Location = new System.Drawing.Point(9, 840);
             this.lblVrsta.Name = "lblVrsta";
-            this.lblVrsta.Size = new System.Drawing.Size(63, 13);
+            this.lblVrsta.Size = new System.Drawing.Size(75, 13);
             this.lblVrsta.TabIndex = 46;
             this.lblVrsta.Text = "Vrsta place:";
             // 
             // btnIzracunaj
             // 
-            this.btnIzracunaj.Location = new System.Drawing.Point(212, 923);
+            this.btnIzracunaj.BackColor = System.Drawing.Color.GhostWhite;
+            this.btnIzracunaj.Location = new System.Drawing.Point(187, 923);
             this.btnIzracunaj.Name = "btnIzracunaj";
             this.btnIzracunaj.Size = new System.Drawing.Size(97, 41);
             this.btnIzracunaj.TabIndex = 47;
             this.btnIzracunaj.Text = "Izracunaj";
-            this.btnIzracunaj.UseVisualStyleBackColor = true;
+            this.btnIzracunaj.UseVisualStyleBackColor = false;
             this.btnIzracunaj.Click += new System.EventHandler(this.btnIzracunaj_Click);
             // 
             // btnKraj
             // 
-            this.btnKraj.Location = new System.Drawing.Point(315, 923);
+            this.btnKraj.BackColor = System.Drawing.Color.GhostWhite;
+            this.btnKraj.Location = new System.Drawing.Point(295, 923);
             this.btnKraj.Name = "btnKraj";
             this.btnKraj.Size = new System.Drawing.Size(97, 41);
             this.btnKraj.TabIndex = 48;
             this.btnKraj.Text = "Odustani";
-            this.btnKraj.UseVisualStyleBackColor = true;
+            this.btnKraj.UseVisualStyleBackColor = false;
             this.btnKraj.Click += new System.EventHandler(this.btnKraj_Click);
             // 
             // lblUkupanTrosak
             // 
             this.lblUkupanTrosak.AutoSize = true;
+            this.lblUkupanTrosak.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblUkupanTrosak.ForeColor = System.Drawing.Color.Black;
             this.lblUkupanTrosak.Location = new System.Drawing.Point(351, 475);
             this.lblUkupanTrosak.Name = "lblUkupanTrosak";
-            this.lblUkupanTrosak.Size = new System.Drawing.Size(80, 13);
+            this.lblUkupanTrosak.Size = new System.Drawing.Size(94, 13);
             this.lblUkupanTrosak.TabIndex = 49;
             this.lblUkupanTrosak.Text = "Ukupan trosak:";
             // 
             // lblDoprinosNa
             // 
             this.lblDoprinosNa.AutoSize = true;
+            this.lblDoprinosNa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDoprinosNa.ForeColor = System.Drawing.Color.Black;
             this.lblDoprinosNa.Location = new System.Drawing.Point(381, 512);
             this.lblDoprinosNa.Name = "lblDoprinosNa";
-            this.lblDoprinosNa.Size = new System.Drawing.Size(134, 13);
+            this.lblDoprinosNa.Size = new System.Drawing.Size(153, 13);
             this.lblDoprinosNa.TabIndex = 50;
             this.lblDoprinosNa.Text = "DOPRINOSI NA UKUPNO";
             // 
@@ -780,9 +804,10 @@
             // lblTrosakUkupno
             // 
             this.lblTrosakUkupno.AutoSize = true;
+            this.lblTrosakUkupno.Font = new System.Drawing.Font("SansSerif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.lblTrosakUkupno.Location = new System.Drawing.Point(683, 512);
             this.lblTrosakUkupno.Name = "lblTrosakUkupno";
-            this.lblTrosakUkupno.Size = new System.Drawing.Size(35, 13);
+            this.lblTrosakUkupno.Size = new System.Drawing.Size(41, 14);
             this.lblTrosakUkupno.TabIndex = 58;
             this.lblTrosakUkupno.Text = "label6";
             // 
@@ -841,34 +866,38 @@
             // lblBruto
             // 
             this.lblBruto.AutoSize = true;
+            this.lblBruto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblBruto.Location = new System.Drawing.Point(351, 645);
             this.lblBruto.Name = "lblBruto";
-            this.lblBruto.Size = new System.Drawing.Size(35, 13);
+            this.lblBruto.Size = new System.Drawing.Size(41, 13);
             this.lblBruto.TabIndex = 65;
             this.lblBruto.Text = "Bruto:";
             // 
             // lblBrutoIznos
             // 
             this.lblBrutoIznos.AutoSize = true;
+            this.lblBrutoIznos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblBrutoIznos.Location = new System.Drawing.Point(683, 645);
             this.lblBrutoIznos.Name = "lblBrutoIznos";
-            this.lblBrutoIznos.Size = new System.Drawing.Size(35, 13);
+            this.lblBrutoIznos.Size = new System.Drawing.Size(47, 15);
             this.lblBrutoIznos.TabIndex = 66;
             this.lblBrutoIznos.Text = "label6";
             // 
             // lblDoprinosIZ
             // 
             this.lblDoprinosIZ.AutoSize = true;
-            this.lblDoprinosIZ.Location = new System.Drawing.Point(381, 677);
+            this.lblDoprinosIZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDoprinosIZ.ForeColor = System.Drawing.Color.Black;
+            this.lblDoprinosIZ.Location = new System.Drawing.Point(382, 667);
             this.lblDoprinosIZ.Name = "lblDoprinosIZ";
-            this.lblDoprinosIZ.Size = new System.Drawing.Size(129, 13);
+            this.lblDoprinosIZ.Size = new System.Drawing.Size(148, 13);
             this.lblDoprinosIZ.TabIndex = 67;
             this.lblDoprinosIZ.Text = "DOPRINOSI IZ UKUPNO";
             // 
             // lblMirovinsko1
             // 
             this.lblMirovinsko1.AutoSize = true;
-            this.lblMirovinsko1.Location = new System.Drawing.Point(378, 700);
+            this.lblMirovinsko1.Location = new System.Drawing.Point(378, 691);
             this.lblMirovinsko1.Name = "lblMirovinsko1";
             this.lblMirovinsko1.Size = new System.Drawing.Size(87, 13);
             this.lblMirovinsko1.TabIndex = 68;
@@ -877,7 +906,7 @@
             // lblMirovinsko2
             // 
             this.lblMirovinsko2.AutoSize = true;
-            this.lblMirovinsko2.Location = new System.Drawing.Point(378, 723);
+            this.lblMirovinsko2.Location = new System.Drawing.Point(378, 713);
             this.lblMirovinsko2.Name = "lblMirovinsko2";
             this.lblMirovinsko2.Size = new System.Drawing.Size(90, 13);
             this.lblMirovinsko2.TabIndex = 69;
@@ -886,7 +915,7 @@
             // lblMirovinsko1Iznos
             // 
             this.lblMirovinsko1Iznos.AutoSize = true;
-            this.lblMirovinsko1Iznos.Location = new System.Drawing.Point(559, 700);
+            this.lblMirovinsko1Iznos.Location = new System.Drawing.Point(559, 691);
             this.lblMirovinsko1Iznos.Name = "lblMirovinsko1Iznos";
             this.lblMirovinsko1Iznos.Size = new System.Drawing.Size(35, 13);
             this.lblMirovinsko1Iznos.TabIndex = 70;
@@ -895,7 +924,7 @@
             // lblMirovinsko1Postotak
             // 
             this.lblMirovinsko1Postotak.AutoSize = true;
-            this.lblMirovinsko1Postotak.Location = new System.Drawing.Point(621, 700);
+            this.lblMirovinsko1Postotak.Location = new System.Drawing.Point(623, 691);
             this.lblMirovinsko1Postotak.Name = "lblMirovinsko1Postotak";
             this.lblMirovinsko1Postotak.Size = new System.Drawing.Size(27, 13);
             this.lblMirovinsko1Postotak.TabIndex = 71;
@@ -904,7 +933,7 @@
             // lblMirovinsko1Ukupno
             // 
             this.lblMirovinsko1Ukupno.AutoSize = true;
-            this.lblMirovinsko1Ukupno.Location = new System.Drawing.Point(683, 700);
+            this.lblMirovinsko1Ukupno.Location = new System.Drawing.Point(683, 691);
             this.lblMirovinsko1Ukupno.Name = "lblMirovinsko1Ukupno";
             this.lblMirovinsko1Ukupno.Size = new System.Drawing.Size(35, 13);
             this.lblMirovinsko1Ukupno.TabIndex = 72;
@@ -913,7 +942,7 @@
             // lblmirovinsko2Iznos
             // 
             this.lblmirovinsko2Iznos.AutoSize = true;
-            this.lblmirovinsko2Iznos.Location = new System.Drawing.Point(559, 726);
+            this.lblmirovinsko2Iznos.Location = new System.Drawing.Point(559, 713);
             this.lblmirovinsko2Iznos.Name = "lblmirovinsko2Iznos";
             this.lblmirovinsko2Iznos.Size = new System.Drawing.Size(35, 13);
             this.lblmirovinsko2Iznos.TabIndex = 73;
@@ -922,7 +951,7 @@
             // lblMirovinsko2Ukupno
             // 
             this.lblMirovinsko2Ukupno.AutoSize = true;
-            this.lblMirovinsko2Ukupno.Location = new System.Drawing.Point(683, 723);
+            this.lblMirovinsko2Ukupno.Location = new System.Drawing.Point(682, 713);
             this.lblMirovinsko2Ukupno.Name = "lblMirovinsko2Ukupno";
             this.lblMirovinsko2Ukupno.Size = new System.Drawing.Size(35, 13);
             this.lblMirovinsko2Ukupno.TabIndex = 74;
@@ -931,7 +960,7 @@
             // lblMirovinsko2postotak
             // 
             this.lblMirovinsko2postotak.AutoSize = true;
-            this.lblMirovinsko2postotak.Location = new System.Drawing.Point(623, 726);
+            this.lblMirovinsko2postotak.Location = new System.Drawing.Point(624, 713);
             this.lblMirovinsko2postotak.Name = "lblMirovinsko2postotak";
             this.lblMirovinsko2postotak.Size = new System.Drawing.Size(21, 13);
             this.lblMirovinsko2postotak.TabIndex = 75;
@@ -940,63 +969,71 @@
             // lblDohodak
             // 
             this.lblDohodak.AutoSize = true;
+            this.lblDohodak.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblDohodak.Location = new System.Drawing.Point(351, 741);
             this.lblDohodak.Name = "lblDohodak";
-            this.lblDohodak.Size = new System.Drawing.Size(51, 13);
+            this.lblDohodak.Size = new System.Drawing.Size(58, 13);
             this.lblDohodak.TabIndex = 76;
             this.lblDohodak.Text = "Dohodak";
             // 
             // lblDohodakUkupno
             // 
             this.lblDohodakUkupno.AutoSize = true;
-            this.lblDohodakUkupno.Location = new System.Drawing.Point(683, 741);
+            this.lblDohodakUkupno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDohodakUkupno.Location = new System.Drawing.Point(682, 741);
             this.lblDohodakUkupno.Name = "lblDohodakUkupno";
-            this.lblDohodakUkupno.Size = new System.Drawing.Size(35, 13);
+            this.lblDohodakUkupno.Size = new System.Drawing.Size(47, 15);
             this.lblDohodakUkupno.TabIndex = 77;
             this.lblDohodakUkupno.Text = "label2";
             // 
             // lblOdbitakIzracun
             // 
             this.lblOdbitakIzracun.AutoSize = true;
+            this.lblOdbitakIzracun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblOdbitakIzracun.Location = new System.Drawing.Point(351, 763);
             this.lblOdbitakIzracun.Name = "lblOdbitakIzracun";
-            this.lblOdbitakIzracun.Size = new System.Drawing.Size(78, 13);
+            this.lblOdbitakIzracun.Size = new System.Drawing.Size(92, 13);
             this.lblOdbitakIzracun.TabIndex = 78;
             this.lblOdbitakIzracun.Text = "Osobni odbitak";
             // 
             // lblOdbitakUkupno
             // 
             this.lblOdbitakUkupno.AutoSize = true;
-            this.lblOdbitakUkupno.Location = new System.Drawing.Point(683, 763);
+            this.lblOdbitakUkupno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblOdbitakUkupno.Location = new System.Drawing.Point(682, 763);
             this.lblOdbitakUkupno.Name = "lblOdbitakUkupno";
-            this.lblOdbitakUkupno.Size = new System.Drawing.Size(35, 13);
+            this.lblOdbitakUkupno.Size = new System.Drawing.Size(47, 15);
             this.lblOdbitakUkupno.TabIndex = 79;
             this.lblOdbitakUkupno.Text = "label2";
             // 
             // lblPorezPrirez
             // 
             this.lblPorezPrirez.AutoSize = true;
+            this.lblPorezPrirez.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblPorezPrirez.ForeColor = System.Drawing.Color.Black;
             this.lblPorezPrirez.Location = new System.Drawing.Point(351, 789);
             this.lblPorezPrirez.Name = "lblPorezPrirez";
-            this.lblPorezPrirez.Size = new System.Drawing.Size(109, 13);
+            this.lblPorezPrirez.Size = new System.Drawing.Size(131, 13);
             this.lblPorezPrirez.TabIndex = 80;
             this.lblPorezPrirez.Text = "Porez i prirez ukupno:";
             // 
             // lblPorezUkupno
             // 
             this.lblPorezUkupno.AutoSize = true;
+            this.lblPorezUkupno.Font = new System.Drawing.Font("SansSerif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.lblPorezUkupno.Location = new System.Drawing.Point(683, 789);
             this.lblPorezUkupno.Name = "lblPorezUkupno";
-            this.lblPorezUkupno.Size = new System.Drawing.Size(35, 13);
+            this.lblPorezUkupno.Size = new System.Drawing.Size(41, 14);
             this.lblPorezUkupno.TabIndex = 81;
             this.lblPorezUkupno.Text = "label2";
             // 
             // lblDoprinosIZukupno
             // 
             this.lblDoprinosIZukupno.AutoSize = true;
-            this.lblDoprinosIZukupno.Location = new System.Drawing.Point(683, 677);
+            this.lblDoprinosIZukupno.Font = new System.Drawing.Font("SansSerif", 8.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.lblDoprinosIZukupno.Location = new System.Drawing.Point(683, 668);
             this.lblDoprinosIZukupno.Name = "lblDoprinosIZukupno";
-            this.lblDoprinosIZukupno.Size = new System.Drawing.Size(35, 13);
+            this.lblDoprinosIZukupno.Size = new System.Drawing.Size(41, 14);
             this.lblDoprinosIZukupno.TabIndex = 82;
             this.lblDoprinosIZukupno.Text = "label6";
             // 
@@ -1110,28 +1147,31 @@
             // lblNeto
             // 
             this.lblNeto.AutoSize = true;
+            this.lblNeto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblNeto.Location = new System.Drawing.Point(351, 898);
             this.lblNeto.Name = "lblNeto";
-            this.lblNeto.Size = new System.Drawing.Size(33, 13);
+            this.lblNeto.Size = new System.Drawing.Size(38, 13);
             this.lblNeto.TabIndex = 95;
             this.lblNeto.Text = "Neto:";
             // 
             // lblNetoIznos
             // 
             this.lblNetoIznos.AutoSize = true;
-            this.lblNetoIznos.Location = new System.Drawing.Point(683, 898);
+            this.lblNetoIznos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNetoIznos.Location = new System.Drawing.Point(682, 896);
             this.lblNetoIznos.Name = "lblNetoIznos";
-            this.lblNetoIznos.Size = new System.Drawing.Size(29, 13);
+            this.lblNetoIznos.Size = new System.Drawing.Size(39, 15);
             this.lblNetoIznos.TabIndex = 96;
             this.lblNetoIznos.Text = "label";
             // 
             // lblObavijest
             // 
             this.lblObavijest.AutoSize = true;
-            this.lblObavijest.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblObavijest.Location = new System.Drawing.Point(382, 388);
+            this.lblObavijest.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblObavijest.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblObavijest.Location = new System.Drawing.Point(364, 413);
             this.lblObavijest.Name = "lblObavijest";
-            this.lblObavijest.Size = new System.Drawing.Size(425, 13);
+            this.lblObavijest.Size = new System.Drawing.Size(518, 16);
             this.lblObavijest.TabIndex = 97;
             this.lblObavijest.Text = "Izračun je isključivo informativan te se kao takav ne može koristiti ni u jednu d" +
     "rugu svrhu!";
@@ -1139,7 +1179,7 @@
             // lblValuta
             // 
             this.lblValuta.AutoSize = true;
-            this.lblValuta.Location = new System.Drawing.Point(189, 785);
+            this.lblValuta.Location = new System.Drawing.Point(198, 782);
             this.lblValuta.Name = "lblValuta";
             this.lblValuta.Size = new System.Drawing.Size(30, 13);
             this.lblValuta.TabIndex = 98;
@@ -1192,7 +1232,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(209, 399);
+            this.label2.Location = new System.Drawing.Point(198, 447);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 103;
@@ -1201,27 +1241,41 @@
             // lblUkupanTrosakIznos
             // 
             this.lblUkupanTrosakIznos.AutoSize = true;
+            this.lblUkupanTrosakIznos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblUkupanTrosakIznos.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblUkupanTrosakIznos.Location = new System.Drawing.Point(683, 475);
             this.lblUkupanTrosakIznos.Name = "lblUkupanTrosakIznos";
-            this.lblUkupanTrosakIznos.Size = new System.Drawing.Size(35, 13);
+            this.lblUkupanTrosakIznos.Size = new System.Drawing.Size(47, 15);
             this.lblUkupanTrosakIznos.TabIndex = 104;
             this.lblUkupanTrosakIznos.Text = "label6";
             // 
             // lblObavijestOsoba
             // 
             this.lblObavijestOsoba.AutoSize = true;
-            this.lblObavijestOsoba.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.lblObavijestOsoba.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblObavijestOsoba.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.lblObavijestOsoba.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblObavijestOsoba.Location = new System.Drawing.Point(349, 620);
             this.lblObavijestOsoba.Name = "lblObavijestOsoba";
             this.lblObavijestOsoba.Size = new System.Drawing.Size(0, 13);
             this.lblObavijestOsoba.TabIndex = 105;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-2, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 24);
+            this.pictureBox1.TabIndex = 106;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 1031);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(899, 974);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblObavijestOsoba);
             this.Controls.Add(this.lblUkupanTrosakIznos);
             this.Controls.Add(this.label2);
@@ -1314,8 +1368,11 @@
             this.Controls.Add(this.txtBrojTelefona);
             this.Controls.Add(this.txtIme);
             this.Controls.Add(this.btnSpremiRadnika);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "frmGlavna";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Obracun placa";
+            this.TransparencyKey = System.Drawing.Color.SteelBlue;
             this.Load += new System.EventHandler(this.frmGlavna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource)).EndInit();
@@ -1328,6 +1385,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radnikBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prirezBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2205,6 +2263,7 @@
         private System.Windows.Forms.BindingSource radnikBindingSource;
         private System.Windows.Forms.Label lblUkupanTrosakIznos;
         private System.Windows.Forms.Label lblObavijestOsoba;
+        private System.Windows.Forms.PictureBox pictureBox1;
         /* private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
