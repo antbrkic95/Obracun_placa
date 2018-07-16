@@ -32,6 +32,11 @@ namespace obracun_placa
         public string broj_racuna { get; set; }
         public string banka { get; set; }
         public string adresa { get; set; }
+        public Nullable<double> iznos_bruto { get; set; }
+        public Nullable<double> stimulacija { get; set; }
+        public Nullable<double> regres { get; set; }
+        public Nullable<double> bozicnica { get; set; }
+        public Nullable<double> uskrsnica { get; set; }
     
         public virtual odbitakClan odbitakClan { get; set; }
         public virtual odbitakZaDjecu odbitakZaDjecu { get; set; }

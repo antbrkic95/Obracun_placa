@@ -22,6 +22,7 @@ namespace obracun_placa
         public Nullable<int> ukupno_trosak { get; set; }
         public Nullable<int> dohodak { get; set; }
         public string obracun { get; set; }
+        public Nullable<System.DateTime> datum { get; set; }
     
         public virtual prirez prirez { get; set; }
         public virtual radnik radnik { get; set; }

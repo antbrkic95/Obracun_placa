@@ -73,6 +73,11 @@
             this.dataGridViewTextBoxColumn734 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn735 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn736 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iznosbrutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stimulacijaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bozicnicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uskrsnicaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn737 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn738 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn739 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -154,6 +159,12 @@
             this.lblUkupanTrosakIznos = new System.Windows.Forms.Label();
             this.lblObavijestOsoba = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtp1 = new System.Windows.Forms.DateTimePicker();
+            this.lblDatum = new System.Windows.Forms.Label();
+            this.txtIznosPocetni = new System.Windows.Forms.TextBox();
+            this.txtStimulacija = new System.Windows.Forms.TextBox();
+            this.lblStimulacija = new System.Windows.Forms.Label();
+            this.lblB = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poslodavacBindingSource)).BeginInit();
             this.gbOlaksice.SuspendLayout();
@@ -171,7 +182,7 @@
             // 
             this.btnSpremiRadnika.BackColor = System.Drawing.Color.SeaShell;
             this.btnSpremiRadnika.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSpremiRadnika.Location = new System.Drawing.Point(9, 245);
+            this.btnSpremiRadnika.Location = new System.Drawing.Point(9, 289);
             this.btnSpremiRadnika.Name = "btnSpremiRadnika";
             this.btnSpremiRadnika.Size = new System.Drawing.Size(106, 42);
             this.btnSpremiRadnika.TabIndex = 0;
@@ -181,7 +192,7 @@
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(95, 23);
+            this.txtIme.Location = new System.Drawing.Point(95, 12);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(100, 20);
             this.txtIme.TabIndex = 1;
@@ -195,21 +206,21 @@
             // 
             // txtAdresa
             // 
-            this.txtAdresa.Location = new System.Drawing.Point(95, 101);
+            this.txtAdresa.Location = new System.Drawing.Point(95, 98);
             this.txtAdresa.Name = "txtAdresa";
             this.txtAdresa.Size = new System.Drawing.Size(100, 20);
             this.txtAdresa.TabIndex = 3;
             // 
             // txtOIB
             // 
-            this.txtOIB.Location = new System.Drawing.Point(95, 75);
+            this.txtOIB.Location = new System.Drawing.Point(95, 71);
             this.txtOIB.Name = "txtOIB";
             this.txtOIB.Size = new System.Drawing.Size(100, 20);
             this.txtOIB.TabIndex = 4;
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(95, 49);
+            this.txtPrezime.Location = new System.Drawing.Point(95, 42);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(100, 20);
             this.txtPrezime.TabIndex = 5;
@@ -231,7 +242,7 @@
             // lblIme
             // 
             this.lblIme.AutoSize = true;
-            this.lblIme.Location = new System.Drawing.Point(34, 23);
+            this.lblIme.Location = new System.Drawing.Point(35, 15);
             this.lblIme.Name = "lblIme";
             this.lblIme.Size = new System.Drawing.Size(24, 13);
             this.lblIme.TabIndex = 8;
@@ -240,7 +251,7 @@
             // lblPrezime
             // 
             this.lblPrezime.AutoSize = true;
-            this.lblPrezime.Location = new System.Drawing.Point(34, 52);
+            this.lblPrezime.Location = new System.Drawing.Point(34, 45);
             this.lblPrezime.Name = "lblPrezime";
             this.lblPrezime.Size = new System.Drawing.Size(44, 13);
             this.lblPrezime.TabIndex = 9;
@@ -249,7 +260,7 @@
             // lblOIB
             // 
             this.lblOIB.AutoSize = true;
-            this.lblOIB.Location = new System.Drawing.Point(34, 78);
+            this.lblOIB.Location = new System.Drawing.Point(35, 74);
             this.lblOIB.Name = "lblOIB";
             this.lblOIB.Size = new System.Drawing.Size(25, 13);
             this.lblOIB.TabIndex = 10;
@@ -258,7 +269,7 @@
             // lblAdresa
             // 
             this.lblAdresa.AutoSize = true;
-            this.lblAdresa.Location = new System.Drawing.Point(34, 104);
+            this.lblAdresa.Location = new System.Drawing.Point(35, 101);
             this.lblAdresa.Name = "lblAdresa";
             this.lblAdresa.Size = new System.Drawing.Size(40, 13);
             this.lblAdresa.TabIndex = 11;
@@ -295,7 +306,7 @@
             // btnObrisi
             // 
             this.btnObrisi.BackColor = System.Drawing.Color.SeaShell;
-            this.btnObrisi.Location = new System.Drawing.Point(121, 245);
+            this.btnObrisi.Location = new System.Drawing.Point(121, 289);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(92, 42);
             this.btnObrisi.TabIndex = 19;
@@ -308,7 +319,7 @@
             this.cmbPoslodavci.DataSource = this.poslodavacBindingSource1;
             this.cmbPoslodavci.DisplayMember = "naziv";
             this.cmbPoslodavci.FormattingEnabled = true;
-            this.cmbPoslodavci.Location = new System.Drawing.Point(95, 205);
+            this.cmbPoslodavci.Location = new System.Drawing.Point(95, 262);
             this.cmbPoslodavci.Name = "cmbPoslodavci";
             this.cmbPoslodavci.Size = new System.Drawing.Size(121, 21);
             this.cmbPoslodavci.TabIndex = 17;
@@ -317,7 +328,7 @@
             // lblPoslodavac
             // 
             this.lblPoslodavac.AutoSize = true;
-            this.lblPoslodavac.Location = new System.Drawing.Point(23, 208);
+            this.lblPoslodavac.Location = new System.Drawing.Point(23, 262);
             this.lblPoslodavac.Name = "lblPoslodavac";
             this.lblPoslodavac.Size = new System.Drawing.Size(63, 13);
             this.lblPoslodavac.TabIndex = 21;
@@ -326,7 +337,7 @@
             // btnZavrsi
             // 
             this.btnZavrsi.BackColor = System.Drawing.Color.SeaShell;
-            this.btnZavrsi.Location = new System.Drawing.Point(307, 245);
+            this.btnZavrsi.Location = new System.Drawing.Point(310, 289);
             this.btnZavrsi.Name = "btnZavrsi";
             this.btnZavrsi.Size = new System.Drawing.Size(82, 42);
             this.btnZavrsi.TabIndex = 23;
@@ -340,7 +351,7 @@
             this.gbOlaksice.Controls.Add(this.lblOdbitakDjeca);
             this.gbOlaksice.Controls.Add(this.cmbOdbitakClan);
             this.gbOlaksice.Controls.Add(this.cmbOdbitakDjeca);
-            this.gbOlaksice.Location = new System.Drawing.Point(9, 293);
+            this.gbOlaksice.Location = new System.Drawing.Point(9, 337);
             this.gbOlaksice.Name = "gbOlaksice";
             this.gbOlaksice.Size = new System.Drawing.Size(326, 107);
             this.gbOlaksice.TabIndex = 26;
@@ -393,7 +404,7 @@
             // btnIzmijeni
             // 
             this.btnIzmijeni.BackColor = System.Drawing.Color.AliceBlue;
-            this.btnIzmijeni.Location = new System.Drawing.Point(219, 245);
+            this.btnIzmijeni.Location = new System.Drawing.Point(219, 289);
             this.btnIzmijeni.Name = "btnIzmijeni";
             this.btnIzmijeni.Size = new System.Drawing.Size(82, 42);
             this.btnIzmijeni.TabIndex = 28;
@@ -418,7 +429,7 @@
             this.gpUnosSati.Controls.Add(this.btnUnosGodisnjeg);
             this.gpUnosSati.Controls.Add(this.btnUnosBolovanja);
             this.gpUnosSati.Controls.Add(this.btnUnosSati);
-            this.gpUnosSati.Location = new System.Drawing.Point(417, 293);
+            this.gpUnosSati.Location = new System.Drawing.Point(419, 326);
             this.gpUnosSati.Name = "gpUnosSati";
             this.gpUnosSati.Size = new System.Drawing.Size(396, 107);
             this.gpUnosSati.TabIndex = 30;
@@ -471,6 +482,11 @@
             this.dataGridViewTextBoxColumn734,
             this.dataGridViewTextBoxColumn735,
             this.dataGridViewTextBoxColumn736,
+            this.iznosbrutoDataGridViewTextBoxColumn,
+            this.stimulacijaDataGridViewTextBoxColumn,
+            this.regresDataGridViewTextBoxColumn,
+            this.bozicnicaDataGridViewTextBoxColumn,
+            this.uskrsnicaDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn737,
             this.dataGridViewTextBoxColumn738,
             this.dataGridViewTextBoxColumn739,
@@ -484,6 +500,8 @@
             this.dgvRadnici.Name = "dgvRadnici";
             this.dgvRadnici.Size = new System.Drawing.Size(593, 180);
             this.dgvRadnici.TabIndex = 31;
+            this.dgvRadnici.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRadnici_CellContentClick);
+            this.dgvRadnici.SelectionChanged += new System.EventHandler(this.dgvRadnici_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn729
             // 
@@ -533,6 +551,39 @@
             this.dataGridViewTextBoxColumn736.DataPropertyName = "adresa";
             this.dataGridViewTextBoxColumn736.HeaderText = "adresa";
             this.dataGridViewTextBoxColumn736.Name = "dataGridViewTextBoxColumn736";
+            // 
+            // iznosbrutoDataGridViewTextBoxColumn
+            // 
+            this.iznosbrutoDataGridViewTextBoxColumn.DataPropertyName = "iznos_bruto";
+            this.iznosbrutoDataGridViewTextBoxColumn.HeaderText = "iznos_bruto";
+            this.iznosbrutoDataGridViewTextBoxColumn.Name = "iznosbrutoDataGridViewTextBoxColumn";
+            // 
+            // stimulacijaDataGridViewTextBoxColumn
+            // 
+            this.stimulacijaDataGridViewTextBoxColumn.DataPropertyName = "stimulacija";
+            this.stimulacijaDataGridViewTextBoxColumn.HeaderText = "stimulacija";
+            this.stimulacijaDataGridViewTextBoxColumn.Name = "stimulacijaDataGridViewTextBoxColumn";
+            // 
+            // regresDataGridViewTextBoxColumn
+            // 
+            this.regresDataGridViewTextBoxColumn.DataPropertyName = "regres";
+            this.regresDataGridViewTextBoxColumn.HeaderText = "regres";
+            this.regresDataGridViewTextBoxColumn.Name = "regresDataGridViewTextBoxColumn";
+            this.regresDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // bozicnicaDataGridViewTextBoxColumn
+            // 
+            this.bozicnicaDataGridViewTextBoxColumn.DataPropertyName = "bozicnica";
+            this.bozicnicaDataGridViewTextBoxColumn.HeaderText = "bozicnica";
+            this.bozicnicaDataGridViewTextBoxColumn.Name = "bozicnicaDataGridViewTextBoxColumn";
+            this.bozicnicaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // uskrsnicaDataGridViewTextBoxColumn
+            // 
+            this.uskrsnicaDataGridViewTextBoxColumn.DataPropertyName = "uskrsnica";
+            this.uskrsnicaDataGridViewTextBoxColumn.HeaderText = "uskrsnica";
+            this.uskrsnicaDataGridViewTextBoxColumn.Name = "uskrsnicaDataGridViewTextBoxColumn";
+            this.uskrsnicaDataGridViewTextBoxColumn.Visible = false;
             // 
             // dataGridViewTextBoxColumn737
             // 
@@ -612,7 +663,7 @@
             // 
             this.lblOdbitak.AutoSize = true;
             this.lblOdbitak.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOdbitak.Location = new System.Drawing.Point(9, 447);
+            this.lblOdbitak.Location = new System.Drawing.Point(12, 476);
             this.lblOdbitak.Name = "lblOdbitak";
             this.lblOdbitak.Size = new System.Drawing.Size(138, 14);
             this.lblOdbitak.TabIndex = 37;
@@ -621,7 +672,7 @@
             // lblUkupanOdbitak
             // 
             this.lblUkupanOdbitak.AutoSize = true;
-            this.lblUkupanOdbitak.Location = new System.Drawing.Point(154, 447);
+            this.lblUkupanOdbitak.Location = new System.Drawing.Point(156, 477);
             this.lblUkupanOdbitak.Name = "lblUkupanOdbitak";
             this.lblUkupanOdbitak.Size = new System.Drawing.Size(0, 13);
             this.lblUkupanOdbitak.TabIndex = 38;
@@ -630,7 +681,7 @@
             // 
             this.lblPrirez.AutoSize = true;
             this.lblPrirez.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPrirez.Location = new System.Drawing.Point(12, 677);
+            this.lblPrirez.Location = new System.Drawing.Point(6, 727);
             this.lblPrirez.Name = "lblPrirez";
             this.lblPrirez.Size = new System.Drawing.Size(254, 13);
             this.lblPrirez.TabIndex = 39;
@@ -641,7 +692,7 @@
             this.cmbPrirez.DataSource = this.prirezBindingSource;
             this.cmbPrirez.DisplayMember = "opcina";
             this.cmbPrirez.FormattingEnabled = true;
-            this.cmbPrirez.Location = new System.Drawing.Point(11, 713);
+            this.cmbPrirez.Location = new System.Drawing.Point(9, 763);
             this.cmbPrirez.Name = "cmbPrirez";
             this.cmbPrirez.Size = new System.Drawing.Size(172, 21);
             this.cmbPrirez.TabIndex = 40;
@@ -649,7 +700,7 @@
             // 
             // txtPlaca
             // 
-            this.txtPlaca.Location = new System.Drawing.Point(92, 779);
+            this.txtPlaca.Location = new System.Drawing.Point(95, 808);
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(100, 20);
             this.txtPlaca.TabIndex = 41;
@@ -658,7 +709,7 @@
             // 
             this.lblPlaca.AutoSize = true;
             this.lblPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPlaca.Location = new System.Drawing.Point(10, 782);
+            this.lblPlaca.Location = new System.Drawing.Point(6, 811);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(76, 13);
             this.lblPlaca.TabIndex = 42;
@@ -1169,7 +1220,7 @@
             this.lblObavijest.AutoSize = true;
             this.lblObavijest.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblObavijest.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblObavijest.Location = new System.Drawing.Point(364, 413);
+            this.lblObavijest.Location = new System.Drawing.Point(369, 444);
             this.lblObavijest.Name = "lblObavijest";
             this.lblObavijest.Size = new System.Drawing.Size(518, 16);
             this.lblObavijest.TabIndex = 97;
@@ -1179,7 +1230,7 @@
             // lblValuta
             // 
             this.lblValuta.AutoSize = true;
-            this.lblValuta.Location = new System.Drawing.Point(198, 782);
+            this.lblValuta.Location = new System.Drawing.Point(207, 811);
             this.lblValuta.Name = "lblValuta";
             this.lblValuta.Size = new System.Drawing.Size(30, 13);
             this.lblValuta.TabIndex = 98;
@@ -1188,7 +1239,7 @@
             // cbStandardni
             // 
             this.cbStandardni.AutoSize = true;
-            this.cbStandardni.Location = new System.Drawing.Point(52, 535);
+            this.cbStandardni.Location = new System.Drawing.Point(37, 536);
             this.cbStandardni.Name = "cbStandardni";
             this.cbStandardni.Size = new System.Drawing.Size(119, 17);
             this.cbStandardni.TabIndex = 99;
@@ -1199,7 +1250,7 @@
             // cbMinimalna
             // 
             this.cbMinimalna.AutoSize = true;
-            this.cbMinimalna.Location = new System.Drawing.Point(52, 620);
+            this.cbMinimalna.Location = new System.Drawing.Point(36, 620);
             this.cbMinimalna.Name = "cbMinimalna";
             this.cbMinimalna.Size = new System.Drawing.Size(102, 17);
             this.cbMinimalna.TabIndex = 100;
@@ -1210,7 +1261,7 @@
             // cbOsoba
             // 
             this.cbOsoba.AutoSize = true;
-            this.cbOsoba.Location = new System.Drawing.Point(52, 590);
+            this.cbOsoba.Location = new System.Drawing.Point(37, 590);
             this.cbOsoba.Name = "cbOsoba";
             this.cbOsoba.Size = new System.Drawing.Size(155, 17);
             this.cbOsoba.TabIndex = 101;
@@ -1221,7 +1272,7 @@
             // cbZaposlenje
             // 
             this.cbZaposlenje.AutoSize = true;
-            this.cbZaposlenje.Location = new System.Drawing.Point(52, 562);
+            this.cbZaposlenje.Location = new System.Drawing.Point(37, 563);
             this.cbZaposlenje.Name = "cbZaposlenje";
             this.cbZaposlenje.Size = new System.Drawing.Size(101, 17);
             this.cbZaposlenje.TabIndex = 102;
@@ -1232,7 +1283,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(198, 447);
+            this.label2.Location = new System.Drawing.Point(207, 477);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 103;
@@ -1269,12 +1320,66 @@
             this.pictureBox1.TabIndex = 106;
             this.pictureBox1.TabStop = false;
             // 
+            // dtp1
+            // 
+            this.dtp1.Location = new System.Drawing.Point(56, 668);
+            this.dtp1.Name = "dtp1";
+            this.dtp1.Size = new System.Drawing.Size(200, 20);
+            this.dtp1.TabIndex = 107;
+            // 
+            // lblDatum
+            // 
+            this.lblDatum.AutoSize = true;
+            this.lblDatum.Location = new System.Drawing.Point(9, 673);
+            this.lblDatum.Name = "lblDatum";
+            this.lblDatum.Size = new System.Drawing.Size(41, 13);
+            this.lblDatum.TabIndex = 108;
+            this.lblDatum.Text = "Datum:";
+            // 
+            // txtIznosPocetni
+            // 
+            this.txtIznosPocetni.Location = new System.Drawing.Point(95, 205);
+            this.txtIznosPocetni.Name = "txtIznosPocetni";
+            this.txtIznosPocetni.Size = new System.Drawing.Size(100, 20);
+            this.txtIznosPocetni.TabIndex = 109;
+            // 
+            // txtStimulacija
+            // 
+            this.txtStimulacija.Location = new System.Drawing.Point(95, 231);
+            this.txtStimulacija.Name = "txtStimulacija";
+            this.txtStimulacija.Size = new System.Drawing.Size(100, 20);
+            this.txtStimulacija.TabIndex = 110;
+            // 
+            // lblStimulacija
+            // 
+            this.lblStimulacija.AutoSize = true;
+            this.lblStimulacija.Location = new System.Drawing.Point(23, 234);
+            this.lblStimulacija.Name = "lblStimulacija";
+            this.lblStimulacija.Size = new System.Drawing.Size(57, 13);
+            this.lblStimulacija.TabIndex = 111;
+            this.lblStimulacija.Text = "Stimulacija";
+            // 
+            // lblB
+            // 
+            this.lblB.AutoSize = true;
+            this.lblB.Location = new System.Drawing.Point(23, 208);
+            this.lblB.Name = "lblB";
+            this.lblB.Size = new System.Drawing.Size(59, 13);
+            this.lblB.TabIndex = 112;
+            this.lblB.Text = "Bruto iznos";
+            // 
             // frmGlavna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(899, 974);
+            this.Controls.Add(this.lblB);
+            this.Controls.Add(this.lblStimulacija);
+            this.Controls.Add(this.txtStimulacija);
+            this.Controls.Add(this.txtIznosPocetni);
+            this.Controls.Add(this.lblDatum);
+            this.Controls.Add(this.dtp1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblObavijestOsoba);
             this.Controls.Add(this.lblUkupanTrosakIznos);
@@ -2244,6 +2349,11 @@
         private System.Windows.Forms.CheckBox cbOsoba;
         private System.Windows.Forms.CheckBox cbZaposlenje;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUkupanTrosakIznos;
+        private System.Windows.Forms.Label lblObavijestOsoba;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dtp1;
+        private System.Windows.Forms.Label lblDatum;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn729;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn730;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn731;
@@ -2252,6 +2362,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn734;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn735;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn736;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iznosbrutoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stimulacijaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bozicnicaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uskrsnicaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn737;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn738;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn739;
@@ -2261,9 +2376,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn743;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn744;
         private System.Windows.Forms.BindingSource radnikBindingSource;
-        private System.Windows.Forms.Label lblUkupanTrosakIznos;
-        private System.Windows.Forms.Label lblObavijestOsoba;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtIznosPocetni;
+        private System.Windows.Forms.TextBox txtStimulacija;
+        private System.Windows.Forms.Label lblStimulacija;
+        private System.Windows.Forms.Label lblB;
         /* private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

@@ -31,13 +31,15 @@ namespace obracun_placa
 
         public BindingList<odbitakZaDjecu> vratiDjecu()
         {
+
             BindingList<odbitakZaDjecu> lista = null;
             using (var db = new PlaceEntities4())
             {
-
                 lista = new BindingList<odbitakZaDjecu>(db.odbitakZaDjecu.ToList());
+
             }
             return lista;
+
         }
     }
 }

@@ -1,4 +1,4 @@
-Ôªøusing System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +16,7 @@ namespace obracun_placa
         private prirez odabraniPrirez;
         private poslodavac odabrani;
         odbitakZaDjecu odabraniOdbitakDjeca;
-        odbitakClan odabraniOdbitakƒålan;
+        odbitakClan odabraniOdbitak»lan;
         public frmGlavna()
         {
             InitializeComponent();
@@ -33,8 +33,8 @@ namespace obracun_placa
                 db.poslodavac.Attach(odabrani);
                 odabraniOdbitakDjeca = cmbOdbitakDjeca.SelectedItem as odbitakZaDjecu;
                 db.odbitakZaDjecu.Attach(odabraniOdbitakDjeca);
-                odabraniOdbitakƒålan = cmbOdbitakClan.SelectedItem as odbitakClan;
-                db.odbitakClan.Attach(odabraniOdbitakƒålan);
+                odabraniOdbitak»lan = cmbOdbitakClan.SelectedItem as odbitakClan;
+                db.odbitakClan.Attach(odabraniOdbitak»lan);
                 int oib;
                 int ime;
                 int prez;
@@ -42,8 +42,6 @@ namespace obracun_placa
                 int banka;
                 int adresa;
                 radnik noviRadnik;
-                double bruto;
-                double stimulacija;
                 //bool test = int.TryParse(txtOIB.Text, out oib);
                 bool imetest = int.TryParse(txtIme.Text, out ime);
                 bool prezimeTest = int.TryParse(txtPrezime.Text, out prez);
@@ -51,11 +49,8 @@ namespace obracun_placa
                 bool bankaTest = int.TryParse(txtBanka.Text, out banka);
                 bool testoib = int.TryParse(txtOIB.Text, out oib);
                 bool testadrese = int.TryParse(txtAdresa.Text, out adresa);
-                bool testStimulacija = double.TryParse(txtStimulacija.Text, out stimulacija);
-                bool testBruto = double.TryParse(txtIznosPocetni.Text, out bruto);
 
-
-                if (testoib &&  testStimulacija &&testBruto&&  testadrese == false && imetest == false && prezimeTest == false && telefonTest && bankaTest == false && !string.IsNullOrEmpty(txtAdresa.Text) && (!string.IsNullOrEmpty(txtIme.Text) &&
+                if (testoib && testadrese == false && imetest == false && prezimeTest == false && telefonTest && bankaTest == false && !string.IsNullOrEmpty(txtAdresa.Text) && (!string.IsNullOrEmpty(txtIme.Text) &&
                    !string.IsNullOrEmpty(txtPrezime.Text) && !string.IsNullOrEmpty(txtOIB.Text) && !string.IsNullOrEmpty(txtBrojTelefona.Text) && !string.IsNullOrEmpty(txtBrojRacuna.Text) && !string.IsNullOrEmpty(txtBanka.Text)))
 
                 {
@@ -69,15 +64,12 @@ namespace obracun_placa
                         broj_telefona = txtBrojTelefona.Text,
                         adresa = txtAdresa.Text,
                         banka = txtBanka.Text,
-                        iznos_bruto=double.Parse(txtIznosPocetni.Text),
-                        stimulacija=double.Parse(txtStimulacija.Text),
                         poslodavac = odabrani,
-                        odbitakClan = odabraniOdbitakƒålan,
+                        odbitakClan = odabraniOdbitak»lan,
                         odbitakZaDjecu = odabraniOdbitakDjeca
 
 
                     };
-                    txtPlaca.Text = (noviRadnik.iznos_bruto + noviRadnik.stimulacija).ToString();
                     db.radnik.Add(noviRadnik);
                     db.SaveChanges();
                     txtIme.Clear();
@@ -87,8 +79,6 @@ namespace obracun_placa
                     txtBrojTelefona.Clear();
                     txtAdresa.Clear();
                     txtBanka.Clear();
-                    txtIznosPocetni.Clear();
-                    txtStimulacija.Clear();
                 }
                 else
                     MessageBox.Show("Morate unijeti pravilne podatke za radnika-provjerite tipove unesenih podataka i obavezan je unos svih potrebnih podataka !");
@@ -184,7 +174,7 @@ namespace obracun_placa
             radnik odabrani = radnikBindingSource.Current as radnik;
             if (odabrani != null)
             {
-                if (MessageBox.Show("Jeste li sigurni da ≈æelite obrisati radnika?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("Jeste li sigurni da ûelite obrisati radnika?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
                     using (var db = new PlaceEntities4())
                     {
@@ -286,8 +276,8 @@ namespace obracun_placa
         private void racunajMladjiOdBruto(placa p) {
             prirez odabrani = cmbPrirez.SelectedItem as prirez;
             if (cbOsoba.Checked == true && rbBruto.Checked == true) {
-                lblObavijestOsoba.Text = "Kod izraƒçuna plaƒáe za osobe mlaƒëe od 30 godina poslodavac je osloboƒëen plaƒáanja doprinosa na plaƒáu u roku od pet godina.";
-                lblBrutoIznos.Text = double.Parse(txtPlaca.Text).ToString();
+                lblObavijestOsoba.Text = "Kod izraËuna plaÊe za osobe mlae od 30 godina poslodavac je osloboen plaÊanja doprinosa na plaÊu u roku od pet godina.";
+                lblBrutoIznos.Text = double.Parse(txtPlaca.Text) + ",00".ToString();
                 lblZastitaIznos.Text = lblBrutoIznos.Text;
                 lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
                 lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
@@ -304,11 +294,11 @@ namespace obracun_placa
                 lblUkupanTrosakIznos.Text = lblBrutoIznos.Text;
 
 
-                lblMirovinsko1Ukupno.Text =((double) (p.visina * 0.15)).ToString();
-                lblMirovinsko2Ukupno.Text =((double) (p.visina * 0.05)).ToString();
-                lblDoprinosIZukupno.Text = ((double)((p.visina * 0.15) + (p.visina * 0.05))).ToString();
+                lblMirovinsko1Ukupno.Text = (p.visina * 0.15).ToString();
+                lblMirovinsko2Ukupno.Text = (p.visina * 0.05).ToString();
+                lblDoprinosIZukupno.Text = ((p.visina * 0.15) + (p.visina * 0.05)).ToString();
                 p.dohodak = p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05));
-                lblDohodakUkupno.Text =((double) ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)))).ToString();
+                lblDohodakUkupno.Text = ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05))).ToString();
 
                 double odbitak = double.Parse(lblUkupanOdbitak.Text);
 
@@ -325,8 +315,6 @@ namespace obracun_placa
                     lblPorez2Ukupno.Text = lblPorez2Iznos.Text;
                     lblPrirezUkupno.Text = lblPrirezIznos.Text;
                     lblPorezUkupno.Text = 0 + ",00";
-                    lblMirovinsko1Iznos.Text = lblBrutoIznos.Text;
-                    lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
                 }
                 else
                 {
@@ -337,8 +325,7 @@ namespace obracun_placa
 
                     lblPorez2Iznos.Text = 0 + ",00";
                     lblPorez2Ukupno.Text = 0 + ",00";
-                    lblMirovinsko1Iznos.Text = lblBrutoIznos.Text;
-                    lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
+
                     lblPrirezUkupno.Text = Math.Round((double.Parse(lblPrirezIznos.Text) * (double)(odabrani.postotak * 0.01)), 2).ToString();
                     lblPorezUkupno.Text = Math.Round((double.Parse(lblPorez1Ukupno.Text) + double.Parse(lblPorez2Ukupno.Text) + double.Parse(lblPrirezUkupno.Text)), 2).ToString();
                     lblNetoIznos.Text = ((p.visina - (double)((p.visina * 0.15) + (p.visina * 0.05))) - Math.Round(double.Parse(lblPorezUkupno.Text), 2)).ToString();
@@ -357,16 +344,17 @@ namespace obracun_placa
 
             if (cbStandardni.Checked == true && rbBruto.Checked == true) {
                 lblPrirezPostotak.Text = odabrani.postotak.ToString() + "%"; ;
-                lblBrutoIznos.Text = double.Parse(txtPlaca.Text).ToString();
+                lblBrutoIznos.Text = double.Parse(txtPlaca.Text) + ",00".ToString();
                 lblMirovinsko1Iznos.Text = lblBrutoIznos.Text;
                 lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
                 p.ukupno_bruto = p.visina;
 
-                lblMirovinsko1Ukupno.Text = (double.Parse(lblMirovinsko1Iznos.Text) * 0.15).ToString();
-                lblMirovinsko2Ukupno.Text = (double.Parse(lblmirovinsko2Iznos.Text) * 0.05).ToString();
-                lblDoprinosIZukupno.Text = ((double.Parse(lblMirovinsko1Iznos.Text) * 0.15) + (double.Parse(lblmirovinsko2Iznos.Text) * 0.05)).ToString();
+                lblMirovinsko1Ukupno.Text = (p.visina * 0.15).ToString();
+                lblMirovinsko2Ukupno.Text = (p.visina * 0.05).ToString();
+
+                lblDoprinosIZukupno.Text = ((p.visina * 0.15) + (p.visina * 0.05)).ToString();
                 p.dohodak = p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05));
-                lblDohodakUkupno.Text = ((double)((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)))).ToString();
+                lblDohodakUkupno.Text = ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05))).ToString();
 
                 lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
                 lblZastitaIznos.Text = lblBrutoIznos.Text;
@@ -375,14 +363,13 @@ namespace obracun_placa
                 lblZastitaPostotak.Text = 1.7 + "%";
                 lblZaposljavanjePostotak.Text = 0.5 + "%";
 
-                lblIznosZdradstvenoUkupno.Text = (double.Parse(lblZdradstvenoIznos.Text) * 0.15).ToString();
-                lblZaposlavanjeUkupno.Text = (double.Parse(lblZaposljavanjeIznos.Text) * 0.017).ToString();
-                lblZastitaUkupno.Text = (double.Parse(lblZastitaIznos.Text) * 0.005).ToString();
+                lblIznosZdradstvenoUkupno.Text = (p.visina * 0.15).ToString();
+                lblZastitaUkupno.Text = (p.visina * 0.005).ToString();
+                lblZaposlavanjeUkupno.Text = (p.visina * 0.017).ToString();
 
-                lblTrosakUkupno.Text = ((double.Parse(lblZdradstvenoIznos.Text) * 0.15) + (double.Parse(lblZaposljavanjeIznos.Text) * 0.017) + (double.Parse(lblZastitaIznos.Text) * 0.005)).ToString();
+                lblTrosakUkupno.Text = ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)).ToString();
 
-                lblUkupanTrosakIznos.Text = ((double.Parse(lblTrosakUkupno.Text)) + (double.Parse(lblBrutoIznos.Text))).ToString();
-                //lblUkupanTrosakIznos.Text = ((double)(p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)))).ToString();
+                lblUkupanTrosakIznos.Text = (p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017))).ToString();
                 p.ukupno_trosak = (int)(p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)));
 
                 double odbitak = double.Parse(lblUkupanOdbitak.Text);
@@ -432,8 +419,8 @@ namespace obracun_placa
             prirez odabrani = cmbPrirez.SelectedItem as prirez;
             if (cbOsoba.Checked == true && rbNeto.Checked == true)
             {
-                lblObavijestOsoba.Text = "Kod izraƒçuna plaƒáe za osobe mlaƒëe od 30 godina poslodavac je osloboƒëen plaƒáanja doprinosa na plaƒáu u roku od pet godina.";
-                lblNetoIznos.Text = double.Parse(txtPlaca.Text).ToString();
+                lblObavijestOsoba.Text = "Kod izraËuna plaÊe za osobe mlae od 30 godina poslodavac je osloboen plaÊanja doprinosa na plaÊu u roku od pet godina.";
+                lblNetoIznos.Text = double.Parse(txtPlaca.Text) + ",00".ToString();
                 lblZastitaIznos.Text = lblBrutoIznos.Text;
                 lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
                 lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
@@ -527,7 +514,7 @@ namespace obracun_placa
             if (cbStandardni.Checked == true && rbNeto.Checked == true)
             {
 
-                lblNetoIznos.Text = double.Parse(txtPlaca.Text).ToString();
+                lblNetoIznos.Text = double.Parse(txtPlaca.Text).ToString() + ",00";
                 p.ukupno_neto = p.visina;
                 lblPrirezPostotak.Text = odabrani.postotak.ToString() + "%";
                 double odbitak = double.Parse(lblUkupanOdbitak.Text);
@@ -643,13 +630,13 @@ namespace obracun_placa
                 MessageBox.Show("Potrebno je odabrati vrstu obracuna!");
 
         }
+        
 
-      
-
+        
         private void btnIzracunaj_Click(object sender, EventArgs e)
         {
-            double placa;
-            bool testPlaca = double.TryParse(txtPlaca.Text, out placa);
+            int placa;
+            bool testPlaca = int.TryParse(txtPlaca.Text, out placa);
             placa novaPlaca;
             radnikPlaca = radnikBindingSource.Current as radnik;
             odabraniPrirez = cmbPrirez.SelectedItem as prirez;
@@ -658,19 +645,22 @@ namespace obracun_placa
             {
                 if (radnikPlaca != null && odabraniPrirez != null && testPlaca)
                 {
-               
                     db.radnik.Attach(radnikPlaca);
                     db.prirez.Attach(odabraniPrirez);
-                  
-                   
                     novaPlaca = new placa()
                     {
-                        visina=(int)double.Parse(txtPlaca.Text),
+                         visina = int.Parse(txtPlaca.Text),
+                        /* FORMULE ZA IZRACUN!!!
+                         ukupno_bruto,
+                         ukupno_neto,
+                         ukupno_trosak
+                         dohodak
+                         */
                         radnik = radnikPlaca,
                         prirez = odabraniPrirez,
-                        datum=dtp1.Value.Date
                                             
                     };
+                    // DodajObracun(novaPlaca);
                     racunajStandardniBruto(novaPlaca);
                     racunajStandardniNeto(novaPlaca);
                     racunajMladjiOdBruto(novaPlaca);
@@ -688,11 +678,11 @@ namespace obracun_placa
 
                     }
                     else
-                        MessageBox.Show("Morate odabrati vrstu plaƒáe!");
+                        MessageBox.Show("Morate odabrati vrstu plaÊe!");
                     //Close();    
                 }
                 else
-                    MessageBox.Show("Za svakog radnika potrebno je unijeti pripadujuƒáu plaƒáu te plaƒáa mora biti napisana u obliku cjelobrojne vrijednosti!");
+                    MessageBox.Show("Za svakog radnika potrebno je unijeti pripadujuÊu plaÊu te plaÊa mora biti napisana u obliku cjelobrojne vrijednosti!");
             }
 
 
@@ -753,11 +743,11 @@ namespace obracun_placa
                     lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
                 else if (o.broj_djece == "Troje djece")
                     lblUkupanOdbitak.Text = (8050 + (2500 * o.koeficijent)).ToString() + ",00";
-                else if (o.broj_djece == "ƒåetvero djece")
+                else if (o.broj_djece == "»etvero djece")
                     lblUkupanOdbitak.Text = (11550 + (2500 * o.koeficijent)).ToString() + ",00";
                 else if (o.broj_djece == "Petero djece")
                     lblUkupanOdbitak.Text = (16300 + (2500 * o.koeficijent)).ToString() + ",00";
-                else if (o.broj_djece == "≈†estero djece")
+                else if (o.broj_djece == "äestero djece")
                     lblUkupanOdbitak.Text = (22550 + (2500 * o.koeficijent)).ToString() + ",00";
                 else if (o.broj_djece == "Sedmero djece")
                     lblUkupanOdbitak.Text = (30550 + (2500 * o.koeficijent)).ToString() + ",00";
@@ -796,8 +786,8 @@ namespace obracun_placa
                     {
                         if (o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 3800.ToString() + ",00";
-                        else if (o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Dva ƒçlana" || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Tri ƒçlana" || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Dva Ëlana" || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Tri Ëlana" || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "Nema djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno = int.Parse(lblUkupanOdbitak.Text);
@@ -805,8 +795,8 @@ namespace obracun_placa
                         }
                         if (o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 5550.ToString() + ",00";
-                        else if (o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Dva ƒçlana" || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Tri ƒçlana" || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Dva Ëlana" || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Tri Ëlana" || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "Jedno dijete" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno1 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno1 = int.Parse(lblUkupanOdbitak.Text);
@@ -814,8 +804,8 @@ namespace obracun_placa
                         }
                         if (o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 8050.ToString() + ",00";
-                        else if (o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Dva ƒçlana" || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Tri ƒçlana" || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Dva Ëlana" || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Tri Ëlana" || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "Dvoje djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno2 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno2 = int.Parse(lblUkupanOdbitak.Text);
@@ -823,19 +813,19 @@ namespace obracun_placa
                         }
                         if (o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 11550.ToString() + ",00";
-                        else if (o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Dva ƒçlana" || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Tri ƒçlana" 
-                            || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Dva Ëlana" || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Tri Ëlana" 
+                            || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "Troje djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno3 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno3 = int.Parse(lblUkupanOdbitak.Text);
                             lblUkupanOdbitak.Text = ukupno3.ToString();
                         }
-                        if (o.broj_djece == "ƒåetvero djece" && odbitakClan.broj_clanova == "Nema")
+                        if (o.broj_djece == "»etvero djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 16300.ToString() + ",00";
-                        else if (o.broj_djece == "ƒåetvero djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "ƒåetvero djece" && odbitakClan.broj_clanova == "Dva ƒçlana" || o.broj_djece == "ƒåetvero djece" && odbitakClan.broj_clanova == "Tri ƒçlana"
-                            || o.broj_djece == "ƒåetvero djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "ƒåetvero djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "»etvero djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "»etvero djece" && odbitakClan.broj_clanova == "Dva Ëlana" || o.broj_djece == "»etvero djece" && odbitakClan.broj_clanova == "Tri Ëlana"
+                            || o.broj_djece == "»etvero djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "»etvero djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno4 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno4 = int.Parse(lblUkupanOdbitak.Text);
@@ -843,19 +833,19 @@ namespace obracun_placa
                         }
                         if (o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 22500.ToString() + ",00";
-                        else if (o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Dva ƒçlana" || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Tri ƒçlana"
-                            || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Dva Ëlana" || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Tri Ëlana"
+                            || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "Petero djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno5 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno4 = int.Parse(lblUkupanOdbitak.Text);
                             lblUkupanOdbitak.Text = ukupno5.ToString();
                         }
-                        if (o.broj_djece == "≈†estero djece" && odbitakClan.broj_clanova == "Nema")
+                        if (o.broj_djece == "äestero djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 30550.ToString() + ",00";
-                        else if (o.broj_djece == "≈†estero djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "≈†estero djece" && odbitakClan.broj_clanova == "Dva ƒçlana" || o.broj_djece == "≈†estero djece" && odbitakClan.broj_clanova == "Tri ƒçlana"
-                            || o.broj_djece == "≈†estero djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "≈†estero djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "äestero djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "äestero djece" && odbitakClan.broj_clanova == "Dva Ëlana" || o.broj_djece == "äestero djece" && odbitakClan.broj_clanova == "Tri Ëlana"
+                            || o.broj_djece == "äestero djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "äestero djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno6 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno4 = int.Parse(lblUkupanOdbitak.Text);
@@ -863,10 +853,10 @@ namespace obracun_placa
                         }
                         if (o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 40550.ToString() + ",00";
-                        else if (o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Dva ƒçlana" 
-                            || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Tri ƒçlana"
-                            || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Dva Ëlana" 
+                            || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Tri Ëlana"
+                            || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "Sedmero djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno7 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno7 = int.Parse(lblUkupanOdbitak.Text);
@@ -874,10 +864,10 @@ namespace obracun_placa
                         }
                         if (o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 52800.ToString() + ",00";
-                        else if (o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Dva ƒçlana"
-                            || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Tri ƒçlana"
-                            || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Dva Ëlana"
+                            || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Tri Ëlana"
+                            || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "Osmero djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno8 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno8 = int.Parse(lblUkupanOdbitak.Text);
@@ -885,10 +875,10 @@ namespace obracun_placa
                         }
                         if (o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 67550.ToString() + ",00";
-                        else if (o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Dva ƒçlana"
-                            || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Tri ƒçlana"
-                            || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Dva Ëlana"
+                            || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Tri Ëlana"
+                            || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "Devetero djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno9 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno9 = int.Parse(lblUkupanOdbitak.Text);
@@ -896,10 +886,10 @@ namespace obracun_placa
                         }
                         if (o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Nema")
                             lblUkupanOdbitak.Text = 84800.ToString() + ",00";
-                        else if (o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Jedan ƒçlan" || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Dva ƒçlana"
-                            || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Tri ƒçlana"
-                            || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "ƒåetiri ƒçlana"
-                            || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Pet ƒçlanova")
+                        else if (o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Jedan Ëlan" || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Dva Ëlana"
+                            || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Tri Ëlana"
+                            || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "»etiri Ëlana"
+                            || o.broj_djece == "Desetero djece" && odbitakClan.broj_clanova == "Pet Ëlanova")
                         {
                             lblUkupanOdbitak.Text = (ukupno10 + (2500 * odbitakClan.koeficijent)).ToString() + ",00";
                             ukupno10 = int.Parse(lblUkupanOdbitak.Text);
@@ -925,15 +915,15 @@ namespace obracun_placa
             {
                 if (o.broj_clanova == "Nema")
                     lblUkupanOdbitak.Text = 3800.ToString() + ",00";
-                else if (o.broj_clanova == "Jedan ƒçlan")
+                else if (o.broj_clanova == "Jedan Ëlan")
                     lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
-                else if (o.broj_clanova == "Dva ƒçlana")
+                else if (o.broj_clanova == "Dva Ëlana")
                     lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
-                else if (o.broj_clanova == "Tri ƒçlana")
+                else if (o.broj_clanova == "Tri Ëlana")
                     lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
-                else if (o.broj_clanova == "ƒåetiri ƒçlana")
+                else if (o.broj_clanova == "»etiri Ëlana")
                     lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
-                else if (o.broj_clanova == "Pet ƒçlanova")
+                else if (o.broj_clanova == "Pet Ëlanova")
                     lblUkupanOdbitak.Text = (3800 + (2500 * o.koeficijent)).ToString() + ",00";
             }
             catch { }
@@ -971,21 +961,6 @@ namespace obracun_placa
         private void gbOlaksice_Enter(object sender, EventArgs e)
         {
 
-        }
-
-        private void dgvRadnici_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
-        private void dgvRadnici_SelectionChanged(object sender, EventArgs e)
-        {
-            using (var db = new PlaceEntities4())
-            {
-
-                radnik r = radnikBindingSource.Current as radnik;
-                txtPlaca.Text = (r.stimulacija + r.iznos_bruto).ToString();
-            }
         }
     }
 }

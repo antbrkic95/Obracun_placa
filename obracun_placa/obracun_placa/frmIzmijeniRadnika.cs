@@ -37,19 +37,11 @@ namespace obracun_placa
                 txtIzmjenaTelefon.Text = radnikIzmjena.broj_telefona;
                 txtIzmjenaRacun.Text = radnikIzmjena.broj_racuna;
                 txtIzmjenaBanka.Text = radnikIzmjena.banka;
+                txtBrutoIzmjena.Text = radnikIzmjena.iznos_bruto.ToString();
+                txtStimulacijaIzmjena.Text = radnikIzmjena.stimulacija.ToString();
             }
-            //OsvjeziPoslodavce();
         }
-        /*private void OsvjeziPoslodavce()
-        {
-            BindingList<poslodavac> poslodavciIzmjena = null;
-            using (var db = new PlaceEntities1())
-            {
-
-                poslodavciIzmjena = new BindingList<poslodavac>(db.poslodavac.ToList());
-            }
-            poslodavacBindingSource.DataSource = poslodavciIzmjena;
-        }*/
+     
         private void btnSpremiIzmjene_Click(object sender, EventArgs e)
         {
             using (var db = new PlaceEntities4())
@@ -61,14 +53,18 @@ namespace obracun_placa
                 int banka;
                 int racun;
                 int adresa;
+                double bruto;
+                double stimulacija;
                 bool oibTest = int.TryParse(txtIzmjenaOIB.Text, out oib);
                 bool testTelefon = int.TryParse(txtIzmjenaTelefon.Text, out brojtelefona);
                 bool testIme = int.TryParse(txtIzmjenaIme.Text, out ime);
                 bool testPrezime = int.TryParse(txtIzmjenaPrezime.Text, out prezime);
                 bool testBanka = int.TryParse(txtIzmjenaBanka.Text, out banka);
+                bool testBruto = double.TryParse(txtBrutoIzmjena.Text, out bruto);
                 //bool testracun = int.TryParse(txtIzmjenaRacun.Text, out racun);
                 bool testadresa = int.TryParse(txtIzmjenaAdresa.Text, out adresa);
-                if (oibTest && testTelefon && testIme==false && testPrezime==false && testBanka==false && testadresa==false)
+                bool testStimulacija = double.TryParse(txtStimulacijaIzmjena.Text, out stimulacija);
+                if (oibTest && testTelefon && testIme==false && testPrezime==false && testBanka==false && testadresa==false && testBruto && testStimulacija)
                 {
                     if (radnikIzmjena == null)
                     {
@@ -82,7 +78,9 @@ namespace obracun_placa
                             broj_racuna = txtIzmjenaRacun.Text,
                             broj_telefona = txtIzmjenaTelefon.Text,
                             banka = txtIzmjenaBanka.Text,
-                            poslodavac = izmjenaPoslodavac
+                            poslodavac = izmjenaPoslodavac,
+                            iznos_bruto=double.Parse(txtBrutoIzmjena.Text),
+                            stimulacija=double.Parse(txtStimulacijaIzmjena.Text)
                         };
                         db.radnik.Add(izmjenjeni);
                         db.SaveChanges();
@@ -99,15 +97,9 @@ namespace obracun_placa
                         radnikIzmjena.broj_racuna = txtIzmjenaRacun.Text;
                         radnikIzmjena.broj_telefona = txtIzmjenaTelefon.Text;
                         radnikIzmjena.banka = txtIzmjenaBanka.Text;
-                        // radnikIzmjena.poslodavac = izmjenaPoslodavac;
-                        /*  if (izmjenaPoslodavac.naziv == "HeliozTehnologies") {
-                              radnikIzmjena.poslodavac = izmjenaPoslodavac;
-
-                          }
-                          if (izmjenaPoslodavac.naziv == "BrodBot") {
-                              radnikIzmjena.poslodavac = izmjenaPoslodavac;
-
-                          }*/
+                        radnikIzmjena.iznos_bruto = double.Parse(txtBrutoIzmjena.Text);
+                        radnikIzmjena.stimulacija = double.Parse(txtStimulacijaIzmjena.Text);
+                      
                         db.SaveChanges();
                         Close();
                     }

@@ -31,10 +31,11 @@
           <Property Name="prirez_ID" Type="int" />
           <Property Name="radnik_ID" Type="int" />
           <Property Name="ukupno_bruto" Type="float" />
-          <Property Name="ukupno_neto" Type="int" />
-          <Property Name="ukupno_trosak" Type="int" />
+          <Property Name="ukupno_neto" Type="float" />
+          <Property Name="ukupno_trosak" Type="float" />
           <Property Name="dohodak" Type="float" />
           <Property Name="obracun" Type="varchar" MaxLength="50" />
+          <Property Name="datum" Type="datetime" />
         </EntityType>
         <EntityType Name="poslodavac">
           <Key>
@@ -69,6 +70,11 @@
           <Property Name="poslodavac_ID" Type="int" />
           <Property Name="odbitakDjeca_ID" Type="int" />
           <Property Name="odbitakClan_ID" Type="int" />
+          <Property Name="iznos_bruto" Type="float" />
+          <Property Name="stimulacija" Type="float" />
+          <Property Name="regres" Type="float" />
+          <Property Name="bozicnica" Type="float" />
+          <Property Name="uskrsnica" Type="float" />
         </EntityType>
         <EntityType Name="radniSati">
           <Key>
@@ -297,6 +303,7 @@
           <Property Name="obracun" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="prirez" Relationship="Self.FK_placa_prirez" FromRole="placa" ToRole="prirez" />
           <NavigationProperty Name="radnik" Relationship="Self.FK_placa_radnik" FromRole="placa" ToRole="radnik" />
+          <Property Name="datum" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="poslodavac">
           <Key>
@@ -338,6 +345,11 @@
           <NavigationProperty Name="sati_blagdani" Relationship="Self.FK_sati_blagdani_radnik" FromRole="radnik" ToRole="sati_blagdani" />
           <NavigationProperty Name="sati_bolovanje" Relationship="Self.FK_sati_bolovanje_radnik" FromRole="radnik" ToRole="sati_bolovanje" />
           <NavigationProperty Name="sati_godisnji" Relationship="Self.FK_sati_godisnji_radnik" FromRole="radnik" ToRole="sati_godisnji" />
+          <Property Name="iznos_bruto" Type="Double" />
+          <Property Name="stimulacija" Type="Double" />
+          <Property Name="regres" Type="Double" />
+          <Property Name="bozicnica" Type="Double" />
+          <Property Name="uskrsnica" Type="Double" />
         </EntityType>
         <EntityType Name="radniSati">
           <Key>
@@ -485,6 +497,7 @@
           <EntitySetMapping Name="placa">
             <EntityTypeMapping TypeName="PlaceModel.placa">
               <MappingFragment StoreEntitySet="placa">
+                <ScalarProperty Name="datum" ColumnName="datum" />
                 <ScalarProperty Name="ID_placa" ColumnName="ID_placa" />
                 <ScalarProperty Name="visina" ColumnName="visina" />
                 <ScalarProperty Name="vrsta" ColumnName="vrsta" />
@@ -519,6 +532,11 @@
           <EntitySetMapping Name="radnik">
             <EntityTypeMapping TypeName="PlaceModel.radnik">
               <MappingFragment StoreEntitySet="radnik">
+                <ScalarProperty Name="uskrsnica" ColumnName="uskrsnica" />
+                <ScalarProperty Name="bozicnica" ColumnName="bozicnica" />
+                <ScalarProperty Name="regres" ColumnName="regres" />
+                <ScalarProperty Name="stimulacija" ColumnName="stimulacija" />
+                <ScalarProperty Name="iznos_bruto" ColumnName="iznos_bruto" />
                 <ScalarProperty Name="ID_radnik" ColumnName="ID_radnik" />
                 <ScalarProperty Name="ime" ColumnName="ime" />
                 <ScalarProperty Name="prezime" ColumnName="prezime" />
