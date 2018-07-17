@@ -33,7 +33,7 @@ namespace obracun_placa
 
             using (var db = new PlaceEntities4())
             {
-                if (testNazivPraznika == false && testSati)
+                if (testNazivPraznika == false && testSati && !string.IsNullOrEmpty(txtBrojSati.Text) && !string.IsNullOrEmpty(txtPraznik.Text))
                 {
                     if (odabraniRadnikPraznik != null)
                     {

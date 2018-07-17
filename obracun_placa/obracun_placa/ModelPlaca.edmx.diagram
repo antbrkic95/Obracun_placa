@@ -24,6 +24,8 @@
         <AssociationConnector Association="PlaceModel.FK_sati_blagdani_radnik" ManuallyRouted="false" />
         <AssociationConnector Association="PlaceModel.FK_sati_bolovanje_radnik" ManuallyRouted="false" />
         <AssociationConnector Association="PlaceModel.FK_sati_godisnji_radnik" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PlaceModel.bonus" Width="1.5" PointX="5.25" PointY="0.75" />
+        <AssociationConnector Association="PlaceModel.FK_bonus_radnik" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

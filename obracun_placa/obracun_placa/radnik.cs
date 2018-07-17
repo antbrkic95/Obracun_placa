@@ -22,6 +22,7 @@ namespace obracun_placa
             this.sati_blagdani = new HashSet<sati_blagdani>();
             this.sati_bolovanje = new HashSet<sati_bolovanje>();
             this.sati_godisnji = new HashSet<sati_godisnji>();
+            this.bonus = new HashSet<bonus>();
         }
     
         public int ID_radnik { get; set; }
@@ -37,6 +38,8 @@ namespace obracun_placa
         public Nullable<double> regres { get; set; }
         public Nullable<double> bozicnica { get; set; }
         public Nullable<double> uskrsnica { get; set; }
+        public Nullable<double> ukupno_bonus { get; set; }
+        public Nullable<double> razlika { get; set; }
     
         public virtual odbitakClan odbitakClan { get; set; }
         public virtual odbitakZaDjecu odbitakZaDjecu { get; set; }
@@ -51,5 +54,7 @@ namespace obracun_placa
         public virtual ICollection<sati_bolovanje> sati_bolovanje { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sati_godisnji> sati_godisnji { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<bonus> bonus { get; set; }
     }
 }

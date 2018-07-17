@@ -43,7 +43,7 @@ namespace obracun_placa
             bool testSati = int.TryParse(txtBrojSati.Text, out sati);
 
             using (var db = new PlaceEntities4()) {
-                if(testNazivRada==false && testSati) {
+                if(testNazivRada==false && testSati && !string.IsNullOrEmpty(txtNazivRada.Text) && !string.IsNullOrEmpty(txtBrojSati.Text)) {
                     if (noviRadnik != null)
                     {
 

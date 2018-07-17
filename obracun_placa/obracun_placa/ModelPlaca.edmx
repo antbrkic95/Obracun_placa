@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="PlaceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bonus">
+          <Key>
+            <PropertyRef Name="ID_bonus" />
+          </Key>
+          <Property Name="ID_bonus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="regres" Type="float" />
+          <Property Name="bozicnica" Type="float" />
+          <Property Name="uskrsnica" Type="float" />
+          <Property Name="radnik_ID" Type="int" />
+          <Property Name="datum" Type="datetime" />
+          <Property Name="ukupno" Type="float" />
+        </EntityType>
         <EntityType Name="odbitakClan">
           <Key>
             <PropertyRef Name="ID_odbitakClan" />
@@ -75,6 +87,8 @@
           <Property Name="regres" Type="float" />
           <Property Name="bozicnica" Type="float" />
           <Property Name="uskrsnica" Type="float" />
+          <Property Name="ukupno_bonus" Type="float" />
+          <Property Name="razlika" Type="float" />
         </EntityType>
         <EntityType Name="radniSati">
           <Key>
@@ -111,6 +125,18 @@
           <Property Name="broj_sati" Type="int" />
           <Property Name="radnik_ID" Type="int" />
         </EntityType>
+        <Association Name="FK_bonus_radnik">
+          <End Role="radnik" Type="Self.radnik" Multiplicity="0..1" />
+          <End Role="bonus" Type="Self.bonus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="radnik">
+              <PropertyRef Name="ID_radnik" />
+            </Principal>
+            <Dependent Role="bonus">
+              <PropertyRef Name="radnik_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_placa_prirez">
           <End Role="prirez" Type="Self.prirez" Multiplicity="0..1" />
           <End Role="placa" Type="Self.placa" Multiplicity="*" />
@@ -220,6 +246,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="PlaceModelStoreContainer">
+          <EntitySet Name="bonus" EntityType="Self.bonus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="odbitakClan" EntityType="Self.odbitakClan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="odbitakZaDjecu" EntityType="Self.odbitakZaDjecu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="placa" EntityType="Self.placa" Schema="dbo" store:Type="Tables" />
@@ -230,6 +257,10 @@
           <EntitySet Name="sati_blagdani" EntityType="Self.sati_blagdani" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sati_bolovanje" EntityType="Self.sati_bolovanje" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sati_godisnji" EntityType="Self.sati_godisnji" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_bonus_radnik" Association="Self.FK_bonus_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="bonus" EntitySet="bonus" />
+          </AssociationSet>
           <AssociationSet Name="FK_placa_prirez" Association="Self.FK_placa_prirez">
             <End Role="prirez" EntitySet="prirez" />
             <End Role="placa" EntitySet="placa" />
@@ -350,6 +381,9 @@
           <Property Name="regres" Type="Double" />
           <Property Name="bozicnica" Type="Double" />
           <Property Name="uskrsnica" Type="Double" />
+          <NavigationProperty Name="bonus" Relationship="PlaceModel.FK_bonus_radnik" FromRole="radnik" ToRole="bonus" />
+          <Property Name="ukupno_bonus" Type="Double" />
+          <Property Name="razlika" Type="Double" />
         </EntityType>
         <EntityType Name="radniSati">
           <Key>
@@ -469,7 +503,28 @@
             <End Role="radnik" EntitySet="radnik" />
             <End Role="sati_godisnji" EntitySet="sati_godisnji" />
           </AssociationSet>
+          <EntitySet Name="bonus" EntityType="PlaceModel.bonus" />
+          <AssociationSet Name="FK_bonus_radnik" Association="PlaceModel.FK_bonus_radnik">
+            <End Role="radnik" EntitySet="radnik" />
+            <End Role="bonus" EntitySet="bonus" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="bonus">
+          <Key>
+            <PropertyRef Name="ID_bonus" />
+          </Key>
+          <Property Name="ID_bonus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="regres" Type="Double" />
+          <Property Name="bozicnica" Type="Double" />
+          <Property Name="uskrsnica" Type="Double" />
+          <NavigationProperty Name="radnik" Relationship="PlaceModel.FK_bonus_radnik" FromRole="bonus" ToRole="radnik" />
+          <Property Name="datum" Type="DateTime" Precision="3" />
+          <Property Name="ukupno" Type="Double" />
+        </EntityType>
+        <Association Name="FK_bonus_radnik">
+          <End Type="PlaceModel.radnik" Role="radnik" Multiplicity="0..1" />
+          <End Type="PlaceModel.bonus" Role="bonus" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -532,6 +587,8 @@
           <EntitySetMapping Name="radnik">
             <EntityTypeMapping TypeName="PlaceModel.radnik">
               <MappingFragment StoreEntitySet="radnik">
+                <ScalarProperty Name="razlika" ColumnName="razlika" />
+                <ScalarProperty Name="ukupno_bonus" ColumnName="ukupno_bonus" />
                 <ScalarProperty Name="uskrsnica" ColumnName="uskrsnica" />
                 <ScalarProperty Name="bozicnica" ColumnName="bozicnica" />
                 <ScalarProperty Name="regres" ColumnName="regres" />
@@ -663,6 +720,27 @@
               <ScalarProperty Name="ID_godisnji" ColumnName="ID_godisnji" />
             </EndProperty>
             <Condition IsNull="false" ColumnName="radnik_ID" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="bonus">
+            <EntityTypeMapping TypeName="PlaceModel.bonus">
+              <MappingFragment StoreEntitySet="bonus">
+                <ScalarProperty Name="ukupno" ColumnName="ukupno" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="uskrsnica" ColumnName="uskrsnica" />
+                <ScalarProperty Name="bozicnica" ColumnName="bozicnica" />
+                <ScalarProperty Name="regres" ColumnName="regres" />
+                <ScalarProperty Name="ID_bonus" ColumnName="ID_bonus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_bonus_radnik" TypeName="PlaceModel.FK_bonus_radnik" StoreEntitySet="bonus">
+            <EndProperty Name="bonus">
+              <ScalarProperty Name="ID_bonus" ColumnName="ID_bonus" />
+            </EndProperty>
+            <EndProperty Name="radnik">
+              <ScalarProperty Name="ID_radnik" ColumnName="radnik_ID" />
+            </EndProperty>
+            <Condition ColumnName="radnik_ID" IsNull="false" />
           </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>

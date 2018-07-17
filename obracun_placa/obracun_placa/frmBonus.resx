@@ -117,47 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="poslodavacBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>544, 17</value>
-  </metadata>
-  <metadata name="poslodavacBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>216, 56</value>
-  </metadata>
-  <metadata name="odbitakClanBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>788, 56</value>
-  </metadata>
-  <metadata name="odbitakZaDjecuBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>572, 56</value>
-  </metadata>
-  <metadata name="prirezBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>181, 95</value>
-  </metadata>
-  <metadata name="poslodavacBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>984, 56</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        /9j/4AAQSkZJRgABAQEAYABgAAD/4QBERXhpZgAATU0AKgAAAAgAAgE7AAIAAAAHAAAAJpydAAEAAAAO
-        AAAALgAAAABURVNUMDQAAFQARQBTAFQAMAA0AAAA/9sAQwAHBQUGBQQHBgUGCAcHCAoRCwoJCQoVDxAM
-        ERgVGhkYFRgXGx4nIRsdJR0XGCIuIiUoKSssKxogLzMvKjInKisq/9sAQwEHCAgKCQoUCwsUKhwYHCoq
-        KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq/8AAEQgAFAAaAwEi
-        AAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAAB
-        fQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNE
-        RUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1
-        tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEA
-        AAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRC
-        kaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpz
-        dHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ
-        2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A9Us/FNtpHiXUotVu5Vh2xiJfmYA7RnAHSpbz
-        xvps2sWL2l5J5CFvOG1l47cd65ydrF/FetWmp6n/AGUzGF45SOSAoJH4gj/6/SpfEmt+HpfFGjPZ3dsl
-        uu9biaFBhM8AnjHrXqzoQkk7O9t+m3p+p49OvUg2rq3Nt11fr+h2sfjTQ5JFQXm0scAsjAfnjii4ObmX
-        /fP864jX9Y8P2vgN7K01e21G/Vl2yhR5j/Pk+/AyOtdbaB1soBKCriNQwPUHHNeWz1i9c6FpWqpDJqOn
-        29zIqAB5IwWA9M9cVEPCPh4RPH/YtiVf7wMCn9aKK255WtfQx5I83NbUbb+D/DtrcJNBotkkiHKt5IO0
-        +v1p04/0iT/fP86KKzZpE//Z
-</value>
-  </data>
-  <metadata name="radnikBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>342, 95</value>
-  </metadata>
 </root>

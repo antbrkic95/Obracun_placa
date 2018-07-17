@@ -17,6 +17,7 @@ namespace obracun_placa
         private poslodavac odabrani;
         odbitakZaDjecu odabraniOdbitakDjeca;
         odbitakClan odabraniOdbitakČlan;
+        radnik odabraniBonus;
         public frmGlavna()
         {
             InitializeComponent();
@@ -112,8 +113,6 @@ namespace obracun_placa
             OsvjeziOdbitakDjeca();
             OsvjeziOdbitakClanovi();
             lblUkupanOdbitak.Text = "3800" + ",00";
-
-
 
             OsvjeziPrireze();
         }
@@ -304,15 +303,16 @@ namespace obracun_placa
                 lblUkupanTrosakIznos.Text = lblBrutoIznos.Text;
 
 
-                lblMirovinsko1Ukupno.Text =((double) (p.visina * 0.15)).ToString();
-                lblMirovinsko2Ukupno.Text =((double) (p.visina * 0.05)).ToString();
-                lblDoprinosIZukupno.Text = ((double)((p.visina * 0.15) + (p.visina * 0.05))).ToString();
+                // lblMirovinsko1Ukupno.Text =((double) (p.visina * 0.15)).ToString();
+                lblMirovinsko1Ukupno.Text = (double.Parse(lblBrutoIznos.Text) * 0.15).ToString();
+                lblMirovinsko2Ukupno.Text = (double.Parse(lblBrutoIznos.Text) * 0.05).ToString();
+                lblDoprinosIZukupno.Text = (double.Parse(lblMirovinsko1Ukupno.Text) + double.Parse(lblMirovinsko2Ukupno.Text)).ToString();
                 p.dohodak = p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05));
-                lblDohodakUkupno.Text =((double) ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)))).ToString();
-
+                // lblDohodakUkupno.Text =((double) ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)))).ToString();
+                lblDohodakUkupno.Text = (double.Parse(lblBrutoIznos.Text) - double.Parse(lblDoprinosIZukupno.Text)).ToString();
                 double odbitak = double.Parse(lblUkupanOdbitak.Text);
 
-                double dohodak = ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)));
+                double dohodak = (double)(double.Parse(lblBrutoIznos.Text) - double.Parse(lblDoprinosIZukupno.Text));
 
                 if (dohodak < odbitak)
                 {
@@ -332,7 +332,7 @@ namespace obracun_placa
                 {
                     double razlika = dohodak - odbitak;
                     lblPorez1Iznos.Text = razlika.ToString();
-                    lblPorez1Ukupno.Text = (double.Parse(lblPorez1Iznos.Text) * 0.24).ToString();
+                    lblPorez1Ukupno.Text = Math.Round((double.Parse(lblPorez1Iznos.Text) * 0.24), 2).ToString();
                     lblPrirezIznos.Text = lblPorez1Ukupno.Text;
 
                     lblPorez2Iznos.Text = 0 + ",00";
@@ -341,7 +341,7 @@ namespace obracun_placa
                     lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
                     lblPrirezUkupno.Text = Math.Round((double.Parse(lblPrirezIznos.Text) * (double)(odabrani.postotak * 0.01)), 2).ToString();
                     lblPorezUkupno.Text = Math.Round((double.Parse(lblPorez1Ukupno.Text) + double.Parse(lblPorez2Ukupno.Text) + double.Parse(lblPrirezUkupno.Text)), 2).ToString();
-                    lblNetoIznos.Text = ((p.visina - (double)((p.visina * 0.15) + (p.visina * 0.05))) - Math.Round(double.Parse(lblPorezUkupno.Text), 2)).ToString();
+                    lblNetoIznos.Text = Math.Round(double.Parse(lblDohodakUkupno.Text) - double.Parse(lblPorezUkupno.Text), 2).ToString();
                     p.ukupno_neto = (int)((p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05))) - float.Parse(lblPorezUkupno.Text));
                 }
 
@@ -362,12 +362,12 @@ namespace obracun_placa
                 lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
                 p.ukupno_bruto = p.visina;
 
-                lblMirovinsko1Ukupno.Text = (double.Parse(lblMirovinsko1Iznos.Text) * 0.15).ToString();
-                lblMirovinsko2Ukupno.Text = (double.Parse(lblmirovinsko2Iznos.Text) * 0.05).ToString();
-                lblDoprinosIZukupno.Text = ((double.Parse(lblMirovinsko1Iznos.Text) * 0.15) + (double.Parse(lblmirovinsko2Iznos.Text) * 0.05)).ToString();
+                lblMirovinsko1Ukupno.Text = Math.Round((double.Parse(lblMirovinsko1Iznos.Text) * 0.15),2).ToString();
+                lblMirovinsko2Ukupno.Text =Math.Round( (double.Parse(lblmirovinsko2Iznos.Text) * 0.05),2).ToString();
+                lblDoprinosIZukupno.Text =Math.Round( ((double.Parse(lblMirovinsko1Iznos.Text) * 0.15) + (double.Parse(lblmirovinsko2Iznos.Text) * 0.05)),2).ToString();
                 p.dohodak = p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05));
-                lblDohodakUkupno.Text = ((double)((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)))).ToString();
-
+                // lblDohodakUkupno.Text = ((double)((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)))).ToString();
+                lblDohodakUkupno.Text = Math.Round((double.Parse(lblBrutoIznos.Text) - double.Parse(lblDoprinosIZukupno.Text)),2).ToString();
                 lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
                 lblZastitaIznos.Text = lblBrutoIznos.Text;
                 lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
@@ -375,19 +375,19 @@ namespace obracun_placa
                 lblZastitaPostotak.Text = 1.7 + "%";
                 lblZaposljavanjePostotak.Text = 0.5 + "%";
 
-                lblIznosZdradstvenoUkupno.Text = (double.Parse(lblZdradstvenoIznos.Text) * 0.15).ToString();
-                lblZaposlavanjeUkupno.Text = (double.Parse(lblZaposljavanjeIznos.Text) * 0.017).ToString();
-                lblZastitaUkupno.Text = (double.Parse(lblZastitaIznos.Text) * 0.005).ToString();
+                lblIznosZdradstvenoUkupno.Text = Math.Round((double.Parse(lblZdradstvenoIznos.Text) * 0.15),2).ToString();
+                lblZaposlavanjeUkupno.Text = Math.Round((double.Parse(lblZaposljavanjeIznos.Text) * 0.017),2).ToString();
+                lblZastitaUkupno.Text = Math.Round((double.Parse(lblZastitaIznos.Text) * 0.005),2).ToString();
 
-                lblTrosakUkupno.Text = ((double.Parse(lblZdradstvenoIznos.Text) * 0.15) + (double.Parse(lblZaposljavanjeIznos.Text) * 0.017) + (double.Parse(lblZastitaIznos.Text) * 0.005)).ToString();
+                lblTrosakUkupno.Text = Math.Round(((double.Parse(lblZdradstvenoIznos.Text) * 0.15) + (double.Parse(lblZaposljavanjeIznos.Text) * 0.017) + (double.Parse(lblZastitaIznos.Text) * 0.005)),2).ToString();
 
-                lblUkupanTrosakIznos.Text = ((double.Parse(lblTrosakUkupno.Text)) + (double.Parse(lblBrutoIznos.Text))).ToString();
+                lblUkupanTrosakIznos.Text = Math.Round( ((double.Parse(lblTrosakUkupno.Text)) + (double.Parse(lblBrutoIznos.Text))),2).ToString();
                 //lblUkupanTrosakIznos.Text = ((double)(p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)))).ToString();
                 p.ukupno_trosak = (int)(p.visina + ((p.visina * 0.15) + (p.visina * 0.005) + (p.visina * 0.017)));
 
                 double odbitak = double.Parse(lblUkupanOdbitak.Text);
 
-                double dohodak = ((double)(p.visina) - (double)((p.visina * 0.15) + (p.visina * 0.05)));
+                double dohodak = (double)(double.Parse(lblBrutoIznos.Text) - double.Parse(lblDoprinosIZukupno.Text));
 
                 if (dohodak < odbitak)
                 {
@@ -404,22 +404,18 @@ namespace obracun_placa
                 }
                 else {
                     double razlika = dohodak - odbitak;
-                    lblPorez1Iznos.Text = razlika.ToString();
-                    lblPorez1Ukupno.Text = (double.Parse(lblPorez1Iznos.Text) * 0.24).ToString();
+                    lblPorez1Iznos.Text =razlika.ToString();
+                    lblPorez1Ukupno.Text = Math.Round((double.Parse(lblPorez1Iznos.Text) * 0.24),2).ToString();
                     lblPrirezIznos.Text = lblPorez1Ukupno.Text;
 
                     lblPorez2Iznos.Text = 0 + ",00";
                     lblPorez2Ukupno.Text = 0 + ",00";
 
-                    /*if (odabrani.postotak == 12)
-                        lblPrirezUkupno.Text = (double.Parse(lblPrirezIznos.Text) * 0.12).ToString();
-                    else if (odabrani.postotak == 10)
-                        lblPrirezUkupno.Text = (double.Parse(lblPrirezIznos.Text) * 0.1).ToString();
-                    else if (odabrani.postotak == 0)
-                        lblPrirezUkupno.Text = 0 + ",00";*/
+                   
                     lblPrirezUkupno.Text = Math.Round((double.Parse(lblPrirezIznos.Text) * (double)(odabrani.postotak * 0.01)), 2).ToString();
                     lblPorezUkupno.Text = Math.Round((double.Parse(lblPorez1Ukupno.Text) + double.Parse(lblPorez2Ukupno.Text) + double.Parse(lblPrirezUkupno.Text)), 2).ToString();
-                    lblNetoIznos.Text = ((p.visina - (double)((p.visina * 0.15) + (p.visina * 0.05))) - Math.Round(double.Parse(lblPorezUkupno.Text), 2)).ToString();
+                    lblNetoIznos.Text = Math.Round(double.Parse(lblDohodakUkupno.Text) - double.Parse(lblPorezUkupno.Text), 2).ToString();
+
                     p.ukupno_neto = (int)((p.visina - (int)((p.visina * 0.15) + (p.visina * 0.05))) - float.Parse(lblPorezUkupno.Text));
                 }
             }
@@ -547,22 +543,22 @@ namespace obracun_placa
                     p.ukupno_bruto = (int)((100 * neto) / (100 - 20));
                     lblMirovinsko1Iznos.Text = lblBrutoIznos.Text;
                     lblmirovinsko2Iznos.Text = lblBrutoIznos.Text;
-                    lblMirovinsko1Ukupno.Text = (double.Parse(lblMirovinsko1Iznos.Text) * 0.15).ToString();
-                    lblMirovinsko2Ukupno.Text = (double.Parse(lblmirovinsko2Iznos.Text) * 0.05).ToString();
-                    lblDoprinosIZukupno.Text = ((double.Parse(lblMirovinsko1Iznos.Text) * 0.15) + (double.Parse(lblmirovinsko2Iznos.Text) * 0.05)).ToString();
+                    lblMirovinsko1Ukupno.Text =Math.Round( (double.Parse(lblMirovinsko1Iznos.Text) * 0.15),2).ToString();
+                    lblMirovinsko2Ukupno.Text = Math.Round((double.Parse(lblmirovinsko2Iznos.Text) * 0.05),2).ToString();
+                    lblDoprinosIZukupno.Text = Math.Round(((double.Parse(lblMirovinsko1Iznos.Text) * 0.15) + (double.Parse(lblmirovinsko2Iznos.Text) * 0.05)),2).ToString();
                     lblZdradstvenoIznos.Text = lblBrutoIznos.Text;
                     lblZastitaIznos.Text = lblBrutoIznos.Text;
                     lblZaposljavanjeIznos.Text = lblBrutoIznos.Text;
                     lblZdradstvenoPostotak.Text = 15 + ",00 %";
                     lblZastitaPostotak.Text = 1.7 +  "%";
                     lblZaposljavanjePostotak.Text = 0.5 + "%";
-                    lblIznosZdradstvenoUkupno.Text = (double.Parse(lblZdradstvenoIznos.Text) * 0.15).ToString();
-                    lblZaposlavanjeUkupno.Text = (double.Parse(lblZaposljavanjeIznos.Text) * 0.017).ToString();
-                    lblZastitaUkupno.Text = (double.Parse(lblZastitaIznos.Text) * 0.005).ToString();
+                    lblIznosZdradstvenoUkupno.Text = Math.Round((double.Parse(lblZdradstvenoIznos.Text) * 0.15),2).ToString();
+                    lblZaposlavanjeUkupno.Text = Math.Round((double.Parse(lblZaposljavanjeIznos.Text) * 0.017),2).ToString();
+                    lblZastitaUkupno.Text =Math.Round( (double.Parse(lblZastitaIznos.Text) * 0.005),2).ToString();
 
-                    lblTrosakUkupno.Text = ((double.Parse(lblZdradstvenoIznos.Text) * 0.15) + (double.Parse(lblZaposljavanjeIznos.Text) * 0.017) + (double.Parse(lblZastitaIznos.Text) * 0.005)).ToString();
+                    lblTrosakUkupno.Text = Math.Round(((double.Parse(lblZdradstvenoIznos.Text) * 0.15) + (double.Parse(lblZaposljavanjeIznos.Text) * 0.017) + (double.Parse(lblZastitaIznos.Text) * 0.005)),2).ToString();
 
-                    lblUkupanTrosakIznos.Text = ((double.Parse(lblTrosakUkupno.Text)) + (double.Parse(lblBrutoIznos.Text))).ToString();
+                    lblUkupanTrosakIznos.Text = Math.Round(((double.Parse(lblTrosakUkupno.Text)) + (double.Parse(lblBrutoIznos.Text))),2).ToString();
                     p.ukupno_trosak = (int)((double.Parse(lblTrosakUkupno.Text)) + (double.Parse(lblBrutoIznos.Text)));
                 }
                 else if (neto > odbitak)
@@ -661,8 +657,7 @@ namespace obracun_placa
                
                     db.radnik.Attach(radnikPlaca);
                     db.prirez.Attach(odabraniPrirez);
-                  
-                   
+        
                     novaPlaca = new placa()
                     {
                         visina=(int)double.Parse(txtPlaca.Text),
@@ -984,9 +979,51 @@ namespace obracun_placa
             {
 
                 radnik r = radnikBindingSource.Current as radnik;
-                txtPlaca.Text = (r.stimulacija + r.iznos_bruto).ToString();
+                if (r.razlika != null)
+                {
+                    txtPlaca.Text = (r.stimulacija + r.iznos_bruto+r.razlika).ToString();
+                }
+                else
+                    txtPlaca.Text = (r.stimulacija + r.iznos_bruto).ToString();
+            }
+
+        }
+
+        private void btnBonusi_Click(object sender, EventArgs e)
+        {
+            radnik odabraniUnosRadnik = radnikBindingSource.Current as radnik;
+            if (odabraniUnosRadnik != null)
+            {
+
+                frmBonus formaBonus = new frmBonus(odabraniUnosRadnik);
+                formaBonus.ShowDialog();
             }
         }
+
+       /* private void btnSpremi_Click(object sender, EventArgs e)
+        {
+            double regres;
+            double bozicnica;
+            double uskrsnica;
+            bool testRegres = double.TryParse(txtRegres.Text, out regres);
+            bool testBozic = double.TryParse(txtBozic.Text, out bozicnica);
+            bool testUskrs = double.TryParse(txtUskrs.Text, out uskrsnica);
+
+            using (var db = new PlaceEntities4())
+            {
+
+                if (testBozic && testRegres && testUskrs)
+                {
+                    db.radnik.Attach(odabraniBonus);
+                    odabraniBonus.bozicnica = double.Parse(txtBozic.Text);
+                    odabraniBonus.uskrsnica = double.Parse(txtUskrs.Text);
+                    odabraniBonus.regres = double.Parse(txtRegres.Text);
+                
+                }
+                db.SaveChanges();
+                Close();
+            }
+        }*/
     }
 }
 

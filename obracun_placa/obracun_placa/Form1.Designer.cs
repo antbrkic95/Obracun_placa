@@ -61,6 +61,7 @@
             this.btnIzmijeni = new System.Windows.Forms.Button();
             this.btnUnosSati = new System.Windows.Forms.Button();
             this.gpUnosSati = new System.Windows.Forms.GroupBox();
+            this.btnBonusi = new System.Windows.Forms.Button();
             this.btnUnosPraznika = new System.Windows.Forms.Button();
             this.btnUnosGodisnjeg = new System.Windows.Forms.Button();
             this.btnUnosBolovanja = new System.Windows.Forms.Button();
@@ -415,7 +416,7 @@
             // btnUnosSati
             // 
             this.btnUnosSati.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnUnosSati.Location = new System.Drawing.Point(6, 59);
+            this.btnUnosSati.Location = new System.Drawing.Point(6, 51);
             this.btnUnosSati.Name = "btnUnosSati";
             this.btnUnosSati.Size = new System.Drawing.Size(82, 42);
             this.btnUnosSati.TabIndex = 29;
@@ -425,21 +426,33 @@
             // 
             // gpUnosSati
             // 
+            this.gpUnosSati.Controls.Add(this.btnBonusi);
             this.gpUnosSati.Controls.Add(this.btnUnosPraznika);
             this.gpUnosSati.Controls.Add(this.btnUnosGodisnjeg);
             this.gpUnosSati.Controls.Add(this.btnUnosBolovanja);
             this.gpUnosSati.Controls.Add(this.btnUnosSati);
-            this.gpUnosSati.Location = new System.Drawing.Point(419, 326);
+            this.gpUnosSati.Location = new System.Drawing.Point(419, 329);
             this.gpUnosSati.Name = "gpUnosSati";
-            this.gpUnosSati.Size = new System.Drawing.Size(396, 107);
+            this.gpUnosSati.Size = new System.Drawing.Size(451, 104);
             this.gpUnosSati.TabIndex = 30;
             this.gpUnosSati.TabStop = false;
-            this.gpUnosSati.Text = "Sati";
+            this.gpUnosSati.Text = "Sati i bonusi";
+            // 
+            // btnBonusi
+            // 
+            this.btnBonusi.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnBonusi.Location = new System.Drawing.Point(358, 51);
+            this.btnBonusi.Name = "btnBonusi";
+            this.btnBonusi.Size = new System.Drawing.Size(82, 42);
+            this.btnBonusi.TabIndex = 33;
+            this.btnBonusi.Text = "Bonusi";
+            this.btnBonusi.UseVisualStyleBackColor = false;
+            this.btnBonusi.Click += new System.EventHandler(this.btnBonusi_Click);
             // 
             // btnUnosPraznika
             // 
             this.btnUnosPraznika.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnUnosPraznika.Location = new System.Drawing.Point(299, 59);
+            this.btnUnosPraznika.Location = new System.Drawing.Point(270, 51);
             this.btnUnosPraznika.Name = "btnUnosPraznika";
             this.btnUnosPraznika.Size = new System.Drawing.Size(82, 42);
             this.btnUnosPraznika.TabIndex = 32;
@@ -450,7 +463,7 @@
             // btnUnosGodisnjeg
             // 
             this.btnUnosGodisnjeg.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnUnosGodisnjeg.Location = new System.Drawing.Point(201, 59);
+            this.btnUnosGodisnjeg.Location = new System.Drawing.Point(182, 51);
             this.btnUnosGodisnjeg.Name = "btnUnosGodisnjeg";
             this.btnUnosGodisnjeg.Size = new System.Drawing.Size(82, 42);
             this.btnUnosGodisnjeg.TabIndex = 31;
@@ -461,7 +474,7 @@
             // btnUnosBolovanja
             // 
             this.btnUnosBolovanja.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnUnosBolovanja.Location = new System.Drawing.Point(104, 59);
+            this.btnUnosBolovanja.Location = new System.Drawing.Point(94, 51);
             this.btnUnosBolovanja.Name = "btnUnosBolovanja";
             this.btnUnosBolovanja.Size = new System.Drawing.Size(82, 42);
             this.btnUnosBolovanja.TabIndex = 30;
@@ -2354,6 +2367,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dtp1;
         private System.Windows.Forms.Label lblDatum;
+        private System.Windows.Forms.BindingSource radnikBindingSource;
+        private System.Windows.Forms.TextBox txtIznosPocetni;
+        private System.Windows.Forms.TextBox txtStimulacija;
+        private System.Windows.Forms.Label lblStimulacija;
+        private System.Windows.Forms.Label lblB;
+        private System.Windows.Forms.Button btnBonusi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn729;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn730;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn731;
@@ -2375,11 +2394,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn742;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn743;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn744;
-        private System.Windows.Forms.BindingSource radnikBindingSource;
-        private System.Windows.Forms.TextBox txtIznosPocetni;
-        private System.Windows.Forms.TextBox txtStimulacija;
-        private System.Windows.Forms.Label lblStimulacija;
-        private System.Windows.Forms.Label lblB;
         /* private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

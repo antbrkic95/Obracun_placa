@@ -38,7 +38,7 @@ namespace obracun_placa
 
             using (var db = new PlaceEntities4())
             {
-                if (testBolovanje == false && testSati)
+                if (testBolovanje == false && testSati && !string.IsNullOrEmpty(txtBrojSati.Text) && !string.IsNullOrEmpty(txtRazlogBolovanja.Text))
                 {
                     if (odabraniBolovanje != null)
                     {

@@ -35,5 +35,6 @@ namespace obracun_placa
         public virtual DbSet<sati_blagdani> sati_blagdani { get; set; }
         public virtual DbSet<sati_bolovanje> sati_bolovanje { get; set; }
         public virtual DbSet<sati_godisnji> sati_godisnji { get; set; }
+        public virtual DbSet<bonus> bonus { get; set; }
     }
 }
