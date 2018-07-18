@@ -52,7 +52,8 @@ namespace obracun_placa
                         {
                             vrsta_rada = txtNazivRada.Text,
                             broj_sati = int.Parse(txtBrojSati.Text),
-                            radnik = noviRadnik
+                            radnik = noviRadnik,
+                            datum=dtpDatumSati.Value.Date
 
                         };
                         db.radniSati.Add(noviSati);

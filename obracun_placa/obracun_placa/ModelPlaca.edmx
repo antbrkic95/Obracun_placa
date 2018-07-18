@@ -98,6 +98,7 @@
           <Property Name="vrsta_rada" Type="varchar" MaxLength="50" />
           <Property Name="broj_sati" Type="int" />
           <Property Name="radnik_ID" Type="int" />
+          <Property Name="datum" Type="datetime" />
         </EntityType>
         <EntityType Name="sati_blagdani">
           <Key>
@@ -107,6 +108,7 @@
           <Property Name="naziv" Type="varchar" MaxLength="30" />
           <Property Name="broj_sati" Type="int" />
           <Property Name="radnik_ID" Type="int" />
+          <Property Name="datum" Type="datetime" />
         </EntityType>
         <EntityType Name="sati_bolovanje">
           <Key>
@@ -393,6 +395,7 @@
           <Property Name="vrsta_rada" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="broj_sati" Type="Int32" />
           <NavigationProperty Name="radnik" Relationship="Self.FK_radniSati_radnik" FromRole="radniSati" ToRole="radnik" />
+          <Property Name="datum" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="sati_blagdani">
           <Key>
@@ -402,6 +405,7 @@
           <Property Name="naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="broj_sati" Type="Int32" />
           <NavigationProperty Name="radnik" Relationship="Self.FK_sati_blagdani_radnik" FromRole="sati_blagdani" ToRole="radnik" />
+          <Property Name="datum" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="sati_bolovanje">
           <Key>
@@ -608,6 +612,7 @@
           <EntitySetMapping Name="radniSati">
             <EntityTypeMapping TypeName="PlaceModel.radniSati">
               <MappingFragment StoreEntitySet="radniSati">
+                <ScalarProperty Name="datum" ColumnName="datum" />
                 <ScalarProperty Name="ID_radniSati" ColumnName="ID_radniSati" />
                 <ScalarProperty Name="vrsta_rada" ColumnName="vrsta_rada" />
                 <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />
@@ -617,6 +622,7 @@
           <EntitySetMapping Name="sati_blagdani">
             <EntityTypeMapping TypeName="PlaceModel.sati_blagdani">
               <MappingFragment StoreEntitySet="sati_blagdani">
+                <ScalarProperty Name="datum" ColumnName="datum" />
                 <ScalarProperty Name="ID_blagdani" ColumnName="ID_blagdani" />
                 <ScalarProperty Name="naziv" ColumnName="naziv" />
                 <ScalarProperty Name="broj_sati" ColumnName="broj_sati" />

@@ -38,14 +38,14 @@
             // 
             // txtRazlogBolovanja
             // 
-            this.txtRazlogBolovanja.Location = new System.Drawing.Point(108, 31);
+            this.txtRazlogBolovanja.Location = new System.Drawing.Point(108, 38);
             this.txtRazlogBolovanja.Name = "txtRazlogBolovanja";
             this.txtRazlogBolovanja.Size = new System.Drawing.Size(100, 20);
             this.txtRazlogBolovanja.TabIndex = 0;
             // 
             // txtBrojSati
             // 
-            this.txtBrojSati.Location = new System.Drawing.Point(108, 72);
+            this.txtBrojSati.Location = new System.Drawing.Point(108, 76);
             this.txtBrojSati.Name = "txtBrojSati";
             this.txtBrojSati.Size = new System.Drawing.Size(100, 20);
             this.txtBrojSati.TabIndex = 1;
@@ -53,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 31);
+            this.label1.Location = new System.Drawing.Point(13, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 2;

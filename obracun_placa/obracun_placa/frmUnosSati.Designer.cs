@@ -34,6 +34,8 @@
             this.lblNazivRada = new System.Windows.Forms.Label();
             this.lblBrojSati = new System.Windows.Forms.Label();
             this.btnOdustaniSati = new System.Windows.Forms.Button();
+            this.dtpDatumSati = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNazivRada
@@ -52,7 +54,7 @@
             // 
             // btnUnosRadnihSati
             // 
-            this.btnUnosRadnihSati.Location = new System.Drawing.Point(16, 108);
+            this.btnUnosRadnihSati.Location = new System.Drawing.Point(12, 157);
             this.btnUnosRadnihSati.Name = "btnUnosRadnihSati";
             this.btnUnosRadnihSati.Size = new System.Drawing.Size(75, 39);
             this.btnUnosRadnihSati.TabIndex = 2;
@@ -80,7 +82,7 @@
             // 
             // btnOdustaniSati
             // 
-            this.btnOdustaniSati.Location = new System.Drawing.Point(102, 108);
+            this.btnOdustaniSati.Location = new System.Drawing.Point(102, 157);
             this.btnOdustaniSati.Name = "btnOdustaniSati";
             this.btnOdustaniSati.Size = new System.Drawing.Size(75, 39);
             this.btnOdustaniSati.TabIndex = 5;
@@ -88,11 +90,30 @@
             this.btnOdustaniSati.UseVisualStyleBackColor = true;
             this.btnOdustaniSati.Click += new System.EventHandler(this.btnOdustaniSati_Click);
             // 
+            // dtpDatumSati
+            // 
+            this.dtpDatumSati.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDatumSati.Location = new System.Drawing.Point(77, 97);
+            this.dtpDatumSati.Name = "dtpDatumSati";
+            this.dtpDatumSati.Size = new System.Drawing.Size(200, 20);
+            this.dtpDatumSati.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Datum rada:";
+            // 
             // frmUnosSati
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(233, 205);
+            this.ClientSize = new System.Drawing.Size(290, 268);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpDatumSati);
             this.Controls.Add(this.btnOdustaniSati);
             this.Controls.Add(this.lblBrojSati);
             this.Controls.Add(this.lblNazivRada);
@@ -115,5 +136,7 @@
         private System.Windows.Forms.Label lblNazivRada;
         private System.Windows.Forms.Label lblBrojSati;
         private System.Windows.Forms.Button btnOdustaniSati;
+        private System.Windows.Forms.DateTimePicker dtpDatumSati;
+        private System.Windows.Forms.Label label1;
     }
 }

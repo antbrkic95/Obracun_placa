@@ -17,6 +17,7 @@ namespace obracun_placa
         public int ID_blagdani { get; set; }
         public string naziv { get; set; }
         public Nullable<int> broj_sati { get; set; }
+        public Nullable<System.DateTime> datum { get; set; }
     
         public virtual radnik radnik { get; set; }
     }

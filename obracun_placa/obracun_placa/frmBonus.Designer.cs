@@ -65,6 +65,8 @@
             // 
             // dtpBonus
             // 
+            this.dtpBonus.CustomFormat = "";
+            this.dtpBonus.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpBonus.Location = new System.Drawing.Point(92, 150);
             this.dtpBonus.Name = "dtpBonus";
             this.dtpBonus.Size = new System.Drawing.Size(200, 20);

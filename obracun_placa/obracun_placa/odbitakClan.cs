@@ -28,7 +28,6 @@ namespace obracun_placa
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<radnik> radnik { get; set; }
-
         public BindingList<odbitakClan> vratiClan()
         {
 
@@ -41,5 +40,6 @@ namespace obracun_placa
             return lista;
 
         }
+
     }
 }

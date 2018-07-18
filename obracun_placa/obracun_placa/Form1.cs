@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -640,7 +642,7 @@ namespace obracun_placa
 
         }
 
-      
+    
 
         private void btnIzracunaj_Click(object sender, EventArgs e)
         {
@@ -654,10 +656,10 @@ namespace obracun_placa
             {
                 if (radnikPlaca != null && odabraniPrirez != null && testPlaca)
                 {
-               
+                    //var itemDb = db.Set<prirez>().AsNoTracking().First(x => x.ID_prirez == 1);
                     db.radnik.Attach(radnikPlaca);
                     db.prirez.Attach(odabraniPrirez);
-        
+                    
                     novaPlaca = new placa()
                     {
                         visina=(int)double.Parse(txtPlaca.Text),
